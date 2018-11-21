@@ -1,0 +1,392 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>simctl · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="zi-wo-jian-jie.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="zi-wo-jian-jie.html">
+            
+                <a href="zi-wo-jian-jie.html">
+            
+                    
+                    自我简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="simctl.html">
+            
+                <a href="simctl.html">
+            
+                    
+                    simctl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >simctl</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h2>
+<hr>
+<p>&#x662F;&#x4E00;&#x4E2A;apple&#x63D0;&#x4F9B;&#x7684;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x7528;&#x6765;&#x4E0E;iOS&#x6A21;&#x62DF;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x7684;&#x3002;&#x4E0E;&#x5B89;&#x5353;&#x7684;<code>adb</code>&#x547D;&#x4EE4;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x3002;</p>
+<blockquote>
+<p>&#x5730;&#x5740;</p>
+</blockquote>
+<p>Applications/Xcode.app/Contents/Developer/usr/bin/simctl</p>
+<blockquote>
+<p>&#x6A21;&#x62DF;&#x5668;&#x5730;&#x5740;</p>
+</blockquote>
+<p>/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app</p>
+<h2 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
+<hr>
+<blockquote>
+<p>&#x5E2E;&#x52A9;</p>
+</blockquote>
+<pre><code class="lang-objectivec">xcrun simctl help
+</code></pre>
+<blockquote>
+<p>&#x67E5;&#x770B;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x7684;&#x6A21;&#x62DF;&#x5668;&#x5217;&#x8868;</p>
+</blockquote>
+<pre><code>xcrun instruments -s devices
+</code></pre><blockquote>
+<p>&#x67E5;&#x770B;&#x6240;&#x6709;&#x652F;&#x6301;&#x7684;&#x6A21;&#x62DF;&#x5668;&#x5217;&#x8868;</p>
+</blockquote>
+<pre><code class="lang-objectivec">xcrun simctl list
+
+<span class="hljs-comment">// &#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x53C2;&#x6570; -j &#xFF0C;&#x4EE5;json&#x7684;&#x5F62;&#x5F0F;&#x5C55;&#x793A;</span>
+xcrun simctl list -j
+</code></pre>
+<blockquote>
+<p>&#x521B;&#x5EFA;&#x6A21;&#x62DF;&#x5668;</p>
+</blockquote>
+<pre><code class="lang-objectivec"><span class="hljs-comment">// Device Types &#x548C; Runtimes&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; xcrun simctl list &#x8FDB;&#x884C;&#x67E5;&#x770B;</span>
+<span class="hljs-comment">// Device Types = &#x8BBE;&#x5907;&#x7C7B;&#x578B;</span>
+<span class="hljs-comment">// Runtimes = &#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x53F7;</span>
+xcrun simctl create <span class="hljs-string">&quot;Your_Simulator_Name&quot;</span> <span class="hljs-string">&quot;Device_Types&quot;</span> <span class="hljs-string">&quot;Runtimes&quot;</span>
+
+<span class="hljs-comment">// &#x4F8B;&#x5B50;&#xFF1A;</span>
+<span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#x4E3A;Your_Simulator_Name&#x7684;&#x6A21;&#x62DF;&#x5668;&#xFF0C;iPhone Xs iOS 12.1</span>
+xcrun simctl create <span class="hljs-string">&quot;Your_Simulator_Name&quot;</span> <span class="hljs-string">&quot;com.apple.CoreSimulator.SimDeviceType.iPhone-XS&quot;</span> <span class="hljs-string">&quot;com.apple.CoreSimulator.SimRuntime.iOS-12-1&quot;</span>
+</code></pre>
+<blockquote>
+<p>&#x542F;&#x52A8;&#x6A21;&#x62DF;&#x5668;</p>
+</blockquote>
+<pre><code class="lang-objectivec">// &#x901A;&#x8FC7;UDID&#x65B9;&#x5F0F;&#x542F;&#x52A8;
+// UDID &#x53EF;&#x4EE5;&#x4F7F;&#x7528; xcrun simctl list &#x8FDB;&#x884C;&#x67E5;&#x770B;
+// &#x5728;&#x521B;&#x5EFA;&#x6A21;&#x62DF;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x4E5F;&#x4F1A;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7684;UDID
+xcrun simctl boot &quot;C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542&quot;
+
+// &#x901A;&#x8FC7;&#x6A21;&#x62DF;&#x5668;&#x540D;&#x5B57;&#x542F;&#x52A8;
+xcrun instruments -w &apos;Your_Simulator_Name&apos;
+
+// &#x901A;&#x8FC7;open+UDID&#x7684;&#x65B9;&#x5F0F;&#x542F;&#x52A8;&#x6A21;&#x62DF;&#x5668;
+open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app --args -currentDeviceUDID C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542
+</code></pre>
+<blockquote>
+<p>&#x5B89;&#x88C5;APP</p>
+</blockquote>
+<pre><code class="lang-objectivec"><span class="hljs-comment">// booted: &#x8868;&#x793A;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x6A21;&#x62DF;&#x5668;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x6A21;&#x62DF;&#x5668;&#x542F;&#x52A8;&#xFF0C;&#x8868;&#x793A;&#x6B63;&#x5728;&#x6FC0;&#x6D3B;&#x7684;&#x6A21;&#x62DF;&#x5668;</span>
+<span class="hljs-comment">// &#x6CE8;&#x610F;&#xFF1A;&#x5B89;&#x88C5;&#x7684;APP&#x4E3A;app&#x683C;&#x5F0F;&#xFF0C;&#x4E0D;&#x662F;ipa&#x683C;&#x5F0F;</span>
+xcrun simctl install booted Your_APP_Path.app
+</code></pre>
+<blockquote>
+<p>&#x5378;&#x8F7D;APP</p>
+</blockquote>
+<pre><code>xcrun simctl uninstall booted Your_APP_Bundle_Identifier
+</code></pre><blockquote>
+<p>&#x542F;&#x52A8;APP</p>
+</blockquote>
+<pre><code class="lang-objectivec"><span class="hljs-comment">// &#x901A;&#x8FC7;Bundle ID&#x542F;&#x52A8;APP</span>
+xcrun simctl launch booted Your_APP_Bundle_Identifier
+
+<span class="hljs-comment">// &#x901A;&#x8FC7;URL Schema&#x542F;&#x52A8;APP</span>
+xcrun simctl openurl booted <span class="hljs-string">&quot;Your_APP_URL_Schema&quot;</span>
+
+<span class="hljs-comment">// &#x542F;&#x52A8;APP&#x5E26;&#x542F;&#x52A8;&#x53C2;&#x6570;</span>
+<span class="hljs-comment">// &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x662F;&#x4FDD;&#x5B58;&#x5728;UserDefault&#x91CC;</span>
+xcrun simctl launch booted Your_APP_Bundle_Identifier -key1 value1 -key2 value2 -key3 value3
+</code></pre>
+<blockquote>
+<p>&#x5173;&#x95ED;APP</p>
+</blockquote>
+<pre><code>xcrun simctl terminate booted &quot;Your_APP_Bundle_Identifier&quot;
+</code></pre><blockquote>
+<p>&#x6253;&#x5F00;&#x7F51;&#x9875;</p>
+</blockquote>
+<pre><code class="lang-objectivec"><span class="hljs-comment">// &#x6253;&#x5F00;&#x767E;&#x5EA6;</span>
+xcrun simctl openurl booted <span class="hljs-string">&quot;https://www.baidu.com&quot;</span>
+
+<span class="hljs-comment">// &#x5EF6;&#x4F38;&#xFF1A;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;APP&#x652F;&#x6301;Universal Link&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;URL&#x7684;&#x65B9;&#x5F0F;&#x6253;&#x5F00;APP&#x751A;&#x81F3;&#x6307;&#x5B9A;APP&#x7684;&#x6307;&#x5B9A;&#x9875;&#x9762;</span>
+</code></pre>
+<blockquote>
+<p>&#x6DFB;&#x52A0;&#x56FE;&#x7247;&#x6216;&#x8005;&#x89C6;&#x9891;&#x5230;&#x6A21;&#x62DF;&#x5668;</p>
+</blockquote>
+<pre><code>// &#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x76F4;&#x63A5;&#x62FD;&#x5165;&#x6A21;&#x62DF;&#x5668;&#xFF0C;&#x66F4;&#x65B9;&#x4FBF;
+xcrun simctl addmedia booted Your_file_Path
+</code></pre><blockquote>
+<p>&#x6253;&#x5370;&#x6A21;&#x62DF;&#x5668;&#x65E5;&#x5FD7;</p>
+</blockquote>
+<pre><code>xcrun simctl spawn booted log stream &#x2014; level=debug
+
+// &#x6DFB;&#x52A0;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;
+xcrun simctl spawn booted log stream &#x2014; predicate &#x2018;processImagePath endswith &#x201C;Your_KeyWord&#x201D;&#x2019;
+xcrun simctl spawn booted log stream &#x2014; predicate &#x2018;eventMessage contains &#x201C;error&#x201D; and messageType == info&#x2019;
+
+// &#x6536;&#x96C6;&#x65E5;&#x5FD7;
+xcrun simctl spawn booted log collect
+</code></pre><blockquote>
+<p>&#x622A;&#x56FE;</p>
+</blockquote>
+<pre><code>xcrun simctl io booted screenshot screen.png
+</code></pre><blockquote>
+<p>&#x5F55;&#x5C4F;</p>
+</blockquote>
+<pre><code>// &#x53EF;&#x4EE5;&#x4F7F;&#x7528;Ctrl+C&#x6765;&#x63D0;&#x524D;&#x7ED3;&#x675F;&#x5F55;&#x5236;
+xcrun simctl io booted recordVideo news.mov
+</code></pre><blockquote>
+<p>&#x663E;&#x793A;APP&#x7684;&#x6C99;&#x76D2;&#x5730;&#x5740;</p>
+</blockquote>
+<pre><code>xcrun simctl get_app_container booted Your_APP_Bundle_Identifier
+</code></pre><blockquote>
+<p>&#x663E;&#x793A;APP&#x7684;&#x5B8C;&#x6574;&#x4FE1;&#x606F;</p>
+</blockquote>
+<pre><code>xcrun simctl appinfo booted Your_APP_Bundle_Identifier
+</code></pre><h2 id="&#x65E5;&#x5E38;&#x5E94;&#x7528;">&#x65E5;&#x5E38;&#x5E94;&#x7528;</h2>
+<hr>
+<ul>
+<li>&#x5728;&#x65E5;&#x5E38;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x6BCF;&#x6B21;&#x7F16;&#x8BD1;&#x53EA;&#x80FD;&#x6253;&#x5F00;&#x4E00;&#x4E2A;&#x6A21;&#x62DF;&#x5668;&#xFF0C;&#x9488;&#x5BF9;UI&#x9002;&#x914D;&#x8C03;&#x8BD5;&#x7684;&#x8BDD;&#xFF0C;&#x9700;&#x8981;&#x591A;&#x6B21;&#x7F16;&#x8BD1;&#x5230;&#x4E0D;&#x540C;&#x6A21;&#x62DF;&#x5668;&#x4E0A;&#x4F1A;&#x6BD4;&#x8F83;&#x6D6A;&#x8D39;&#x65F6;&#x95F4;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5728;Build Phases -&gt; New Run Script Phases&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x811A;&#x672C;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x6B21;&#x7F16;&#x8BD1;&#xFF0C;&#x5728;&#x591A;&#x4E2A;&#x6A21;&#x62DF;&#x5668;&#x540C;&#x65F6;&#x542F;&#x52A8;APP</li>
+</ul>
+<pre><code class="lang-objectivec">// &#x9996;&#x5148;&#x6253;&#x5F00;&#x6A21;&#x62DF;&#x5668;&#x5E94;&#x7528;
+open &quot;/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/&quot;
+
+// &#x542F;&#x52A8;&#x9700;&#x8981;&#x6D4B;&#x8BD5;&#x7684;&#x6A21;&#x62DF;&#x5668;
+xcrun simctl boot &quot;C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542&quot;
+
+// &#x5728;&#x6A21;&#x62DF;&#x5668;&#x5B89;&#x88C5;&#x7F16;&#x8BD1;&#x5B8C;&#x7684;app
+xcrun simctl install &quot;C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542&quot; &quot;${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app&quot;
+
+// &#x6253;&#x5F00;&#x5E94;&#x7528;
+xcrun simctl launch &quot;C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542&quot; &quot;${PRODUCT_BUNDLE_IDENTIFIER}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="zi-wo-jian-jie.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 自我简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"simctl","level":"1.3","depth":1,"previous":{"title":"自我简介","level":"1.2","depth":1,"path":"zi-wo-jian-jie.md","ref":"zi-wo-jian-jie.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"simctl.md","mtime":"2018-11-21T08:10:56.122Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-21T12:28:47.914Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
