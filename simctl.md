@@ -50,5 +50,17 @@ xcrun simctl create "Your_Simulator_Name" "Device_Types" "Runtimes"
 xcrun simctl create "Your_Simulator_Name" "com.apple.CoreSimulator.SimDeviceType.iPhone-XS" "com.apple.CoreSimulator.SimRuntime.iOS-12-1"
 ```
 
+> 启动模拟器
+
+```objectivec
+// 通过UUID方式启动
+// UUID 可以使用 xcrun simctl list 进行查看
+// 在创建模拟器的时候，如果创建成功也会返回对应的UUID
+xcrun simctl boot "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542"
+
+// 通过模拟器名字启动
+xcrun instruments -w 'Your_Simulator_Name'
+```
+
 
 
