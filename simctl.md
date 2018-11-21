@@ -89,14 +89,9 @@ xcrun simctl launch booted Your_APP_Bundle_Identifier
 xcrun simctl openurl booted "Your_APP_URL_Schema"
 
 // 启动APP带启动参数
-xcrun simctl launch booted Your_APP_Bundle_Identifier -key value
+xcrun simctl launch booted Your_APP_Bundle_Identifier -key1 value1 -key2 value2 -key3 value3
 
-// 可以使用一下方式获取启动参数
-[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            if([key isEqualToString:@"key"]){
-                *stop = YES;
-            }
-}];
+// 这种方式传进来的参数，是保存在UserDefault里
 ```
 
 > 关闭APP
