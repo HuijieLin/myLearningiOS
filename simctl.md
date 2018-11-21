@@ -89,9 +89,8 @@ xcrun simctl launch booted Your_APP_Bundle_Identifier
 xcrun simctl openurl booted "Your_APP_URL_Schema"
 
 // 启动APP带启动参数
-xcrun simctl launch booted Your_APP_Bundle_Identifier -key1 value1 -key2 value2 -key3 value3
-
 // 这种方式传进来的参数，是保存在UserDefault里
+xcrun simctl launch booted Your_APP_Bundle_Identifier -key1 value1 -key2 value2 -key3 value3
 ```
 
 > 关闭APP
