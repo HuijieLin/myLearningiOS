@@ -81,7 +81,7 @@ xcrun simctl uninstall booted Your_APP_Bundle_Identifier
 
 > 启动APP
 
-```
+```objectivec
 // 通过Bundle ID启动APP
 xcrun simctl launch booted Your_APP_Bundle_Identifier
 
@@ -90,6 +90,14 @@ xcrun simctl openurl booted "Your_APP_URL_Schema"
 
 // 启动APP带启动参数
 xcrun simctl launch booted Your_APP_Bundle_Identifier -key value
+
+// 可以使用一下方式获取启动参数
+[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            if([key isEqualToString:@"DumplingsPort"]){
+                port = obj;
+                *stop = YES;
+            }
+}];
 ```
 
 > 关闭APP
