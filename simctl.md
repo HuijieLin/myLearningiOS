@@ -65,7 +65,7 @@ xcrun instruments -w 'Your_Simulator_Name'
 open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app --args -currentDeviceUDID C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542
 ```
 
-> 在模拟器中安装APP
+> 安装APP
 
 ```objectivec
 // booted: 表示正在运行的模拟器，如果有多个模拟器启动，表示正在激活的模拟器
@@ -73,7 +73,13 @@ open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app --
 xcrun simctl install booted Your_APP_Path.app
 ```
 
-> 打开指定APP
+> 卸载APP
+
+```
+xcrun simctl uninstall booted Your_APP_Bundle_Identifier
+```
+
+> 启动APP
 
 ```
 // 通过Bundle ID启动APP
@@ -83,15 +89,76 @@ xcrun simctl launch booted Your_APP_Bundle_Identifier
 xcrun simctl openurl booted "Your_APP_URL_Schema"
 ```
 
-> 模拟器打开一个网页
+> 关闭APP
 
 ```
+xcrun simctl terminate booted "Your_APP_Bundle_Identifier"
+```
+
+> 打开网页
+
+```objectivec
 // 打开百度
 xcrun simctl openurl booted "https://www.baidu.com"
 
 // 延伸：
 // 如果APP支持Universal Link，也可以使用URL的方式打开APP甚至指定APP的指定页面
 ```
+
+> 添加图片或者视频到模拟器
+
+```
+// 也可以把资源文件直接拽入模拟器，更方便
+xcrun simctl addmedia booted Your_file_Path
+```
+
+> 打印模拟器日志
+
+```
+xcrun simctl spawn booted log stream — level=debug
+
+// 添加过滤条件
+xcrun simctl spawn booted log stream — predicate ‘processImagePath endswith “Your_KeyWord”’
+xcrun simctl spawn booted log stream — predicate ‘eventMessage contains “error” and messageType == info’
+
+// 收集日志
+xcrun simctl spawn booted log collect
+```
+
+> 截图
+
+```
+xcrun simctl io booted screenshot screen.png
+```
+
+> 录屏
+
+```
+// 可以使用Ctrl+C来提前结束录制
+xcrun simctl io booted recordVideo news.mov
+```
+
+## 日常应用
+
+---
+
+* 在日常开发中，每次编译只能打开一个模拟器，针对UI适配调试的话，需要多次编译到不同模拟器上会比较浪费时间，所以可以在Build Phases -&gt; New Run Script Phases添加以下脚本来实现一次编译，在多个模拟器同时启动APP
+
+```objectivec
+// 首先打开模拟器应用
+open "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+
+// 启动需要测试的模拟器
+xcrun simctl boot "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542"
+
+// 在模拟器安装编译完的app
+xcrun simctl install "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542" "${BUILT_PRODUCTS_DIR}/${TARGET_NAME}.app"
+
+// 打开应用
+xcrun simctl launch "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542" "${PRODUCT_BUNDLE_IDENTIFIER}
+```
+
+
 
 
 
