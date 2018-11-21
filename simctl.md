@@ -8,3 +8,13 @@
 
 Applications/Xcode.app/Contents/Developer/usr/bin/simctl
 
+## 常用命令
+
+---
+
+帮助
+
+> xcrun simctl help
+
+
+
