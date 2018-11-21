@@ -87,6 +87,9 @@ xcrun simctl launch booted Your_APP_Bundle_Identifier
 
 // 通过URL Schema启动APP
 xcrun simctl openurl booted "Your_APP_URL_Schema"
+
+// 启动APP带启动参数
+xcrun simctl launch booted Your_APP_Bundle_Identifier -key value
 ```
 
 > 关闭APP
@@ -157,8 +160,6 @@ xcrun simctl install "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542" "${BUILT_PRODUCTS_DI
 // 打开应用
 xcrun simctl launch "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542" "${PRODUCT_BUNDLE_IDENTIFIER}
 ```
-
-
 
 
 
