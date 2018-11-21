@@ -12,9 +12,17 @@ Applications/Xcode.app/Contents/Developer/usr/bin/simctl
 
 ---
 
-帮助
+> 帮助
 
-> xcrun simctl help
+```objectivec
+xcrun simctl help
+```
+
+> 查看已经安装的模拟器列表
+
+```
+xcrun instruments -s devices
+```
 
 
 
