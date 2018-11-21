@@ -93,8 +93,7 @@ xcrun simctl launch booted Your_APP_Bundle_Identifier -key value
 
 // 可以使用一下方式获取启动参数
 [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-            if([key isEqualToString:@"DumplingsPort"]){
-                port = obj;
+            if([key isEqualToString:@"key"]){
                 *stop = YES;
             }
 }];
