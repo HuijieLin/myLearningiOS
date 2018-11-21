@@ -148,6 +148,18 @@ xcrun simctl io booted screenshot screen.png
 xcrun simctl io booted recordVideo news.mov
 ```
 
+> 显示APP的沙盒地址
+
+```
+xcrun simctl get_app_container booted Your_APP_Bundle_Identifier
+```
+
+> 显示APP的完整信息
+
+```
+xcrun simctl appinfo booted Your_APP_Bundle_Identifier
+```
+
 ## 日常应用
 
 ---
