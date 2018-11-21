@@ -53,13 +53,36 @@ xcrun simctl create "Your_Simulator_Name" "com.apple.CoreSimulator.SimDeviceType
 > 启动模拟器
 
 ```objectivec
-// 通过UUID方式启动
-// UUID 可以使用 xcrun simctl list 进行查看
-// 在创建模拟器的时候，如果创建成功也会返回对应的UUID
+// 通过UDID方式启动
+// UDID 可以使用 xcrun simctl list 进行查看
+// 在创建模拟器的时候，如果创建成功也会返回对应的UDID
 xcrun simctl boot "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542"
 
 // 通过模拟器名字启动
 xcrun instruments -w 'Your_Simulator_Name'
+
+// 通过open+UDID的方式启动模拟器
+open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app --args -currentDeviceUDID C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542
+```
+
+> 在模拟器中安装APP
+
+```objectivec
+// booted: 表示正在运行的模拟器，如果有多个模拟器启动，表示正在激活的模拟器
+// 注意：安装的APP为app格式，不是ipa格式
+xcrun simctl install booted Your_APP_Path.app
+```
+
+> 打开指定APP
+
+```
+
+```
+
+> 模拟器打开一个网页
+
+```
+
 ```
 
 
