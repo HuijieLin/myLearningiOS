@@ -8,6 +8,10 @@
 
 Applications/Xcode.app/Contents/Developer/usr/bin/simctl
 
+> 模拟器地址
+
+/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
+
 ## 常用命令
 
 ---
@@ -22,6 +26,21 @@ xcrun simctl help
 
 ```
 xcrun instruments -s devices
+```
+
+> 查看所有支持的模拟器列表
+
+```objectivec
+xcrun simctl list
+
+// 可以添加参数 -j ，以json的形式展示
+xcrun simctl list -j
+```
+
+> 创建模拟器
+
+```
+
 ```
 
 
