@@ -39,8 +39,15 @@ xcrun simctl list -j
 
 > 创建模拟器
 
-```
+```objectivec
+// Device Types 和 Runtimes，可以使用 xcrun simctl list 进行查看
+// Device Types = 设备类型
+// Runtimes = 系统版本号
+xcrun simctl create "Your_Simulator_Name" "Device_Types" "Runtimes"
 
+// 例子：
+// 创建一个名字为Your_Simulator_Name的模拟器，iPhone X 11.4
+xcrun simctl create "Your_Simulator_Name" "com.apple.CoreSimulator.SimDeviceType.iPhone-X" "com.apple.CoreSimulator.SimRuntime.iOS-11-4"
 ```
 
 
