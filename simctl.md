@@ -46,8 +46,8 @@ xcrun simctl list -j
 xcrun simctl create "Your_Simulator_Name" "Device_Types" "Runtimes"
 
 // 例子：
-// 创建一个名字为Your_Simulator_Name的模拟器，iPhone X 11.4
-xcrun simctl create "Your_Simulator_Name" "com.apple.CoreSimulator.SimDeviceType.iPhone-X" "com.apple.CoreSimulator.SimRuntime.iOS-11-4"
+// 创建一个名字为Your_Simulator_Name的模拟器，iPhone Xs iOS 12.1
+xcrun simctl create "Your_Simulator_Name" "com.apple.CoreSimulator.SimDeviceType.iPhone-XS" "com.apple.CoreSimulator.SimRuntime.iOS-12-1"
 ```
 
 
