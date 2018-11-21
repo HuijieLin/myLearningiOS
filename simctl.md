@@ -76,14 +76,14 @@ xcrun simctl install booted Your_APP_Path.app
 > 打开指定APP
 
 ```
-// 需要知道APP的Bundle Identifier
 xcrun simctl launch booted Your_APP_Bundle_Identifier
 ```
 
 > 模拟器打开一个网页
 
 ```
-
+// 打开百度
+xcrun simctl openurl booted "https://www.baidu.com"
 ```
 
 
