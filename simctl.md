@@ -76,7 +76,11 @@ xcrun simctl install booted Your_APP_Path.app
 > 打开指定APP
 
 ```
+// 通过Bundle ID启动APP
 xcrun simctl launch booted Your_APP_Bundle_Identifier
+
+// 通过URL Schema启动APP
+xcrun simctl openurl booted "Your_APP_URL_Schema"
 ```
 
 > 模拟器打开一个网页
@@ -84,6 +88,9 @@ xcrun simctl launch booted Your_APP_Bundle_Identifier
 ```
 // 打开百度
 xcrun simctl openurl booted "https://www.baidu.com"
+
+// 延伸：
+// 如果APP支持Universal Link，也可以使用URL的方式打开APP甚至指定APP的指定页面
 ```
 
 
