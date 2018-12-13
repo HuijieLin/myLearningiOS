@@ -154,6 +154,12 @@ xcrun simctl get_app_container booted Your_APP_Bundle_Identifier
 xcrun simctl appinfo booted Your_APP_Bundle_Identifier
 ```
 
+> 运行之后app所在目录
+
+```
+~/Library/Developer/Xcode/DerivedData/Your_Project_Name/Build/Products/Debug-iphonesimulator/Your_Project_Name.app
+```
+
 ## 日常应用
 
 ---
