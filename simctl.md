@@ -156,8 +156,11 @@ xcrun simctl appinfo booted Your_APP_Bundle_Identifier
 
 > 运行之后app所在目录
 
-```
+```objectivec
 ~/Library/Developer/Xcode/DerivedData/Your_Project_Name/Build/Products/Debug-iphonesimulator/Your_Project_Name.app
+
+// 或者可以在didFinishLaunchingWithOptions里面打印路径
+[[NSBundle mainBundle] pathForAuxiliaryExecutable:@""];
 ```
 
 ## 日常应用
