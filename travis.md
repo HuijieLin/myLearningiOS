@@ -18,7 +18,7 @@ Travis CI 是持续集成服务，它可以跟github上面的仓库做关联，�
 
 * 在仓库的根目录加入命名为`.travis.yml`的文件，不用语言的构建方式可以参考 [https://docs.travis-ci.com/ ](https://docs.travis-ci.com/)的`Programming Languages`
 
-* 在编写完`.travis.yml`文件后，整一个过程就已经完成
+* 在编写完`.travis.yml`文件后，整个过程就已经完成。日后关联的仓库在有代码更新时就会自动构建和编译。
 
 ## 日常应用
 
