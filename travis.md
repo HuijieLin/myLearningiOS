@@ -4,7 +4,9 @@
 
 Travis CI 是持续集成服务，它可以跟github上面的仓库做关联，每当仓库代码有改动时就会自动构建和编译。
 
-官网：[https://travis-ci.org/](https://travis-ci.org/)
+> 官网
+
+[https://travis-ci.org/](https://travis-ci.org/)
 
 ## 操作步骤
 
@@ -43,9 +45,11 @@ before_install:
   * 找到Travis对应仓库，点击结果图标
 
   ![](assets/import5.png)
+
   * 复制对应连接
 
   ![](/assets/import6.png)
+
   * 粘贴在仓库的README中
 
   ![](/assets/import7.png)
