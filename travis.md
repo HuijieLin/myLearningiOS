@@ -54,5 +54,19 @@ before_install:
 
   ![](/assets/import7.png)
 
+## 错误排查
+
+---
+
+> xcodebuild: error: Scheme YOUR\_SCHEME is not currently configured for the test action
+>
+> 参考连接：[https://stackoverflow.com/questions/30481630/scheme-is-not-configured-for-the-test-action-ios-xcode-project](https://stackoverflow.com/questions/30481630/scheme-is-not-configured-for-the-test-action-ios-xcode-project)
+
+* 如果你的项目是一个framework，可以设置edit scheme -&gt; Run -&gt; Executable 选择『Ask on Launch』![](/assets/import8.png)
+
+* 如果你的项目是一个Application
+  * 可以设置edit scheme -&gt; Run -&gt; Executable 选择『对应的scheme即可』
+  * 如果还是不行可以通过 `xcodebuild -workspace path/to/workspace/file -list` 或者 `xcodebuild -project path/to/project/file -list` 查看有没有重复的scheme进行删除
+
 
 
