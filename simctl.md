@@ -62,6 +62,8 @@ xcrun simctl boot "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542"
 xcrun instruments -w 'Your_Simulator_Name'
 
 // 通过open+UDID的方式启动模拟器
+open -a "simulator" --args -CurrentDeviceUDID C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542
+// 或者
 open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app --args -currentDeviceUDID C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542
 ```
 
