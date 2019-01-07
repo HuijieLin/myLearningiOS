@@ -4,4 +4,5 @@
 * [自我简介](zi-wo-jian-jie.md)
 * [simctl](simctl.md)
 * [Travis](travis.md)
+* [位移运算符加速](wei-yi-yun-suan-fu-jia-su.md)
 
