@@ -69,11 +69,11 @@ before_install:
   * 可以设置edit scheme -&gt; Run -&gt; Executable 选择『对应的scheme即可』
   * 如果还是不行可以通过 `xcodebuild -workspace path/to/workspace/file -list` 或者 `xcodebuild -project path/to/project/file -list` 查看有没有重复的scheme进行删除
 
-| 11 |  |
+|  |  |
 | :--- | ---: |
-| 333 | 44 |
-|  | fdsfdsf |
-|  | sdfsdfsdfdsf |
+|  |  |
+|  |  |
+|  |  |
 |  |  |
 |  |  |
 |  |  |
