@@ -48,20 +48,22 @@ observer中需要实现以下方法获取KVO回调：
 
 [Apple官网文档 - Manual Change Notification](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueObserving/Articles/KVOCompliance.html#//apple_ref/doc/uid/20002178-SW3)
 
-给属性添加完观察者之后，手动调用`willChangeValueForKey`和`didChangeValueForKey`即可。代码如下
+给属性添加完观察者之后，手动调用`willChangeValueForKey`和`didChangeValueForKey`即可。
+
+代码如下：
 
 ```objectivec
 @property (nonatomic, strong) NSDate *now;
 
 - (void)viewDidLoad {
    [super viewDidLoad];
-   
+
    _now = [NSDate date];
-   
+
    // 添加属性观察
    [self addObserver:self forKeyPath:@"now" options:NSKeyValueObservingOptionNew context:nil];
    NSLog(@"1");
-   
+
    // 手动调用以下方法
    [self willChangeValueForKey:@"now"]; // “手动触发self.now的KVO”，必写。
    NSLog(@"2");
