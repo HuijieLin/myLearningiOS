@@ -76,6 +76,8 @@ observer中需要实现以下方法获取KVO回调：
 
 KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量的监听，需要手动实现。
 
+[参考链接](https://yq.aliyun.com/articles/30483)
+
 方法如下：
 
 * 重写实例变量的`get`和`set`方法，在`set`方法的前后分别插入`willChangeValueForKey`和`didChangeValueForKey`
@@ -139,7 +141,7 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
     {
         return NO;
     }
-    
+
     return [super automaticallyNotifiesObserversForKey:key];
 }
 
@@ -167,19 +169,19 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
 
     // 创建学生对象
     _student = [Student new];
-    
+
     // 监听属性name
     [_student addObserver:self
                forKeyPath:@"name"  // 属性
                   options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
                   context:nil];
-    
+
     // 监听实例变量age
     [_student addObserver:self
                forKeyPath:@"age"   // 实例变量
                   options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
                   context:nil];
-    
+
     _student.name = @"YouXianMing"; // 改变名字
     _student.age  = @"18";          // 改变年龄
 }
