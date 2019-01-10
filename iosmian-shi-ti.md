@@ -307,7 +307,25 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 > ## 消息转发流程
 
+![](/assets/2019011002.png)
 
+* 动态方法解析
+
+`resolveInstanceMethod` 和 `resolveClassMethod`
+
+* 快速转发
+
+`forwardingTargetForSelector`
+
+* 完整转发
+
+`methodSignatureForSelector` 和 `forwardInvocation`
+
+# 网络
+
+---
+
+> ## Get和POST
 
 # 算法
 
