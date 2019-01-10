@@ -11,7 +11,9 @@
 ---
 
 > ## KVO的实现原理
->
+
+流程图如下：![](/assets/2019011001.png)
+
 > ## addObserver:forKeyPath:options:context:各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？
 
 ```objectivec
