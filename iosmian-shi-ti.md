@@ -12,6 +12,13 @@
 
 > ## KVO的实现原理
 
+原理如下：
+
+* 当观察一个对象的时候，苹果会动态创建一个类。这个新建的类继承自观察对象所属的类。并且在新建的子类里面重写观察对象的`setter`方法，重写的`setter`方法会在调用原`setter`方法之前插入`willChangeValueForKey`和`didChangeValueForKey`来通知观察对象的值的更改。最后通过isa-swizzling把观察对象的isa指针指向新建子类，这样观察对象就变成了新建子类的实例。
+* isa指针 - 告诉runtime这个对象的类是什么
+* 新建的子类的前缀是`NSKVONotifying_` ，如果手动创建一个同名的类，在注册的时候就会报错
+* 重写`setter`方法是在运行时而不是编译时
+
 流程图如下：![](/assets/2019011001.png)
 
 > ## addObserver:forKeyPath:options:context:各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？
