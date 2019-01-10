@@ -230,7 +230,7 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
 
 ---
 
-类的数据结构
+> ## 类的数据结构
 
 ```objectivec
 struct objc_class {
@@ -251,7 +251,7 @@ Class isa OBJC_ISA_AVAILABILITY;
 } OBJC2_UNAVAILABLE;
 ```
 
-类的实例的数据结构
+> ## 类的实例的数据结构
 
 ```objectivec
 // Represents an instance of a class.
@@ -260,7 +260,7 @@ struct objc_object {
 };
 ```
 
-成员变量的数据结构
+> ## 成员变量的数据结构
 
 ```objectivec
 struct objc_ivar {
@@ -273,7 +273,7 @@ struct objc_ivar {
 }
 ```
 
-属性的数据结构
+> 属性的数据结构
 
 ```objectivec
 /// Defines a property attribute
@@ -283,7 +283,7 @@ typedef struct {
 } objc_property_attribute_t;
 ```
 
-方法的数据结构
+> ## 方法的数据结构
 
 ```objectivec
 typedef struct objc_method *Method;
@@ -295,15 +295,19 @@ struct objc_method {
 } OBJC2_UNAVAILABLE;
 ```
 
-消息调用流程：
-
-* `objc_msgSend(obj,foo)`解释：
+> ## 消息调用流程
 
 ```objectivec
 objc_msgSend(receiver, selector, arg1, arg2, ...)
 ```
 
-> 讲foo给obj发送消息
+`objc_msgSend(obj,foo)`解释：
+
+将foo消息发送给obj对象，首先在 Class 中的缓存查找 IMP （没缓存则初始化缓存），如果没找到，则向父类的 Class 查找。如果一直查找到根类仍旧没有实现，则用\_objc\_msgForward函数指针代替 IMP 。最后执行这个 IMP ，走消息转发流程
+
+> ## 消息转发流程：
+
+
 
 # 算法
 
