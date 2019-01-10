@@ -270,7 +270,7 @@ struct objc_ivar {
 #ifdef __LP64__
     int space OBJC2_UNAVAILABLE;
 #endif
-} 
+}
 ```
 
 属性的数据结构
@@ -281,6 +281,18 @@ typedef struct {
     const char *name; /**< The name of the attribute */
     const char *value; /**< The value of the attribute (usually empty) */
 } objc_property_attribute_t;
+```
+
+方法的数据结构
+
+```objectivec
+typedef struct objc_method *Method;
+
+struct objc_method {
+    SEL method_name OBJC2_UNAVAILABLE;
+    char *method_types OBJC2_UNAVAILABLE;
+    IMP method_imp OBJC2_UNAVAILABLE;
+} OBJC2_UNAVAILABLE;
 ```
 
 # 算法
