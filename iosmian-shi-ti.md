@@ -325,7 +325,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 ---
 
-> ## Get和POST
+> ## Get和Post
 
 # 算法
 
