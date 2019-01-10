@@ -226,6 +226,32 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
      * 在重写的`setter`方法里，记录新旧值然后调用原来的`setter`方法，通知给观察者回调
   4. 添加观察者
 
+# Runtime
+
+---
+
+类的数据结构
+
+```objectivec
+struct objc_class {
+Class isa OBJC_ISA_AVAILABILITY;
+
+#if !__OBJC2__
+    Class super_class OBJC2_UNAVAILABLE; // 父类。
+    const char *name OBJC2_UNAVAILABLE; // 类名。
+    long version OBJC2_UNAVAILABLE; // 类的版本信息。
+    long info OBJC2_UNAVAILABLE; // 类信息，供运行时使用的一些位标识。
+    long instance_size OBJC2_UNAVAILABLE; // 类的实例变量大小。
+    struct objc_ivar_list *ivars OBJC2_UNAVAILABLE; // 类的成员变量列表。
+    struct objc_method_list **methodLists OBJC2_UNAVAILABLE; // 方法定义列表。
+    struct objc_cache *cache OBJC2_UNAVAILABLE; // 方法缓存。
+    struct objc_protocol_list *protocols OBJC2_UNAVAILABLE; // 协议列表。
+#endif
+
+} OBJC2_UNAVAILABLE;
+
+```
+
 # 算法
 
 ---
