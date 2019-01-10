@@ -305,7 +305,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 将foo消息发送给obj对象，首先在 Class 中的缓存查找 IMP （没缓存则初始化缓存），如果没找到，则向父类的 Class 查找。如果一直查找到根类仍旧没有实现，则用\_objc\_msgForward函数指针代替 IMP 。最后执行这个 IMP ，走消息转发流程
 
-> ## 消息转发流程：
+> ## 消息转发流程
 
 
 
