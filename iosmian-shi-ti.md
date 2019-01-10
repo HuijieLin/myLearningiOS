@@ -1,12 +1,12 @@
-### iOS面试题
+# iOS面试题
 
 ---
 
-> 《招聘一个靠谱的iOS》面试题参考答案
+> ## 《招聘一个靠谱的iOS》面试题参考答案
 
 [https://github.com/ChenYilong/iOSInterviewQuestions/](https://github.com/ChenYilong/iOSInterviewQuestions/)
 
-### KVO
+# KVO
 
 ---
 
@@ -197,7 +197,11 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
 @end
 ```
 
-### 算法
+> ## 如何手动实现KVO
+
+
+
+# 算法
 
 ---
 
