@@ -249,7 +249,38 @@ Class isa OBJC_ISA_AVAILABILITY;
 #endif
 
 } OBJC2_UNAVAILABLE;
+```
 
+类的实例的数据结构
+
+```objectivec
+// Represents an instance of a class.
+struct objc_object {
+    Class isa  OBJC_ISA_AVAILABILITY;
+};
+```
+
+成员变量的数据结构
+
+```objectivec
+struct objc_ivar {
+    char *ivar_name OBJC2_UNAVAILABLE; // 变量名。
+    char *ivar_type OBJC2_UNAVAILABLE; // 变量类型。
+    int ivar_offset OBJC2_UNAVAILABLE; // 基地址偏移量，在对成员变量寻址时使用。
+#ifdef __LP64__
+    int space OBJC2_UNAVAILABLE;
+#endif
+} 
+```
+
+属性的数据结构
+
+```objectivec
+/// Defines a property attribute
+typedef struct {
+    const char *name; /**< The name of the attribute */
+    const char *value; /**< The value of the attribute (usually empty) */
+} objc_property_attribute_t;
 ```
 
 # 算法
