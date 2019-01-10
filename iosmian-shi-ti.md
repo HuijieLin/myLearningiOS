@@ -295,6 +295,16 @@ struct objc_method {
 } OBJC2_UNAVAILABLE;
 ```
 
+消息调用流程：
+
+* `objc_msgSend(obj,foo)`解释：
+
+```objectivec
+objc_msgSend(receiver, selector, arg1, arg2, ...)
+```
+
+> 讲foo给obj发送消息
+
 # 算法
 
 ---
