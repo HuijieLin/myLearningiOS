@@ -1,11 +1,13 @@
 ## iOS面试题
 
 ---
+
 > ## 《招聘一个靠谱的iOS》面试题参考答案
 
 [https://github.com/ChenYilong/iOSInterviewQuestions/](https://github.com/ChenYilong/iOSInterviewQuestions/)
 
 # KVO
+
 ---
 
 > ## KVO的实现原理
@@ -225,6 +227,7 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
   4. 添加观察者
 
 # Runtime
+
 ---
 
 > ## 类的数据结构
@@ -352,7 +355,14 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 | 安全性 | 与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！ | POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。 |
 | 可见性 | 数据在 URL 中对所有人都是可见的。 | 数据不会显示在 URL 中。 |
 
+> ## http有哪些部分
+>
+> ## tcp和udp的区别
+>
+> ## 七层模型
+
 # 算法
+
 ---
 
 > 算法奇数排在前面，偶数排在后面
