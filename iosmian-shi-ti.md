@@ -325,7 +325,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 ---
 
-> ## Get和Post
+> ## Get和Post的区别
 
 * GET
   * 从指定的资源请求数据
@@ -360,7 +360,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 ---
 
 > 算法奇数排在前面，偶数排在后面
-
+>
 > 无重复字符的最长子串
 
 
