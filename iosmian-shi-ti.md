@@ -1,4 +1,4 @@
-## iOS面试题
+# iOS面试题
 
 ---
 
@@ -325,8 +325,6 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 ---
 
-
-
 # 网络
 
 ---
@@ -362,9 +360,9 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 | 可见性 | 数据在 URL 中对所有人都是可见的。 | 数据不会显示在 URL 中。 |
 
 > ## HTTP有哪些部分
-
+>
 > ## TCP和UDP的区别
-
+>
 > ## 七层模型
 
 # 算法
