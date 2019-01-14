@@ -321,6 +321,12 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 `methodSignatureForSelector` 和 `forwardInvocation`
 
+# 内存管理
+
+---
+
+
+
 # 网络
 
 ---
@@ -355,10 +361,10 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 | 安全性 | 与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！ | POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。 |
 | 可见性 | 数据在 URL 中对所有人都是可见的。 | 数据不会显示在 URL 中。 |
 
-> ## http有哪些部分
->
-> ## tcp和udp的区别
->
+> ## HTTP有哪些部分
+
+> ## TCP和UDP的区别
+
 > ## 七层模型
 
 # 算法
