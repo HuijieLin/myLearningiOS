@@ -22,6 +22,12 @@ otool -v -s __DATA __objc_selrefs YOUR_APP_PATH
 // 文件里面的 __objc_classrefs -> 被引用的类
 // 两个集合相减就是没有用到的类
 otool -o -V YOUR_APP_PATH
+
+// 看指定架构下面的信息
+otool -arch x86_64 -V -o YOUR_APP_PATH
+
+// 查看支持什么架构
+lipo -info YOUR_APP_PATH
 ```
 
 
