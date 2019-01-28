@@ -2,6 +2,10 @@
 
 ---
 
+> ## 相关链接
+
+[http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/](#httpyulingtianxiacomblog20141105objective-c-runtime)
+
 > ## 类的数据结构
 
 ```objectivec

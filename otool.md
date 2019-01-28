@@ -2,6 +2,10 @@
 
 ---
 
+> ##  参考链接
+
+[https://mp.weixin.qq.com/s?\_\_biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6\#rd](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6#rd)
+
 > ## 生成Link Map File
 
 LinkMap文件是Xcode产生可执行文件的同时生成的链接信息，用来描述可执行文件的构造成分，包括代码段（\_\_TEXT）和数据段（\_\_DATA）的分布情况。只要设置`Project -> Build Settings -> Write Link Map File`为`YES`，并设置`Path to Link Map File`，build完后就可以在设置的路径看到LinkMap文件了。![](/assets/2019012801.png)
