@@ -12,4 +12,5 @@
   * [Runloop](iosmian-shi-ti/runloop.md)
   * [网络](iosmian-shi-ti/wang-luo.md)
   * [算法](iosmian-shi-ti/suan-fa.md)
+* [otool](otool.md)
 
