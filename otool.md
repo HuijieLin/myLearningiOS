@@ -2,9 +2,9 @@
 
 ---
 
-> ##  参考链接
+> ## 参考链接
 
-[https://mp.weixin.qq.com/s?\_\_biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6\#rd](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6#rd)
+[https://mp.weixin.qq.com/s?\_\_biz=MzAwNDY1ODY2OQ==∣=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6\#rd](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6#rd)
 
 > ## 生成Link Map File
 
@@ -32,6 +32,15 @@ otool -arch x86_64 -V -o YOUR_APP_PATH
 
 // 查看支持什么架构
 lipo -info YOUR_APP_PATH
+```
+
+> ## strings搜索
+
+将ipa变成Zip格式，然后cd到Payload目录里面的app
+
+```
+strings - -a -arch armv7 "test" | grep canOpenUrl
+strings - -a -arch armv7 "test" > test.txt
 ```
 
 
