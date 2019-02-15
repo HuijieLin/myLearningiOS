@@ -7,6 +7,13 @@
 lipo YOUR_A_FILE -thin armv7 -output YOUR_OUTPUT_FILE_PATH
 // 导出.o文件
 ar -x YOUR_OUTPUT_FILE_PATH
+
+// 例子.framework
+lipo my.framework/my -thin armv7 -output my_armv7.a
+// 例子.a
+lipo my.a -thin armv7 -output my_armv7.a
+// 导出.o文件
+ar -x my_armv7.a
 ```
 
 
