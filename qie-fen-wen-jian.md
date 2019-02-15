@@ -1,17 +1,11 @@
 > ## 导出.o文件
 
-* .a文件
-
 ```
-lipo YOUR_A_FILE -thin armv7 -output xxxx
-ar -x YOUR_NOFLAT_FILE
+lipo YOUR_A_FILE -thin armv7 -output YOUR_OUTPUT_FILE_PATH
+ar -x YOUR_OUTPUT_FILE_PATH
 ```
 
-* .framework文件
 
-```
-otool -o YOUR_FRAMEWORK_FILE
-```
 
 
 
