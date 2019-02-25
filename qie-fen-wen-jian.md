@@ -43,6 +43,7 @@ my~.x86
 
 ```
 xcrun nm -nm xx.o文件
+otool -o xx.o文件
 ```
 
 
