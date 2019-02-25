@@ -10,6 +10,9 @@
 
 LinkMap文件是Xcode产生可执行文件的同时生成的链接信息，用来描述可执行文件的构造成分，包括代码段（\_\_TEXT）和数据段（\_\_DATA）的分布情况。只要设置`Project -> Build Settings -> Write Link Map File`为`YES`，并设置`Path to Link Map File`，build完后就可以在设置的路径看到LinkMap文件了。![](/assets/2019012801.png)
 
+* linkmap路径查找
+  * 在build完之后在xcode工程的`products`目录会生成对应的`app -> 右键 -> Show in Finder`，在和`Products`目录同级下面有一个`Intermediates.noindex`目录，在里面找即可
+
 > ## 查看使用到的方法
 
 ```c
