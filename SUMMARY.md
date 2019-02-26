@@ -7,6 +7,7 @@
 * [位移运算符加速](wei-yi-yun-suan-fu-jia-su.md)
 * [iOS面试题](iosmian-shi-ti.md)
   * [Runtime](iosmian-shi-ti/runtime.md)
+    * [associate](iosmian-shi-ti/runtime/associate.md)
   * [KVO](iosmian-shi-ti/kvo.md)
   * [内存管理](iosmian-shi-ti/nei-cun-guan-li.md)
   * [Runloop](iosmian-shi-ti/runloop.md)
