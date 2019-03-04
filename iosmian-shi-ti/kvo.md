@@ -92,9 +92,7 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
 
 #import <Foundation/Foundation.h>
 
-@interface Student : NSObject
-
-{
+@interface Student : NSObject {
     NSString  *_age;
 }
 - (void)setAge:(NSString *)age;
@@ -217,4 +215,6 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
   3. 检查KVO类有没有重写过观察对象的`setter`方法，如果没有，添加重写的`setter`方法
      * 在重写的`setter`方法里，记录新旧值然后调用原来的`setter`方法，通知给观察者回调
   4. 添加观察者
+
+
 
