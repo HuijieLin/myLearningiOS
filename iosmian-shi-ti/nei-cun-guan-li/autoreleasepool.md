@@ -13,6 +13,7 @@
 @autoreleasepool{}
 
 // 编译后：
+
 void *context = objc_autoreleasePoolPush();
 // {}中的代码
 objc_autoreleasePoolPop(context);
@@ -51,8 +52,4 @@ objc\_autoreleasePoolPush的返回值就是哨兵对象的地址，objc\_autorel
 > objc\_autoreleasePoolPop调用之后，AutoreleasePoolPage的内部结构如下：
 
 ![](/assets/import2019030504.png)
-
-
-
-
 
