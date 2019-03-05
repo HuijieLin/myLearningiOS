@@ -7,5 +7,17 @@
 | 系统默认的AutoreleasePool | 在每个runloop迭代结束的时候释放 |
 | 手动添加的AutoreleasePool | 在超出作用域的时候释放（也就是大括号外面） |
 
+> ## AutoreleasePool原理
+
+```objectivec
+@autoreleasepool{}
+
+// 编译后：
+void *context = objc_autoreleasePoolPush();
+// {}中的代码
+objc_autoreleasePoolPop(context);
+
+```
+
 
 
