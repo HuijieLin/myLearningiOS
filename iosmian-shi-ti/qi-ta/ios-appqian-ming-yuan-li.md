@@ -38,8 +38,8 @@
 1. mac本地生成一对公密钥，称为`本地公钥`和`本地私钥`。
 2. 苹果也有一套自己的公密钥，公钥在内置在iOS，私钥在苹果的服务器，称为`苹果公钥`和`苹果私钥`。
 3. 把`本地公钥`上传到苹果的后台，`苹果私钥`对`本地公钥`进行签名，得到一份数据包含`本地公钥`和签名，我们把这个称之为证书。
-4. 在苹果后台申请AppID，配置好设备ID列表和APP可使用的权限，在加上第三步生成的证书，组成的数据用`苹果私钥`进行签名，然后把数据和签名组成一个`Provisioning Profile`文件，下载到mac本地。
-5. 在开发的时，编译完一个APP后，用`本地私钥`对APP进行签名，同时把第四步得到的`Provisioning Profile`文件打到APP包里面，文件名为`embedded.mobileprovision`，然后把app安装到手机上。
+4. 在苹果后台申请AppID，配置好设备ID列表和APP可使用的权限，在加上**第③步**生成的证书，组成的数据用`苹果私钥`进行签名，然后把数据和签名组成一个`Provisioning Profile`文件，下载到mac本地。
+5. 在开发的时，编译完一个APP后，用`本地私钥`对APP进行签名，同时把**第④步**得到的`Provisioning Profile`文件打到APP包里面，文件名为`embedded.mobileprovision`，然后把app安装到手机上。
 6. 在安装时，iOS系统取得证书，通过`苹果公钥`去验证APP里面的`embedded.mobileprovision`数字签名是否正确，里面的证书签名也会在验一遍。
 7. 验证完`embedded.mobileprovision`里面的数据都是经过苹果授权之后，就可以取出里面的数据做其他验证，包括用`本地公钥`验证APP签名，验证设备ID是否在ID列表上，AppID是否对应得上，授权开关是否跟APP里的Entitlements吻合等。
 
