@@ -8,7 +8,7 @@
 
 [http://www.ruanyifeng.com/blog/2013/07/rsa\_algorithm\_part\_two.html](http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html)
 
-> 大致流程如下：
+* 大致流程如下：
 
 1. 选出两个质数`p`和`q`，相乘得出一个大整数`n`
 2. 在`1-n`中随机选一个质数`e`
@@ -19,4 +19,6 @@
 上述的`（n，e）`这两个数据组成公钥，`（n，d）`这两个数据组成私钥。非对称加密的原理导致加密的数据不能太大
 
 ，不能大于上述`n`的位数，也就是一般不能大于1024位/2048位。
+
+
 
