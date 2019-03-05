@@ -47,5 +47,7 @@
 6. 在安装时，iOS系统取得证书，通过`苹果公钥`去验证APP里面的`embedded.mobileprovision`数字签名是否正确，里面的证书签名也会在验一遍。
 7. 验证完`embedded.mobileprovision`里面的数据都是经过苹果授权之后，就可以取出里面的数据做其他验证，包括用`本地公钥`验证APP签名，验证设备ID是否在ID列表上，AppID是否对应得上，授权开关是否跟APP里的Entitlements吻合等。
 
+> 上述描述转换成日常理解
+
 
 
