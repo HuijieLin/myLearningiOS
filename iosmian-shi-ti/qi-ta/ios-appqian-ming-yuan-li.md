@@ -53,7 +53,7 @@
 2. 苹果处理
 3. 把`CertificateSigningRequest`文件传到苹果后台合成证书，并且下载到本地。这时候本地有两个证书，第一个是第一步生成的，另外一个是刚刚下载的，同时keychain会把两个证书关联起来，因为它们的公私钥是对应的。在xcode选择下载下来的证书去打包的时候，实际上会找到keychain对应的私钥去验证签名。这个私钥只有这台mac才有，如果其他mac也需要编译怎么办？可以把当前mac的私钥导出，也就是`p12`文件给另外一台mac安装。
 4. 这一步在苹果网站操作，配置APPID/权限/设备等，最后下载`Provisioning Profile`文件
-5. xCode会通过第三步下载会的证书（存着公钥），找到本地对应的私钥（第一步生成的），用本地私钥去签名APP，并且把`Provisioning Profile`文件命名为`embedded.mobileprovision`一起打包进去。这时候APP签名数据保存分两部分，mach-o可执行文件会把签名直接写入这个文件里，其他资源文件则保存在`_CodeSignature`目录下
+5. xCode会通过**第③步**下载会的证书（存着公钥），找到本地对应的私钥（第一步生成的），用本地私钥去签名APP，并且把`Provisioning Profile`文件命名为`embedded.mobileprovision`一起打包进去。这时候APP签名数据保存分两部分，mach-o可执行文件会把签名直接写入这个文件里，其他资源文件则保存在`_CodeSignature`目录下
 6. 苹果处理
 7. 苹果处理
 
