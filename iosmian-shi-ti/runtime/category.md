@@ -35,5 +35,12 @@ typedef struct category_t {
 } category_t;
 ```
 
+1. 编译阶段把每个category封装成一个category\_t结构体放在一个数组里面，这个数组保存在DATA段下面的objc\_catlist section
+2. category附加到类的时候是在map\_images发生，在new-abi的标准下，mapimages最终会调用到\_read\_image方法。
+3. 在\_read\_image方法里面拿到objc\_catlist中编译期保存的category\_t数据，然后：
+   1. 把实例方法、协议、属性添加到类上
+   2. 把类方法、协议添加到metaclass上
+4. category方法不会覆盖主类的方法，只是附加到主类的方法上，在搜索方法实现的时候，会优先拿到分类的方法实现，所以有一种被覆盖的错觉。
+
 
 
