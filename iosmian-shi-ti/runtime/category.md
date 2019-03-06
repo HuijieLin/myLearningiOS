@@ -9,7 +9,7 @@
 
 > ## 打印load方法调用和category的加载
 
-在edit scheme中添加环境变量，如下所示![](/assets/import2019030601.png)
+在edit scheme中添加环境变量，如下所示：![](/assets/import2019030601.png)
 
 > ## category如何添加@property
 
