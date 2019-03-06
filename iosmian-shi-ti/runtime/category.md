@@ -22,5 +22,18 @@
 
 > ## category底层逻辑
 
+* category结构体
+
+```
+typedef struct category_t {
+    const char *name; // 类名
+    classref_t cls; // 类
+    struct method_list_t *instanceMethods; // 实例方法
+    struct method_list_t *classMethods; // 类方法
+    struct protocol_list_t *protocols; // 协议列表
+    struct property_list_t *instanceProperties; // 属性
+} category_t;
+```
+
 
 
