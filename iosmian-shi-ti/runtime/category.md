@@ -15,6 +15,11 @@
 
 在category中声明@property只会生成setter和getter的方法声明，如果需要增加属性的实现需要借助`objc_setAssociatedObject`和`objc_getAssociatedObject`
 
+> ## category为什么不可以添加实例变量
+
+1. 在运行时内存布局已经固定，如果添加实例变量会破坏类的内部结构。
+2. extension在编译时决定，category在运行时决定
+
 > ## category底层逻辑
 
 
