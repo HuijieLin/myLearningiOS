@@ -8,6 +8,7 @@
 * [iOS面试题](iosmian-shi-ti.md)
   * [Runtime](iosmian-shi-ti/runtime.md)
     * [associate](iosmian-shi-ti/runtime/associate.md)
+    * [category](iosmian-shi-ti/runtime/category.md)
   * [KVO](iosmian-shi-ti/kvo.md)
   * [内存管理](iosmian-shi-ti/nei-cun-guan-li.md)
     * [AutoreleasePool](iosmian-shi-ti/nei-cun-guan-li/autoreleasepool.md)
@@ -17,7 +18,6 @@
   * [block](iosmian-shi-ti/block.md)
   * [其他](iosmian-shi-ti/qi-ta.md)
     * [iOS APP签名原理](iosmian-shi-ti/qi-ta/ios-appqian-ming-yuan-li.md)
-    * [category](iosmian-shi-ti/qi-ta/category.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
 
