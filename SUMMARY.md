@@ -18,6 +18,8 @@
   * [block](iosmian-shi-ti/block.md)
   * [其他](iosmian-shi-ti/qi-ta.md)
     * [iOS APP签名原理](iosmian-shi-ti/qi-ta/ios-appqian-ming-yuan-li.md)
+  * [项目准备](iosmian-shi-ti/xiang-mu-zhun-bei.md)
+    * [FPS](iosmian-shi-ti/xiang-mu-zhun-bei/fps.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
 
