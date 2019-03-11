@@ -13,7 +13,10 @@
    1. 通知
    2. KVO
 5. 备忘录模式
-   1. UserDefaults
+   1. 保存对象当前的状态，并在日后可以恢复的模式
+   2. UserDefaults
+
+
 
 
 
