@@ -1,6 +1,4 @@
-> ## dealloc
-
-
+> # dealloc
 
 
 
