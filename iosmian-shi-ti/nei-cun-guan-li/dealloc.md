@@ -12,7 +12,7 @@
 > ## delloc的底层实现
 
 * delloc的调用链路
-  * dealloc -&gt; \_objc\_rootDealloc -&gt; rootDealloc -&gt; object\_dispose -&gt; objc\_destructInstance
+  * `dealloc` -&gt; `_objc_rootDealloc` -&gt; `rootDealloc` -&gt; `object_dispose` -&gt; `objc_destructInstance`
 
 ```
 // 最后一步的代码
@@ -41,7 +41,7 @@ void *objc_destructInstance(id obj)
 > ## object\_cxxDestruct
 
 * 调用链路
-  * object\_cxxDestruct -&gt; object\_cxxDestructFromClass -&gt; .cxx\_destruct
+  * `object_cxxDestruct` -&gt; `object_cxxDestructFromClass` -&gt; `.cxx_destruct`
 
 ```
 void object_cxxDestruct(id obj)
@@ -91,7 +91,7 @@ static void object_cxxDestructFromClass(id obj, Class cls)
 > ## clearDeallocating
 
 * 调用链路：
-  * clearDeallocating -&gt; （最后调到）weak\_clear\_no\_lock
+  * `clearDeallocating` -&gt; （最后调到）`weak_clear_no_lock`
 * 在weaktable中找到对应的引用置为nil，然后在weaktable中移除
 
 
