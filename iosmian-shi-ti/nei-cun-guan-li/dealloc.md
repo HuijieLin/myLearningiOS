@@ -86,7 +86,13 @@ static void object_cxxDestructFromClass(id obj, Class cls)
 
 > ## \_object\_remove\_assocations
 
+找到对象里的关联对象，然后放在数组里，接着遍历释放
+
 > ## clearDeallocating
+
+* 调用链路：
+  * clearDeallocating -&gt; （最后调到）weak\_clear\_no\_lock
+* 在weaktable中找到对应的引用置为nil，然后在weaktable中移除
 
 
 
