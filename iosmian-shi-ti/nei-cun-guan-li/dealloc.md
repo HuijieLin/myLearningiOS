@@ -1,5 +1,7 @@
 > # dealloc
->
+
+---
+
 > ## 什么时候被调用
 
 [https://stackoverflow.com/questions/13853438/when-does-dealloc-method-call](https://stackoverflow.com/questions/13853438/when-does-dealloc-method-call)
@@ -74,6 +76,17 @@ static void object_cxxDestructFromClass(id obj, Class cls)
   * 递归寻找父类中名为`SEL_cxx_destruct`的方法然后调用，最后调用`.cxx_destruct`，用于释放成员变量
   * 在编译的时候看到一个对象里面含有c++对象，就会自动生成这个`.cxx_destruct`方法来用于析构, ARC借助这个方法插入了清理成员变量的逻辑
   * 可以给属性加上`watchpoint`然后断来观察`.cxx_destruct`这个函数
+
+> ## .cxx\_destruct
+
+* 调用链路
+  * `.cxx_destruct`的具体实现由`GenerateObjCCtorDtorMethod`这个方法来生成
+  * 接着调用`emitCXXDestructMethod`
+  * 遍历当前对象的所有实例变量，然后调用`objc_storeStrong`去释放
+
+> ## \_object\_remove\_assocations
+
+> ## clearDeallocating
 
 
 
