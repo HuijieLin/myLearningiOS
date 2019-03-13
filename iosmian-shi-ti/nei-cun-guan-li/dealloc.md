@@ -34,9 +34,9 @@ void *objc_destructInstance(id obj)
 ```
 
 * 处理步骤：
-  * 如果有hasCxxDtor，调用object\_cxxDestruct，C++的析构函数，清理ARC的成员变量
-  * 如果有assoc，调用\_object\_remove\_assocations，清理associated对象
-  * 最后调用clearDeallocating，清空引用计数和weak引用表，并且将weak对象设置为nil
+  * 如果有`hasCxxDtor`，调用`object_cxxDestruct`，C++的析构函数，清理ARC的成员变量
+  * 如果有`assoc`，调用`_object_remove_assocations`，清理associated对象
+  * 最后调用`clearDeallocating`，清空引用计数和weak引用表，并且将weak对象设置为nil
 
 > ## object\_cxxDestruct
 
