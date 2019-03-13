@@ -13,6 +13,7 @@
   * [KVO](iosmian-shi-ti/kvo.md)
   * [内存管理](iosmian-shi-ti/nei-cun-guan-li.md)
     * [AutoreleasePool](iosmian-shi-ti/nei-cun-guan-li/autoreleasepool.md)
+    * [dealloc](iosmian-shi-ti/nei-cun-guan-li/dealloc.md)
   * [Runloop](iosmian-shi-ti/runloop.md)
   * [网络](iosmian-shi-ti/wang-luo.md)
   * [算法](iosmian-shi-ti/suan-fa.md)
