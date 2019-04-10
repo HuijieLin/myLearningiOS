@@ -21,6 +21,7 @@
   * [其他](iosmian-shi-ti/qi-ta.md)
     * [iOS APP签名原理](iosmian-shi-ti/qi-ta/ios-appqian-ming-yuan-li.md)
     * [设计模式](iosmian-shi-ti/qi-ta/she-ji-mo-shi.md)
+    * [APP启动流程](iosmian-shi-ti/qi-ta/appqi-dong-liu-cheng.md)
   * [项目准备](iosmian-shi-ti/xiang-mu-zhun-bei.md)
     * [FPS](iosmian-shi-ti/xiang-mu-zhun-bei/fps.md)
 * [otool](otool.md)
