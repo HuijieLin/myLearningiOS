@@ -25,6 +25,7 @@
   * [项目准备](iosmian-shi-ti/xiang-mu-zhun-bei.md)
     * [FPS](iosmian-shi-ti/xiang-mu-zhun-bei/fps.md)
     * [子线程刷新UI](iosmian-shi-ti/xiang-mu-zhun-bei/zi-xian-cheng-shua-xin-ui.md)
+    * [卡顿监控](iosmian-shi-ti/xiang-mu-zhun-bei/qia-dun-jian-kong.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
 
