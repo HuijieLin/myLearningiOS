@@ -31,4 +31,5 @@
     * [内存获取](iosmian-shi-ti/xiang-mu-zhun-bei/nei-cun-huo-qu.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
+* [日常记录](ri-chang-ji-lu.md)
 
