@@ -2,7 +2,7 @@
 
 [http://blog.sunnyxx.com/2014/10/15/behind-autorelease/](http://blog.sunnyxx.com/2014/10/15/behind-autorelease/)
 
-| 添加AutoreleasePool类型 | 释放时机 | 原因 |
+| 添加AutoreleasePool的类型 | 释放时机 | 原因 |
 | :--- | :--- | :--- |
 | 系统默认的AutoreleasePool | 在当前runloop迭代结束的时候释放 | 系统在每个runloop迭代中都加入了自动释放池Push和Pop |
 | 手动添加的AutoreleasePool | 在超出作用域的时候释放（也就是大括号外面） |  |
