@@ -29,6 +29,7 @@
     * [卡顿监控](iosmian-shi-ti/xiang-mu-zhun-bei/qia-dun-jian-kong.md)
     * [如何获取堆栈](iosmian-shi-ti/xiang-mu-zhun-bei/ru-he-huo-qu-dui-zhan.md)
     * [内存获取](iosmian-shi-ti/xiang-mu-zhun-bei/nei-cun-huo-qu.md)
+  * [iOS Notes](iosmian-shi-ti/ios-notes.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
 * [日常记录](ri-chang-ji-lu.md)
