@@ -6,8 +6,6 @@
 
 ```objectivec
 + (NSArray *)kQ905ArraySortArrayByParity:(NSArray *)input {
-    // 位移运算，判断是否是偶数 (int & 1) == 0
-
     if (![input isKindOfClass:[NSArray class]]) {
         return @[];
     }
@@ -20,6 +18,7 @@
     NSInteger left              = 0;
     NSInteger right             = (NSInteger)returnArray.count - 1;
 
+    // 位移运算，判断是否是偶数 (int & 1) == 0
     while (left < right && right > left) {
         // odd
         while (([returnArray[left] integerValue] & 1) == 1 && left < right) {
