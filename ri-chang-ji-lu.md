@@ -48,5 +48,14 @@ git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git l
 echo display @import UIKit >> ~/.lldbinit
 ```
 
+> ## sourceStree 跳过注册
+
+```
+打开sourcetree
+关闭sourcetree
+命令终端输入defaults write com.torusknot.SourceTreeNotMAS completedWelcomeWizardVersion 3
+打开sourcetree即可跳过登录
+```
+
 
 
