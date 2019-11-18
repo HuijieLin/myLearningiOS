@@ -1,4 +1,6 @@
-> ## category
+> # category
+
+---
 
 [https://tech.meituan.com/2015/03/03/diveintocategory.html](https://tech.meituan.com/2015/03/03/diveintocategory.html)
 
