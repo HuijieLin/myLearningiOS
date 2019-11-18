@@ -5,7 +5,7 @@
 > ## KVC赋值流程 - setValueForKey
 
 1. 调用`setValueForKey`
-2. 按照`setKey`，`_setKey：`顺序查找方法
+2. 按照`setKey`，`_setKey：`的顺序查找方法
 3. 如果找到方法直接调用
 4. 如果没有找到方法，检查`accessInstanceVariablesDirectly`方法的返回值（默认值 = YES）
 5. 如果返回值是YES
@@ -17,7 +17,7 @@
 > ## KVC取值流程 - valueForKey：
 
 1. 调用`valueForKey：`
-2. 按照`getKey`，`key`，`isKey`，`_key`顺序查找方法
+2. 按照`getKey`，`key`，`isKey`，`_key`的顺序查找方法
 3. 如果找到方法直接调用
 4. 如果没有找到方法，检查`accessInstanceVariablesDirectly`方法的返回值（默认值 = YES）
 5. 如果返回值是YES
