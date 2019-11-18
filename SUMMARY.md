@@ -11,6 +11,7 @@
     * [category](iosmian-shi-ti/runtime/category.md)
     * [Method Swizzling](iosmian-shi-ti/runtime/111.md)
   * [KVO](iosmian-shi-ti/kvo.md)
+  * [KVC](iosmian-shi-ti/kvo/kvc.md)
   * [内存管理](iosmian-shi-ti/nei-cun-guan-li.md)
     * [AutoreleasePool](iosmian-shi-ti/nei-cun-guan-li/autoreleasepool.md)
     * [dealloc](iosmian-shi-ti/nei-cun-guan-li/dealloc.md)
