@@ -10,7 +10,7 @@
 4. 如果没有找到方法，检查`accessInstanceVariablesDirectly`方法的返回值（默认值 = YES）
 5. 如果是YES
    1. 按照`key`_, _`isKey`, `key`, `isKey`的顺序查找成员变量，找到了成员变量直接赋值
-   2. 如果没有找到直接调用，`setValueForUndefinedKey`
+   2. 如果没有找到直接调用`setValueForUndefinedKey`
 6. 如果是NO
    1. 调用`setValueForUndefineKey`
 
