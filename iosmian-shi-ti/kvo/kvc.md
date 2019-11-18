@@ -16,8 +16,8 @@
 
 > ## KVC取值流程
 
-1. 调用valueForKey：
-2. 按照getKey，key，isKey，\_key顺序查找方法
+1. 调用`valueForKey：`
+2. 按照`getKey`，`key`，`isKey`，`_key`顺序查找方法
 3. 如果找到方法直接调用
 4. 如果没有找到方法，检查`accessInstanceVariablesDirectly`方法的返回值（默认值 = YES）
 5. 如果是YES
