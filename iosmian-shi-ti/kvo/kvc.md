@@ -14,7 +14,7 @@
 6. 如果是NO
    1. 调用`setValueForUndefineKey`
 
-> ## KVC取值流程
+> ## KVC取值流程 - valueForKey：
 
 1. 调用`valueForKey：`
 2. 按照`getKey`，`key`，`isKey`，`_key`顺序查找方法
