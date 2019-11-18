@@ -15,7 +15,7 @@
 
 > ## category如何添加@property
 
-在category中声明@property只会生成setter和getter的方法声明，如果需要增加属性的实现需要借助`objc_setAssociatedObject`和`objc_getAssociatedObject`
+在`category`中声明 `@property` 只会生成`setter`和`getter`的方法声明，如果需要增加属性的实现需要借助`objc_setAssociatedObject`和`objc_getAssociatedObject`
 
 > ## category为什么不可以添加实例变量
 
