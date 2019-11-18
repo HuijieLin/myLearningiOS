@@ -21,8 +21,8 @@
 3. 如果找到方法直接调用
 4. 如果没有找到方法，检查`accessInstanceVariablesDirectly`方法的返回值（默认值 = YES）
 5. 如果是YES
-   1. 
 
+6. 
 > ## _KVC修改属性会触发KVO吗_
 
 会触发KVO
