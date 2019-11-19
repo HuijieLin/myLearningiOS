@@ -70,7 +70,7 @@ objc_setAssociatedObject(id _Nonnull object,
                          objc_AssociationPolicy policy)
 ```
 
-* 设置关联对象函数中，每个参数对应的应用![](/assets/2019112001.png)
+* 设置关联对象函数`objc_setAssociatedObject`中，每个参数对应的应用![](/assets/2019112001.png)
 
 
 
