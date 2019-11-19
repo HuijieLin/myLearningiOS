@@ -4,7 +4,7 @@
 
 > # Catrgory中有load方法吗
 
-有load方法
+有`load`方法
 
 > ## load方法什么时候调用
 
@@ -21,8 +21,6 @@
 * 调用方式
   * load是根据函数地址直接调用
   * initialize是通过消息机制`objc_msgSend`调用
-
-
 
 
 
