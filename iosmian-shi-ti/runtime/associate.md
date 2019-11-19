@@ -42,15 +42,17 @@
 
 > ## 给关联对象的属性值设置nil，等于remove掉关联对象存储表中的值
 
+## -
+
 > ## 关联对象policy和属性修饰符的对应关系
 
 | objc\_AssociationPolicy | 对应的修饰符 |
 | :--- | :--- |
 | OBJC\_ASSOCIATION\_ASSIGN | assign |
-| OBJC\_ASSOCIATION\_RETAIN\_NONATOMIC | strong,nonatomic |
-| OBJC\_ASSOCIATION\_COPY\_NONATOMIC | copy,nonatomic |
-| OBJC\_ASSOCIATION\_RETAIN | strong,atomic |
-| OBJC\_ASSOCIATION\_COPY | copy,atomic |
+| OBJC\_ASSOCIATION\_RETAIN\_NONATOMIC | strong，nonatomic |
+| OBJC\_ASSOCIATION\_COPY\_NONATOMIC | copy，nonatomic |
+| OBJC\_ASSOCIATION\_RETAIN | strong，atomic |
+| OBJC\_ASSOCIATION\_COPY | copy，atomic |
 
 
 
