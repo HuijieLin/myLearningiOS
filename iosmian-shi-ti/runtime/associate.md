@@ -54,14 +54,10 @@
 
 * 核心对象
 
-  * AssociationsManager
-      - 统一的存储管理
-  * AssociationsHashMap
-      - 关联对象的存储
-  * ObjectAssociationMap
-      - 关联对象里面属性的存储
-  * ObjcAssociation
-      - 具体的属性值和策略
+  * AssociationsManager：统一的存储管理
+  * AssociationsHashMap：关联对象的存储
+  * ObjectAssociationMap：关联对象里面属性的存储
+  * ObjcAssociation：具体的属性值和策略
 
 * 对象关系
 
