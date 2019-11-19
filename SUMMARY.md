@@ -10,6 +10,7 @@
     * [associate](iosmian-shi-ti/runtime/associate.md)
     * [category](iosmian-shi-ti/runtime/category.md)
     * [Method Swizzling](iosmian-shi-ti/runtime/111.md)
+    * [Load](iosmian-shi-ti/runtime/load.md)
   * [KVO](iosmian-shi-ti/kvo.md)
   * [KVC](iosmian-shi-ti/kvo/kvc.md)
   * [内存管理](iosmian-shi-ti/nei-cun-guan-li.md)
