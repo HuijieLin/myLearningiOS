@@ -42,9 +42,13 @@
 
 > ## 给关联对象的属性值设置nil，等于remove掉关联对象存储表中的值
 
-
-
-> ## dd
+| objc\_AssociationPolicy | 对应的修饰符 |
+| :--- | :--- |
+| OBJC\_ASSOCIATION\_ASSIGN | assign |
+| OBJC\_ASSOCIATION\_RETAIN\_NONATOMIC | strong,nonatomic |
+| OBJC\_ASSOCIATION\_COPY\_NONATOMIC | copy,nonatomic |
+| OBJC\_ASSOCIATION\_RETAIN | strong,atomic |
+| OBJC\_ASSOCIATION\_COPY | copy,atomic |
 
 
 
