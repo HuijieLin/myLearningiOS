@@ -21,7 +21,7 @@
 
 [https://stackoverflow.com/questions/10842829/will-an-associated-object-be-released-automatically/10843510\#10843510](https://stackoverflow.com/questions/10842829/will-an-associated-object-be-released-automatically/10843510#10843510)
 
-```
+```markdown
  1. 调用 -release ：引用计数变为零
      * 对象正在被销毁，生命周期即将结束.
      * 不能再有新的 __weak 弱引用， 否则将指向 nil.
