@@ -72,7 +72,6 @@ objc_setAssociatedObject(id _Nonnull object,
 
 * 设置关联对象函数`objc_setAssociatedObject`中，每个参数对应的使用
   * dsads![](/assets/2019112001.png)
-  * ![](/assets/2019112001.png)
 
 
 
