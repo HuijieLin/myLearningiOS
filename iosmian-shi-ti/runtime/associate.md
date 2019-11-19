@@ -59,7 +59,7 @@
   * AssociationsHashMap
       - 关联对象的存储
   * ObjectAssociationMap
-      - 关联对象里面对应属性值的存储
+      - 关联对象里面对应属性的存储
   * ObjcAssociation
       - 具体的属性值和策略
 
