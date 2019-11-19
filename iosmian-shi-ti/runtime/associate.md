@@ -62,9 +62,8 @@
 * 对象关系
 
 ```objectivec
-// 
-// 
-// 
+// 关联对象存储在全局统一的一个AssociationsManager中，并非存储在被关联对象的内存中
+// 设置关联对象为nil时，相当于移除关联对象
 objc_setAssociatedObject(id _Nonnull object, 
                          const void * _Nonnull key,
                          id _Nullable value, 
