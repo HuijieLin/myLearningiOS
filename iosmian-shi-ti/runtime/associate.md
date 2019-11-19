@@ -71,7 +71,10 @@ objc_setAssociatedObject(id _Nonnull object,
 ```
 
 * 设置关联对象函数`objc_setAssociatedObject`中，每个参数对应的使用
-  * dsads![](/assets/2019112001.png)
+  * 不会引用到对应的关联对象，是使用`参数object`的地址进一步运算作为其中一个关联对象的key，所以不会对对象造成引用
+  
+
+![](/assets/2019112001.png)
 
 
 
