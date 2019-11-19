@@ -2,7 +2,7 @@
 
 [http://mrpeak.cn/blog/ios-weak/](http://mrpeak.cn/blog/ios-weak/)
 
-```objectiveC
+```objectivec
 // 通过一个中间层block来解决
 - (void)setContext:(CDDContext*)object {
     id __weak weakObject = object;
