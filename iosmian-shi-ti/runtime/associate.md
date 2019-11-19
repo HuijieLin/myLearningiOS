@@ -50,5 +50,7 @@
 | OBJC\_ASSOCIATION\_RETAIN | strong，atomic |
 | OBJC\_ASSOCIATION\_COPY | copy，atomic |
 
+> ## 关联对象的原理
+
 
 
