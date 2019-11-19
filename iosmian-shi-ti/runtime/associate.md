@@ -52,5 +52,24 @@
 
 > ## 关联对象的原理
 
+* 核心对象
+
+  * AssociationsManager
+  * AssociationsHashMap
+  * ObjectAssociationMap
+  * ObjcAssociation
+
+* 对象关系
+
+```objectivec
+// 
+// 
+// 
+objc_setAssociatedObject(id _Nonnull object, 
+                         const void * _Nonnull key,
+                         id _Nullable value, 
+                         objc_AssociationPolicy policy)
+```
+
 
 
