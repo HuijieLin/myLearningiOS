@@ -9,7 +9,7 @@
 1. `load`方法也是会被拷贝到主类，但是`load`方法的调用是直接使用函数内存地址的方式`(*load_method)(cls, SEL_load);`而不是使用发送消息`objc_msgSend`的方式。
 2. 调用顺序：主类 -&gt; 子类 -&gt; 分类，分类的顺序看编译顺序，也就是`Build Phases -> Compile Sources`的顺序
 
-> ## 打印load方法调用和category的加载
+> ## 打印`load`方法调用和category的加载
 
 在edit scheme中添加环境变量，如下所示：![](/assets/import2019030601.png)
 
