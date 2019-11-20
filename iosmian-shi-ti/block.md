@@ -37,14 +37,18 @@
 // clang转换为c++代码
 xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-8.0.0 main.m
 
-// OC代码
+/*****************
+ * OC代码
+******************/
 int age = 10;
 
 void (^block)(void) = ^{
     NSLog(@"age is %d", age);
 };
 
-// c++代码
+/*****************
+ * C++代码
+******************/
 static struct __main_block_desc_0 {
   size_t reserved;
   size_t Block_size;
