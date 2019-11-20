@@ -33,7 +33,6 @@
 * auto变量的捕获
 
 ```objectivec
-
 // clang转换为c++代码
 xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-8.0.0 main.m
 
@@ -68,6 +67,21 @@ struct __main_block_impl_0 {
   int age; // 捕获到的auto变量，存在block的结构体中
 };
 ```
+
+> block的类型
+
+| block类型 | 环境 |
+| :--- | :--- |
+| NSGlobalBlock | 是 |
+| NSStackBlcok | 是 |
+| 全局变量 | 否 |
+
+* 一共3种类型，都是继承自NSBlock
+  - \_\_NSGlobalBlock\_\_ ：在data区（数据区域）
+  - \_\_NSStackBlock\_\_：在栈
+  - \_\_NSmallockBlack\_\_：在堆
+  
+* 每一种类型的block调用copy的结果如下所示：
 
 > \_\_block的作用是什么
 >
