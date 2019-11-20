@@ -68,7 +68,7 @@ struct __main_block_impl_0 {
 };
 ```
 
-> block的类型
+> ## block的类型
 
 | block类型 | 环境 |
 | :--- | :--- |
