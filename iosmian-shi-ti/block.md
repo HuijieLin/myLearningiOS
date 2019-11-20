@@ -62,7 +62,7 @@ struct __main_block_impl_0 {
 };
 ```
 
-* 当block内部访问了对象类型的auto变量
+* block对auto变量的内存管理
   * 如果block在栈上，将不会对auto变量产生强应用
   * 如果block被copy到堆上：
     * 会调用block内部的copy函数，
@@ -138,6 +138,9 @@ struct __main_block_impl_0 {
   // 最终通过这种方式来设置age变量
   age->__forwarding->age
   ```
+* \_\_block的内存管理
+
+  * 
 
 > block 在修改NSMutableArray的时候需不需要添加\_\_block
 
