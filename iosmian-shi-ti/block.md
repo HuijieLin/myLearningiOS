@@ -140,7 +140,11 @@ struct __main_block_impl_0 {
   ```
 * block对\_\_block变量的内存管理
 
-  * 
+  * block对\_\_block修饰变量生成的结构体强引用（如上面的：\_\_Block\_byref\_age\_0）
+
+  * \_\_block修饰变量的结构体\_\_Block\_byref\_age\_0对变量（如上面的age）的引用类型取决于变量的修饰符（strong， weak等）
+
+  * 注意：在MRC下，\_\_Block\_byref\_age\_0对里面的变量不会retain，也就是弱引用
 
 > block 在修改NSMutableArray的时候需不需要添加\_\_block
 
