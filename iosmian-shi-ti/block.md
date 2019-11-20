@@ -86,6 +86,9 @@ struct __main_block_impl_0 {
 
 ![](/assets/2019112103.png)
 
+* ARC下，以下情况编译器会根据情况自动将栈上的block复制到堆上面（这也说明为什么在ARC下，block用strong和copy声明都可以）
+  * 
+
 > \_\_block的作用是什么
 >
 > block 的属性修饰词为什么是copy
