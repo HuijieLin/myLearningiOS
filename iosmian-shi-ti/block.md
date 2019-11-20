@@ -90,7 +90,7 @@ struct __main_block_impl_0 {
 
   * block作为cocoa API中方法名含有usingBlock的方法参数时
 
-> \_\_block的作用是什么
+> ## \_\_block的作用是什么
 
 * 可以用于解决block内部修改auto变量值的问题
 * 不能修饰全局变量和静态变量
