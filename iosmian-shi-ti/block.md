@@ -33,14 +33,18 @@
 * auto变量的捕获
 
 ```objectivec
-// 原代码
+
+// clang转换为c++代码
+xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-8.0.0 main.m
+
+// OC代码
 int age = 10;
 
 void (^block)(void) = ^{
     NSLog(@"age is %d", age);
 };
 
-// 编译后的c++代码
+// c++代码
 static struct __main_block_desc_0 {
   size_t reserved;
   size_t Block_size;
