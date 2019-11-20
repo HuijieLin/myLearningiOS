@@ -157,16 +157,20 @@ struct __main_block_impl_0 {
     /***************
      * ARC
      ***************/
+    
+    // 方式1：
     __weak typeof(self) weakSelf = self;
     self.block = ^{
         NSLog(@"%@", weakSelf);
     };
-
+    
+    // 方式2：
     __unsafe_unretained typeof(self) weakSelf = self;
     self.block = ^{
         NSLog(@"%@", weakSelf);
     };
 
+    // 方式3:
     // 必须要设置为nil和调用block
     __block typeof(self) weakSelf = self;
     self.block = ^{
@@ -178,11 +182,15 @@ struct __main_block_impl_0 {
     /****************
      * MRC
      ****************/
+     
+    // 方式1:
     __unsafe_unretained typeof(self) weakSelf = self;
     self.block = ^{
         NSLog(@"%@", weakSelf);
     };
 
+    // 方式2:
+    // 因为MRC，__block修饰的变量生成的结构体对里面的变量不会retain，所以不需要设置nil
     __block typeof(self) weakSelf = self;
     self.block = ^{
         NSLog(@"%@", weakSelf);
