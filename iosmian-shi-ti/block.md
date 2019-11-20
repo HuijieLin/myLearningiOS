@@ -62,6 +62,17 @@ struct __main_block_impl_0 {
 };
 ```
 
+* 当block内部访问了对象类型的auto变量
+  * 如果block在栈上，将不会对auto变量产生强应用
+  * 如果block被copy到堆上：
+    * 会调用block内部的copy函数，
+    * copy函数内部最终会调用`_Block_object_assign`函数
+    * `_Block_object_assign`函数会根据auto变量的修饰符\(strong, weak 等\)形成对变量的强应用还是弱应用
+  * 如果block在堆上被移除
+    * 会调用block内部的dispose函数
+    * dispose函数内部会调用`_block_object_dispose`函数
+    * `_block_object_dispoase`会自动释放引用的auto变量
+
 > ## block的类型
 
 | block类型 | 环境 |
