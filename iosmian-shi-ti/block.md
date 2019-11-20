@@ -121,7 +121,7 @@ struct __main_block_impl_0 {
   struct __main_block_impl_0 {
     struct __block_impl impl;
     struct __main_block_desc_0* Desc;
-    __Block_byref_age_0 *age; // by ref
+    __Block_byref_age_0 *age; // age变量
   };
   ```
 
