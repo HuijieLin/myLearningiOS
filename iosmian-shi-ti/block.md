@@ -50,7 +50,7 @@ struct __block_impl {
   void *isa;
   int Flags;
   int Reserved;
-  void *FuncPtr;
+  void *FuncPtr; // 指向block的内容，调用block的时候通过这个来找到block的内容
 };
 
 struct __main_block_impl_0 {
