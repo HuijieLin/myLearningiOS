@@ -94,20 +94,35 @@ struct __main_block_impl_0 {
 
 * 可以用于解决block内部修改auto变量值的问题
 * 不能修饰全局变量和静态变量
-* 主要流程如下：
+* 编译器会把\_\_block变量包装成一个对象，主要流程如下：
 * ```objectivec
   /***************
    * OC代码
    ***************/
   __block int age = 10;
-        
+
   void (^block)(void) = ^{
       NSLog(@"age is %d", age);
   };
-        
+
   /***************
   * C++代码
   ***************/
+  // __block修饰的age变量包装成下面的结构体
+  struct __Block_byref_age_0 {
+    void *__isa;
+  __Block_byref_age_0 *__forwarding;
+   int __flags;
+   int __size;
+   int age;
+  };
+
+  // block结构主入口
+  struct __main_block_impl_0 {
+    struct __block_impl impl;
+    struct __main_block_desc_0* Desc;
+    __Block_byref_age_0 *age; // by ref
+  };
   ```
 
 > block 在修改NSMutableArray的时候需不需要添加\_\_block
