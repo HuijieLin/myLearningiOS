@@ -6,7 +6,7 @@
 
 ![](/assets/2019112101.png)
 
-> ## block 的变量捕获
+> ## block的变量捕获
 
 * auto是默认的变量声明标签，例如：
 * ```objectivec
