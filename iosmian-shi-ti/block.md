@@ -123,6 +123,9 @@ struct __main_block_impl_0 {
     struct __main_block_desc_0* Desc;
     __Block_byref_age_0 *age; // age变量
   };
+
+  // 最终通过这种方式来设置age变量
+  age->__forwarding->age
   ```
 
 > block 在修改NSMutableArray的时候需不需要添加\_\_block
