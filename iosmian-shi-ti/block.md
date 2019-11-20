@@ -91,7 +91,25 @@ struct __main_block_impl_0 {
   * block作为cocoa API中方法名含有usingBlock的方法参数时
 
 > \_\_block的作用是什么
->
+
+* 可以用于解决block内部修改auto变量值的问题
+* 不能修饰全局变量和静态变量
+* 主要流程如下：
+* ```objectivec
+  /***************
+   * OC代码
+   ***************/
+  __block int age = 10;
+        
+  void (^block)(void) = ^{
+      NSLog(@"age is %d", age);
+  };
+        
+  /***************
+  * C++代码
+  ***************/
+  ```
+
 > block 在修改NSMutableArray的时候需不需要添加\_\_block
 
 不需要，因为本身没有修改到NSMutableArray
