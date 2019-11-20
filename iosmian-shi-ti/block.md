@@ -24,7 +24,7 @@
 | 局部变量 - static | 是 | 指针传递 |
 | 全局变量 | 否 | 直接访问 |
 
-* auto变量的捕获
+* auto变量的捕获demo
 
 ```objectivec
 // clang转换为c++代码
