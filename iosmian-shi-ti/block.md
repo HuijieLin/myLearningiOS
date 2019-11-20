@@ -32,14 +32,14 @@
 
 * auto变量的捕获
 
-```cpp
+```objectivec
 // 
         int age = 10;
-        
+
         void (^block)(void) = ^{
             NSLog(@"age is %d", age);
         };
-        
+
 static struct __main_block_desc_0 {
   size_t reserved;
   size_t Block_size;
@@ -60,11 +60,9 @@ struct __main_block_impl_0 {
 ```
 
 > \_\_block的作用是什么
-
-
-
+>
 > block 的属性修饰词为什么是copy
-
+>
 > 使用block有哪些注意点
 >
 > block 在修改NSMutableArray的时候需不需要添加\_\_block
