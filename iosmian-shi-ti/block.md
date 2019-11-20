@@ -33,13 +33,14 @@
 * auto变量的捕获
 
 ```objectivec
-// 
-        int age = 10;
+// 原代码
+int age = 10;
 
-        void (^block)(void) = ^{
-            NSLog(@"age is %d", age);
-        };
+void (^block)(void) = ^{
+    NSLog(@"age is %d", age);
+};
 
+// 编译后的c++代码
 static struct __main_block_desc_0 {
   size_t reserved;
   size_t Block_size;
@@ -55,7 +56,7 @@ struct __block_impl {
 struct __main_block_impl_0 {
   struct __block_impl impl;
   struct __main_block_desc_0* Desc;
-  int age;
+  int age; // 捕获到的auto变量，存在block的结构体中
 };
 ```
 
