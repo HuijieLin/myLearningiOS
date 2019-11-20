@@ -138,7 +138,7 @@ struct __main_block_impl_0 {
   // 最终通过这种方式来设置age变量
   age->__forwarding->age
   ```
-* \_\_block的内存管理
+* block对\_\_block变量的内存管理
 
   * 
 
