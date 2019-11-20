@@ -154,17 +154,19 @@ struct __main_block_impl_0 {
 > ## 解决循环引用
 
 ```objectivec
-    // ARC
+    /***************
+     * ARC
+     ***************/
     __weak typeof(self) weakSelf = self;
     self.block = ^{
         NSLog(@"%@", weakSelf);
     };
-    
+
     __unsafe_unretained typeof(self) weakSelf = self;
     self.block = ^{
         NSLog(@"%@", weakSelf);
     };
-    
+
     // 必须要设置为nil和调用block
     __block typeof(self) weakSelf = self;
     self.block = ^{
@@ -172,13 +174,15 @@ struct __main_block_impl_0 {
         weakSelf = Nil;
     };
     self.block();
-    
-    // MRC
+
+    /****************
+     * MRC
+     ****************/
     __unsafe_unretained typeof(self) weakSelf = self;
     self.block = ^{
         NSLog(@"%@", weakSelf);
     };
-    
+
     __block typeof(self) weakSelf = self;
     self.block = ^{
         NSLog(@"%@", weakSelf);
