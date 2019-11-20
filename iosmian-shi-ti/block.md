@@ -72,16 +72,19 @@ struct __main_block_impl_0 {
 
 | block类型 | 环境 |
 | :--- | :--- |
-| NSGlobalBlock | 是 |
-| NSStackBlcok | 是 |
-| 全局变量 | 否 |
+| NSGlobalBlock | 没有访问auto变量 |
+| NSStackBlcok | 访问了auto变量 |
+| NSMallocBlock | NSStackBlock调用了copy |
 
 * 一共3种类型，都是继承自NSBlock
-  - \_\_NSGlobalBlock\_\_ ：在data区（数据区域）
-  - \_\_NSStackBlock\_\_：在栈
-  - \_\_NSmallockBlack\_\_：在堆
-  
+
+  * \_\_NSGlobalBlock\_\_ ：在data区（数据区域）
+  * \_\_NSStackBlock\_\_：在栈
+  * \_\_NSMallockBlack\_\_：在堆
+
 * 每一种类型的block调用copy的结果如下所示：
+
+![](/assets/2019112103.png)
 
 > \_\_block的作用是什么
 >
