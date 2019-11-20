@@ -8,7 +8,7 @@
 
 > ## block的变量捕获
 
-* auto是默认的变量声明标签，例如：
+* auto是默认的变量声明标签，如下：
 * ```objectivec
   // 这种就表示auto变量类型，默认值
   int age = 10;
