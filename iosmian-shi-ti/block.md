@@ -87,15 +87,21 @@ struct __main_block_impl_0 {
 ![](/assets/2019112103.png)
 
 * ARC下，以下情况编译器会根据情况自动将栈上的block复制到堆上面（这也说明为什么在ARC下，block用strong和copy声明都可以）
-  * 
+  * block作为函数返回值时
 
-> \_\_block的作用是什么
->
-> block 的属性修饰词为什么是copy
->
-> 使用block有哪些注意点
->
+  * 将block赋值给\_\_strong修饰的变量时
+
+  * block作为GCD API中的参数时
+
+  * block作为cocoa API中方法名含有usingBlock的方法参数时
+
+> \_\_block的作用是什
+
+
+
 > block 在修改NSMutableArray的时候需不需要添加\_\_block
+
+不需要，因为本身没有修改到NSMutableArray
 
 
 
