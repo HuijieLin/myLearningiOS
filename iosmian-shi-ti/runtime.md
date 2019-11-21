@@ -6,7 +6,10 @@
 
 [http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/](#httpyulingtianxiacomblog20141105objective-c-runtime)
 
-> ## 什么是runtime？
+> ## 什么是runtime
+- OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时在进行
+- OC的动态性就是由runtime来支撑和实现的
+
 >
 > ## 类的数据结构
 
