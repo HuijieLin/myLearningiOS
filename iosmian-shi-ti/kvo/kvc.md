@@ -26,7 +26,7 @@
 6. 如果返回值是NO
    1. 调用`setValueForUndefineKey`
 
-> ## _KVC修改属性会触发KVO吗_
+> ## KVC修改属性会触发KVO吗
 
 会触发KVO
 
