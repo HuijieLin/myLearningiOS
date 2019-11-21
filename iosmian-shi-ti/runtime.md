@@ -6,7 +6,7 @@
 
 [http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/](#httpyulingtianxiacomblog20141105objective-c-runtime)
 
-> ## 什么是
+> ## 什么是runtim
 >
 > ## 类的数据结构
 
