@@ -55,6 +55,20 @@ union isa_t
 };
 ```
 
+> ## super的本质
+
+super调用，底层会转换为`objc_msgSendSuper2`函数调用，接收2个参数：
+
+* struct objc\_super2
+* SEL
+
+```objectivec
+struct objc_super2 {
+    id receiver; // 消息接受者
+    Class current_class; // receiver的Class对象，在通过current_class->superClass，在父类开始查找方法
+};
+```
+
 > ## 类的数据结构
 
 ```objectivec
@@ -226,20 +240,3 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 * 完整转发
 
   `methodSignatureForSelector` 和 `forwardInvocation`
-
-> ## super的本质
-
-super调用，底层会转换为`objc_msgSendSuper2`函数调用，接收2个参数：
-
-* struct objc\_super2
-* SEL
-
-```objectivec
-struct objc_super2 {
-    id receiver; // 消息接受者
-    Class current_class; // receiver的Class对象，在通过current_class->superClass，在父类开始查找方法
-};
-```
-
-
-
