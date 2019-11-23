@@ -195,18 +195,19 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 将foo消息发送给obj对象，首先在 Class 中的缓存查找 IMP （没缓存则初始化缓存），如果没找到，则向父类的 Class 查找。如果一直查找到根类仍旧没有实现，则用\_objc\_msgForward函数指针代替 IMP 。最后执行这个 IMP ，走消息转发流程
 
 **详细流程如下：**
-- 判断receiver（obj）是否为nil
-- 如果是YES，就退出
-- 如果是NO，查找的顺序如下：
-  - 从receiverClass（obj的class）的cache中查找方法，找到就调用方法，查找流程结束
-  - 从receiverClass（obj的class）的`~class_rw_t`中查找方法，找到就调用方法同时把方法缓存到receiverClass（obj的class）的cache中，查找流程结束
-  - 从superClass的cache中查找方法，找到就调用方法同时把方法缓存到receiverClass（obj的class）的cache中，查找流程结束
-  - 从superClass的`~class_rw_t`中查找方法，找到就调用方法同时把方法缓存到receiverClass（obj的class）的cache中，查找流程结束
-- 在`class_rw_t`中查找方法的顺序
-  - 对于已经排序好的，使用二分法查找
-  - 没有排序的，就线性查找（遍历查找）
-- receiver通过isa指针找到receiverClass
-- receiverClass通过superclass指针找到SuperClass
+
+* 判断receiver（obj）是否为nil
+* 如果是YES，就退出
+* 如果是NO，查找的顺序如下：
+  * 从receiverClass（obj的class）的cache中查找方法，找到就调用方法，查找流程结束
+  * 从receiverClass（obj的class）的`~class_rw_t`中查找方法，找到就调用方法同时把方法缓存到receiverClass（obj的class）的cache中，查找流程结束
+  * 从superClass的cache中查找方法，找到就调用方法同时把方法缓存到receiverClass（obj的class）的cache中，查找流程结束
+  * 从superClass的`~class_rw_t`中查找方法，找到就调用方法同时把方法缓存到receiverClass（obj的class）的cache中，查找流程结束
+* 在`class_rw_t`中查找方法的顺序
+  * 对于已经排序好的，使用二分法查找
+  * 没有排序的，就线性查找（遍历查找）
+* receiver通过isa指针找到receiverClass
+* receiverClass通过superclass指针找到SuperClass
 
 > ## 消息转发流程
 
@@ -214,28 +215,31 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 * 动态方法解析
 
-  - 根据消息的接受者类型分别调用对应的方法：`resolveInstanceMethod`（实例对象） 和 `resolveClassMethod`（类对象）
-  - 在调用完上面的方法之后，就标记为**已经动态解析**，然后重新来一次消息发送的流程，就是【缓存 - 方法表 - 父类缓存 - 父类方法表】的流程再来一次查找
-  - 上面两个方法的返回值，无论是YES还是NO都没什么用，因为在知道走到了这两个方法，外部就会自动标示为**已经动态解析**
+  * 根据消息的接受者类型分别调用对应的方法：`resolveInstanceMethod`（实例对象） 和 `resolveClassMethod`（类对象）
+  * 在调用完上面的方法之后，就标记为**已经动态解析**，然后重新来一次消息发送的流程，就是【缓存 - 方法表 - 父类缓存 - 父类方法表】的流程再来一次查找
+  * 上面两个方法的返回值，无论是YES还是NO都没什么用，因为在知道走到了这两个方法，外部就会自动标示为**已经动态解析**
 
 * 快速转发
 
-    `forwardingTargetForSelector`
+  `forwardingTargetForSelector`
 
 * 完整转发
 
-    `methodSignatureForSelector` 和 `forwardInvocation`
+  `methodSignatureForSelector` 和 `forwardInvocation`
 
 > ## super的本质
 
-super调用，底层会转换为objc_msgSendSuper2函数调用，接收2个参数
-- struct objc_super2
-- SEL
+super调用，底层会转换为`objc_msgSendSuper2`函数调用，接收2个参数
+
+* struct objc\_super2
+* SEL
 
 ```objectivec
 struct objc_super2 {
     id receiver; // 消息接受者
-    Class current_class; // receiver的Class对象
+    Class current_class; // receiver的Class对象，在通过current
 };
 ```
+
+
 
