@@ -229,7 +229,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 > ## super的本质
 
-super调用，底层会转换为`objc_msgSendSuper2`函数调用，接收2个参数
+super调用，底层会转换为`objc_msgSendSuper2`函数调用，接收2个参数：
 
 * struct objc\_super2
 * SEL
