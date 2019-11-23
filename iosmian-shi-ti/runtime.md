@@ -237,7 +237,7 @@ super调用，底层会转换为`objc_msgSendSuper2`函数调用，接收2个参
 ```objectivec
 struct objc_super2 {
     id receiver; // 消息接受者
-    Class current_class; // receiver的Class对象，在通过current
+    Class current_class; // receiver的Class对象，在通过current_class-superClass，在父类开始查找方法
 };
 ```
 
