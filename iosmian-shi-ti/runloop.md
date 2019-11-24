@@ -26,8 +26,27 @@ iOS平台下有两个这样的对象`NSRunLoop`和`CFRunLoopRef`：
 - CFRunLoopRef
 - CFRunLoopModeRef
 - CFRunLoopSourceRef
+  - 事件发生的地方
+  - Source0:
+    - 只包含一个回调（函数指针），它不能主动触发事件
+    - 常见的场景：
+      - 触摸事件处理
+      - `performSelector:onThread:`
+  - Source1:
+    - 包含一个mach_port和一个回调（函数指针）
+    - 被用于通过内核和其他线程互相发送消息
+    - 这个source可以主动唤醒RunLoop
+    - 常见的场景：
+      - 基于Port的线程间通信
+      - 系统事件的捕捉
 - CFRunLoopTimerRef
+  - 基于时间的触发器
+  - 其包含了一个时间长度和一个回调，当加入RunLoop的时候，RunLoop会注册对应的时间点，当时间点到的时候，RunLoop会被唤醒处理对应的回调
+  - 常见的场景：
+    - NSTimer
+    - `performSelector:withObject:afterDelay:`
 - CFRunLoopObserverRef
+  - 当RunLoop的状态发生变化的时候，观察者就可以接收到回调
 
 ```objectivec
 
