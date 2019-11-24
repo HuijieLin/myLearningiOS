@@ -48,6 +48,8 @@ iOS平台下有两个这样的对象`NSRunLoop`和`CFRunLoopRef`：
 - CFRunLoopObserverRef
   - 当RunLoop的状态发生变化的时候，观察者就可以接收到回调
 
+内部结构（精简）如下：
+
 ```objectivec
 
 typedef struct __CFRunLoop * CFRunLoopRef;
