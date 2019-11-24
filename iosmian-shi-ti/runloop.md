@@ -81,8 +81,8 @@ struct __CFRunLoopMode {
 * CFRunLoopModeRef 代表 RunLoop 的运行模式
 * 一个 RunLoop 可以包含多个 Mode ，每个 Mode 又包含多个 Source0/Source1/Timer/Observer
 * 如果需要切换 Mode，只能退出当前的 Mode，重新再次进入
-  * 好处：每个Mode里面的Source0/Source1/Timer/Observer可以区分开来，互不干扰
-* 如果Mode里面没有任何Source0/Source1/Timer/Observer，RunLoop就会退出
+  * 好处：每个 Mode 里面的 Source0/Source1/Timer/Observer 可以区分开来，互不干扰
+* 如果Mode里面没有任何 Source0/Source1/Timer/Observer，RunLoop 就会退出
 * 苹果公开提供的 Mode 有两个：`kCFRunLoopDefaultMode (NSDefaultRunLoopMode)` 和 `UITrackingRunLoopMode`
 * 苹果还提供了一个操作 Common 标记的字符串：`kCFRunLoopCommonModes (NSRunLoopCommonModes)`，这个不是真正的mode，只是作为一个标志符。被标记的item，可以在包含 Common 标记符的Mode下面运行，苹果公开的两个 Mode ，都属于带有 Common 标记的 Mode
 
