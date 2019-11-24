@@ -83,4 +83,11 @@ struct __CFRunLoopMode {
 - 苹果公开提供的 Mode 有两个：`kCFRunLoopDefaultMode (NSDefaultRunLoopMode)` 和 `UITrackingRunLoopMode`
 - 苹果还提供了一个操作 Common 标记的字符串：`kCFRunLoopCommonModes (NSRunLoopCommonModes)`，这个不是真正的mode，只是作为一个标志符。被标记的item，可以在包含 Common 标记符的Mode下面运行，苹果公开的两个 Mode ，都属于带有 Common 标记的 Mode
 
+> ## Runloop的运行步骤
 
+> ## Runloop的休眠原理
+
+- 用户态调用`mach_msg()`切换到内核态，内核态中内核实现的`mach_msg()`会完成实际的工作
+- 等待消息
+  - 没有消息就让线程休眠
+  - 有消息就唤醒线程
