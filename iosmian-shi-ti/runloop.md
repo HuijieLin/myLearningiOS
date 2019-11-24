@@ -105,8 +105,8 @@ struct __CFRunLoopMode {
     2.  退出Loop
 11. 通知Observer：退出Loop
 
-涉及到方法：
-```
+**涉及到方法：**
+```objectivec
 {
     /// 1. 通知Observers，即将进入RunLoop
     /// 此处有Observer会创建AutoreleasePool: _objc_autoreleasePoolPush();
