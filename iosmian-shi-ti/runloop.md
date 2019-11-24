@@ -87,7 +87,9 @@ struct __CFRunLoopMode {
 * 苹果还提供了一个操作 Common 标记的字符串：`kCFRunLoopCommonModes (NSRunLoopCommonModes)`，这个不是真正的mode，只是作为一个标志符。被标记的item，可以在包含 Common 标记符的Mode下面运行，苹果公开的两个 Mode ，都属于带有 Common 标记的 Mode
 
 > ## Runloop的运行步骤
->
+
+
+
 > ## Runloop的休眠原理
 
 ![](/assets/2019112504.png)
