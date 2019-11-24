@@ -27,22 +27,11 @@ iOS平台下有两个这样的对象`NSRunLoop`和`CFRunLoopRef`：
 typedef struct __CFRunLoop * CFRunLoopRef;
 
 struct __CFRunLoop {
-    CFRuntimeBase _base;
-    pthread_mutex_t _lock;			/* locked for accessing mode list */
-    __CFPort _wakeUpPort;			// used for CFRunLoopWakeUp 
-    Boolean _unused;
-    volatile _per_run_data *_perRunData;              // reset for runs of the run loop
     pthread_t _pthread;
-    uint32_t _winthread;
     CFMutableSetRef _commonModes;
     CFMutableSetRef _commonModeItems;
     CFRunLoopModeRef _currentMode;
     CFMutableSetRef _modes;
-    struct _block_item *_blocks_head;
-    struct _block_item *_blocks_tail;
-    CFAbsoluteTime _runTime;
-    CFAbsoluteTime _sleepTime;
-    CFTypeRef _counterpart;
 };
 ```
 
