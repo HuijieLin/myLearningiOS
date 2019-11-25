@@ -2,6 +2,8 @@
 
 源码地址：[https://github.com/apple/swift-corelibs-libdispatch](https://github.com/apple/swift-corelibs-libdispatch)
 
+深入理解GCD：[https://bestswifter.com/deep-gcd/](https://bestswifter.com/deep-gcd/)
+
 * 关键术语：
   * 同步：
     * `dispatch_sync`
