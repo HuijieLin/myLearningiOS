@@ -14,6 +14,7 @@
   * [Runloop](iosmian-shi-ti/runloop.md)
   * [KVO](iosmian-shi-ti/kvo.md)
   * [KVC](iosmian-shi-ti/kvo/kvc.md)
+  * GCD
   * [内存管理](iosmian-shi-ti/nei-cun-guan-li.md)
     * [AutoreleasePool](iosmian-shi-ti/nei-cun-guan-li/autoreleasepool.md)
     * [dealloc](iosmian-shi-ti/nei-cun-guan-li/dealloc.md)
@@ -32,7 +33,6 @@
     * [卡顿监控](iosmian-shi-ti/xiang-mu-zhun-bei/qia-dun-jian-kong.md)
     * [如何获取堆栈](iosmian-shi-ti/xiang-mu-zhun-bei/ru-he-huo-qu-dui-zhan.md)
     * [内存获取](iosmian-shi-ti/xiang-mu-zhun-bei/nei-cun-huo-qu.md)
-  * [iOS Notes](iosmian-shi-ti/ios-notes.md)
   * GCD
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
