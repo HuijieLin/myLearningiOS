@@ -162,5 +162,16 @@ struct __CFRunLoopMode {
   * 没有消息就让线程休眠
   * 有消息就唤醒线程
 
+> ## 事件响应
 
+苹果注册了一个Source1用来捕获系统事件，对应的回调函数为`__IOHIDEventSystemClientQueueCallback()`
+
+- 事件产生顺序：
+  - 发生硬件事件（触摸，锁屏，摇晃），IOKit.framework生成一个IOHIDEvent事件并并由SpringBoard接收
+  - SpringBoard只接收按键，触摸，加速，接近传感器等几种Event
+  - 然后使用mach port转发给对应的app进程
+  - 一开始Source1注册的回调就会被触发，并调用`_UIApplicationHandleEventQueue()`进行app内部分发
+  - `_UIApplicationHandleEventQueue()`会把IOHIDEvent包装成UIEvent进行处理或者分发给UIWindow
+
+> ## 手势识别
 
