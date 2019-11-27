@@ -11,6 +11,7 @@
     * [category](iosmian-shi-ti/runtime/category.md)
     * [Method Swizzling](iosmian-shi-ti/runtime/111.md)
     * [Load](iosmian-shi-ti/runtime/load.md)
+    * [Tagged Pointer](iosmian-shi-ti/runtime/tagged-pointer.md)
   * [Runloop](iosmian-shi-ti/runloop.md)
   * [KVO](iosmian-shi-ti/kvo.md)
   * [KVC](iosmian-shi-ti/kvo/kvc.md)
