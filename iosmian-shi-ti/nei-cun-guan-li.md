@@ -21,6 +21,12 @@
 ｜ 内核区
 高地址
 
+> ## OC对象的内存管理
+
+- 在iOS中，使用**引用计数**来管理OC对象的内存
+- 可以通过以下私有函数来查看自动释放池的情况：
+`extern void _objc_autoreleasePoolPrint(void);`
+
 > ## weak和assign的区别
 
 不同点：
