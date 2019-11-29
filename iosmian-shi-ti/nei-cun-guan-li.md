@@ -44,7 +44,6 @@ struct SideTable {
 - 当一个对象obj被weak指针指向时，这个weak指针会以obj作为key，被存储到sideTable类的weak_table这个散列表上对应的一个weak指针数组里面
 - 当一个对象obj的delloc方法被调用是，runtime会以obj为key，从sideTable类的weak_table这个散列表中，找出对应的weak指针列表，然后将里面的weak指逐个设置为nil
 - 在散列表里面的查找过程：
-
 ```objectivec
 // weak指针表结构
 struct weak_table_t {
