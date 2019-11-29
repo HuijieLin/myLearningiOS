@@ -27,6 +27,20 @@
 - 可以通过以下私有函数来查看自动释放池的情况：
 `extern void _objc_autoreleasePoolPrint(void);`
 
+> ## 引用计数的存储
+
+- 在64bit中，引用计数可以直接存储在优化过的isa指针中，当存不下的时候，在存到SideTable类中。
+- SideTable结构如下：
+```objectivec
+struct SideTable {
+    spinlock_t slock; // 保证原子操作的自旋锁
+    RefcountMap refcnts; // 引用计数的hash表
+    weak_table_t weak_table; // weak 引用全局hash表
+};
+```
+
+> ## weak指针的实现原理
+
 > ## weak和assign的区别
 
 不同点：
