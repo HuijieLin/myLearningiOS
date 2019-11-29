@@ -39,7 +39,7 @@ objc_autoreleasePoolPop(context);
 
 > 释放时机
 
-每次调用objc\_autoreleasePoolPush的时候，runtime就会往当前的AutoreleasePoolPage中添加一个哨兵对象，值等于0，然后AutoreleasePoolPage的内部结构如下所示：
+每次调用objc\_autoreleasePoolPush的时候，runtime就会往当前的AutoreleasePoolPage中添加一个哨兵对象（POOL\_BOUNDARY），值等于0，然后AutoreleasePoolPage的内部结构如下所示：
 
 ![](/assets/import2019030503.png)
 
