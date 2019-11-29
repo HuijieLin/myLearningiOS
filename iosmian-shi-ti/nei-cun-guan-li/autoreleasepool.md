@@ -43,10 +43,10 @@ objc_autoreleasePoolPop(context);
 
 ![](/assets/import2019030503.png)
 
-objc\_autoreleasePoolPush的返回值就是哨兵对象的地址，objc\_autoreleasePoolPop的参数就是哨兵对象的地址，所以：
+objc\_autoreleasePoolPush的返回值就是哨兵对象的地址，objc\_autoreleasePoolPop的参数就是哨兵对象（POOL\_BOUNDARY）的地址，所以：
 
-1. 将入参的哨兵对象地址找到对对应的page
-2. 在当前page中，将晚于哨兵对象加入的autorelease对象发送一次release消息，并把next指针移回正确的位置
+1. 将入参的哨兵对象（POOL\_BOUNDARY）地址找到对对应的page
+2. 在当前page中，将晚于哨兵对象（POOL\_BOUNDARY）加入的autorelease对象发送一次release消息，并把next指针移回正确的位置
 3. 从最新加入的autorelease对象一直向前清理，可以跨越多个page，直到清理到哨兵对象所在的位置
 
 > objc\_autoreleasePoolPop调用之后，AutoreleasePoolPage的内部结构如下：
