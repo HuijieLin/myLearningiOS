@@ -42,7 +42,7 @@ _objc_isTaggedPointer(const void * _Nullable ptr)
 ```objectivec
 // 问题：以下两段代码的运行结果
 
-// 代码1: 运行会crash：EXC_BAD_ACCESS
+// 代码1: 运行会crash（EXC_BAD_ACCESS），crash在objc_release
 dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
 for (int i = 0 ; i<1000; i++) {
     dispatch_async(queue, ^{
