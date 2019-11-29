@@ -1,5 +1,13 @@
 > ## 简介
 
+- 在没有tagger pointer之前，NSNumber等小对象需要动态分配内存，维护引用计数，NSNumber指针存储的是堆中NSNumber对象的地址值
+- 在64bit开始，iOS引入tagged pointer，用于优化NSNumber，NSData，NSString等小对象的存储（直接存在指针里面）
+- 在使用tagger pointer之后，是通过Tag+Data的方式存储
+- objc_msgSend可以识别是否tagger pointer，然后直接在指针里面取内容，减少调用开销
+- 当指针存不下内容时，才通过动态分配内存的方式来存储数据
+
+
+> ## 底层判断逻辑
 ```objectivec
 
 #if TARGET_OS_OSX && __x86_64__
