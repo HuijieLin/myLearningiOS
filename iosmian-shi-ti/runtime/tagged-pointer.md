@@ -5,10 +5,13 @@
 - 在使用tagger pointer之后，是通过Tag+Data的方式存储
 - objc_msgSend可以识别是否tagger pointer，然后直接在指针里面取内容，减少调用开销
 - 当指针存不下内容时，才通过动态分配内存的方式来存储数据
-
+- 在MAC下，如果是tagged pointer，它对应的引用计数就是-1
 
 > ## 底层判断逻辑
 
+如何判断是否tagged pointer：
+- iOS平台，判断最高有效位是否为1
+- MAC平台，判断最低有效位是否为1
 
 ```objectivec
 
@@ -21,9 +24,9 @@
 #endif
 
 #if OBJC_MSB_TAGGED_POINTERS
-#   define _OBJC_TAG_MASK (1UL<<63)
+#   define _OBJC_TAG_MASK (1UL<<63) // iOS平台获取最高位（第64bit），如果是1，就表示tagged pointer
 #else
-#   define _OBJC_TAG_MASK 1UL
+#   define _OBJC_TAG_MASK 1UL // MAC平台获取最低位，如果是1，就表示tagged pointer
 #endif
 
 // 传入指针地址和 _OBJC_TAG_MASK 进行按位与操作，判断是否是 Tagged Pointer
@@ -33,3 +36,5 @@ _objc_isTaggedPointer(const void * _Nullable ptr)
     return ((uintptr_t)ptr & _OBJC_TAG_MASK) == _OBJC_TAG_MASK;
 }
 ```
+
+> ## 相关面试题
