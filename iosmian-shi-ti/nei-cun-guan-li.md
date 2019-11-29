@@ -41,6 +41,18 @@ struct SideTable {
 
 > ## weak指针的实现原理
 
+- 当一个对象obj被weak指针指向时，这个weak指针会以obj作为key，被存储到sideTable类的weak_table这个散列表上对应的一个weak指针数组里面
+- 当一个对象obj的delloc方法被调用是，runtime会以obj为key，从sideTable类的weak_table这个散列表中，找出对应的weak指针列表，然后将里面的weak指逐个设置为nil
+
+```objectivec
+struct weak_table_t {
+    weak_entry_t *weak_entries;
+    size_t    num_entries;
+    uintptr_t mask;
+    uintptr_t max_hash_displacement;
+};
+```
+
 > ## weak和assign的区别
 
 不同点：
