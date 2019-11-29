@@ -11,8 +11,8 @@
 
 如何判断是否tagged pointer：
 
-* iOS平台，判断最高有效位是否为1
-* MAC平台，判断最低有效位是否为1
+* iOS平台，判断**最高**有效位是否为1
+* MAC平台，判断**最低**有效位是否为1
 
 ```objectivec
 #if TARGET_OS_OSX && __x86_64__
