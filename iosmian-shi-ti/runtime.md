@@ -187,7 +187,7 @@ struct objc_method {
 
 ```objectivec
 struct cache_t {
-    struct bucket_t *_buckets; // 散列表
+    struct bucket_t *_buckets; // 散列表（哈希表）
     mask_t _mask; // 散列表的长度 - 1
     mask_t _occupied; // 已经缓存的方法数量
 };
@@ -240,3 +240,6 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 * 完整转发
 
   `methodSignatureForSelector` 和 `forwardInvocation`
+
+
+
