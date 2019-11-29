@@ -1,20 +1,20 @@
 > ## 简介
 
-- 在没有tagger pointer之前，NSNumber等小对象需要动态分配内存，维护引用计数，NSNumber指针存储的是堆中NSNumber对象的地址值
-- 在64bit开始，iOS引入tagged pointer，用于优化NSNumber，NSData，NSString等小对象的存储（直接存在指针里面）
-- 在使用tagger pointer之后，是通过Tag+Data的方式存储
-- objc_msgSend可以识别是否tagger pointer，然后直接在指针里面取内容，减少调用开销
-- 当指针存不下内容时，才通过动态分配内存的方式来存储数据
-- 在MAC下，如果是tagged pointer，它对应的引用计数就是-1$$
+* 在没有tagger pointer之前，NSNumber等小对象需要动态分配内存，维护引用计数，NSNumber指针存储的是堆中NSNumber对象的地址值
+* 在64bit开始，iOS引入tagged pointer，用于优化NSNumber，NSData，NSString等小对象的存储（直接存在指针里面）
+* 在使用tagger pointer之后，是通过Tag+Data的方式存储
+* objc\_msgSend可以识别是否tagger pointer，然后直接在指针里面取内容，减少调用开销
+* 当指针存不下内容时，才通过动态分配内存的方式来存储数据
+* 在MAC下，如果是tagged pointer，它对应的引用计数就是-1$$
 
 > ## 底层判断逻辑
 
 如何判断是否tagged pointer：
-- iOS平台，判断最高有效位是否为1
-- MAC平台，判断最低有效位是否为1
+
+* iOS平台，判断最高有效位是否为1
+* MAC平台，判断最低有效位是否为1
 
 ```objectivec
-
 #if TARGET_OS_OSX && __x86_64__
     // Mac 平台
 #   define OBJC_MSB_TAGGED_POINTERS 0
@@ -72,3 +72,6 @@ for (int i = 0 ; i<1000; i++) {
     });
 }
 ```
+
+
+
