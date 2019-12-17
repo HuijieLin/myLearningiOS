@@ -38,7 +38,7 @@ typedef struct category_t {
 ```
 
 1. 编译阶段把每个`category`封装成一个`category_t`结构体放在一个数组里面，这个数组保存在`DATA`段下面的`objc_catlist section`
-2. `category`附加到类的时候是在`map_images`发生，在`new-abi`的标准下，`mapimages`最终会调用到`_read_image`方法。
+2. `category`附加到类的时候是在`map_images`发生，在`new-abi`的标准下，`map-images`最终会调用到`_read_image`方法。
 3. 在`_read_image`方法里面拿到`objc_catlist`中编译期保存的`category_t`数据，然后：
    1. 把实例方法、协议、属性添加到类上
    2. 把类方法、协议添加到metaclass上
