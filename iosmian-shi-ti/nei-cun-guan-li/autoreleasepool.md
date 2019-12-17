@@ -26,7 +26,7 @@ objc_autoreleasePoolPop(context);
 
 * 是一个双向的链表
 * AutoreleasePoolPage每个对象会开辟4096字节内存（等于虚拟内存一页的大小），除了实例变量所占的内存，其余的内存空间全部留给autorealse对象
-* AutoreleasePool是按线程一一对应的，结构体中的的`thread`就是指当前的线程
+* AutoreleasePool是按线程一一对应的，结构体中的`thread`就是指当前的线程
 * 结构体中的`next`就是下一个加进来的autorelease对象的位置
 * 一个AutoreleasePoolPage对象被占满时，就会新建新的AutoreleasePoolPage对象，然后链表连接，后面的autorelease对象就加入新的page里面去
 
