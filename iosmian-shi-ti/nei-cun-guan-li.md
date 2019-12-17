@@ -57,7 +57,7 @@ struct weak_table_t {
 // 查找逻辑
 // 1. 用对象内存地址referent转成hash值 然后 & weak_table->mask 获取一个开始索引
 // 2. 然后根据这个索引在数组中查找元素
-// 3. 如果查找出来的元素跟入餐referent不一样，在通过 (index+1) & weak_table->mask 重新计算index，重新查找，直到查到对应的对象
+// 3. 如果查找出来的元素跟入参referent不一样，在通过 (index+1) & weak_table->mask 重新计算index，重新查找，直到查到对应的对象
 static weak_entry_t *
 weak_entry_for_referent(weak_table_t *weak_table, objc_object *referent)
 {
