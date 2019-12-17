@@ -5,7 +5,7 @@
 * 在使用tagger pointer之后，是通过Tag+Data的方式存储
 * objc\_msgSend可以识别是否tagger pointer，然后直接在指针里面取内容，减少调用开销
 * 当指针存不下内容时，才通过动态分配内存的方式来存储数据
-* 在MAC下，如果是tagged pointer，它对应的引用计数就是-1$$
+* 在MAC下，如果是tagged pointer，它对应的引用计数就是-1
 
 > ## 底层判断逻辑
 
