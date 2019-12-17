@@ -166,14 +166,17 @@ struct __CFRunLoopMode {
 
 苹果注册了一个Source1用来捕获系统事件，对应的回调函数为`__IOHIDEventSystemClientQueueCallback()`
 
-- 事件产生顺序：
-  - 发生硬件事件（触摸，锁屏，摇晃），IOKit.framework生成一个IOHIDEvent事件并并由SpringBoard接收
-  - SpringBoard只接收按键，触摸，加速，接近传感器等几种Event
-  - 然后使用mach port转发给对应的app进程
-  - 一开始Source1注册的回调就会被触发，并调用`_UIApplicationHandleEventQueue()`进行app内部分发
-  - `_UIApplicationHandleEventQueue()`会把IOHIDEvent包装成UIEvent进行处理或者分发给UIWindow
+* 事件产生顺序：
+  * 发生硬件事件（触摸，锁屏，摇晃），IOKit.framework生成一个IOHIDEvent事件并并由SpringBoard接收
+  * SpringBoard只接收按键，触摸，加速，接近传感器等几种Event
+  * 然后使用mach port转发给对应的app进程
+  * 一开始Source1注册的回调就会被触发，并调用`_UIApplicationHandleEventQueue()`进行app内部分发
+  * `_UIApplicationHandleEventQueue()`会把IOHIDEvent包装成UIEvent进行处理或者分发给UIWindow
 
 > ## 手势识别
 
-- 当`_UIApplicationHandleEventQueue()`识别到是一个手势事件，首先会调用Cancel，将当前的touchBegin/Move/End等回调打断，随后系统讲这个手势事件标记为待处理。
-- 苹果注册一个Observer检测BeforeWaiting（即将休眠）事件，当Observer的回调函数是`_UIGestureRecognizerUpdateObserver()`，内部会将刚刚标记待处理的手势执行手势的回调。
+* 当`_UIApplicationHandleEventQueue()`识别到是一个手势事件，首先会调用Cancel，将当前的touchBegin/Move/End等回调打断，随后系统讲这个手势事件标记为待处理。
+* 苹果注册一个Observer检测BeforeWaiting（即将休眠）事件，当Observer的回调函数是`_UIGestureRecognizerUpdateObserver()`，内部会将刚刚标记待处理的手势执行手势的回调。
+
+
+
