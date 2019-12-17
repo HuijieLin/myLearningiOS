@@ -13,7 +13,6 @@
 @autoreleasepool{}
 
 // 编译后：
-
 void *context = objc_autoreleasePoolPush();
 // {}中的代码
 objc_autoreleasePoolPop(context);
