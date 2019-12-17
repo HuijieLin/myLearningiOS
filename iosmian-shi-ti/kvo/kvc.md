@@ -2,7 +2,7 @@
 
 ---
 
-> ## KVC赋值流程 - setValueForKey
+> ## KVC赋值流程 `- setValueForKey`
 
 1. 调用`setValueForKey`
 2. 按照`setKey`，`_setKey：`的顺序查找方法
@@ -14,7 +14,7 @@
 6. 如果返回值是NO
    1. 调用`setValueForUndefineKey`
 
-> ## KVC取值流程 - valueForKey：
+> ## KVC取值流程 `- valueForKey：`
 
 1. 调用`valueForKey：`
 2. 按照`getKey`，`key`，`isKey`，`_key`的顺序查找方法
