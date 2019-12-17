@@ -88,7 +88,7 @@ struct objc_class : objc_object {
     class_data_bits_t bits; // 用于获取具体的类信息
 };
 
-// 通过上面的 `bits & FAST_DATA_MASK` 来获取
+// 通过上面的 `bits & FAST_DATA_MASK` 来获取这个结构体
 // 里面的methods，properties，protocols是二维数组，里面包含了类的初始内容和分类的内容
 struct class_rw_t {
     uint32_t flags;
