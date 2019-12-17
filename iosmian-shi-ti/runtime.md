@@ -30,7 +30,7 @@ union isa_t
 #   define ISA_MAGIC_MASK  0x000003f000000001ULL
 #   define ISA_MAGIC_VALUE 0x000001a000000001ULL
     struct {
-    
+
         // 0: 表示普通的指针，存储着class，meta-class对象的内存地址；
         // 1: 表示优化过，使用位域存储信息
         uintptr_t nonpointer        : 1; 
@@ -48,7 +48,7 @@ union isa_t
         // 在调试时分辨对象是否未完成初始化
         uintptr_t magic             : 6;
 
-        // 增进是否有被弱引用过
+        // 曾经是否有被弱引用过
         uintptr_t weakly_referenced : 1;
 
         // 对象是否正在释放
