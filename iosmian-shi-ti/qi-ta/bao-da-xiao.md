@@ -96,6 +96,12 @@
 编译选项的解释：https://gist.github.com/NSExceptional/2cd98300f7297b75d7b2d929effa2f15
 
 - Generate Debug Symbols
+  - 调试符号是在编译时形成的
+  - 当设置为YES
+    - 每个源文件在编译成.o文件时，编译参数多了\-g和\-gmodules参数，打包会生成symbols文件
+  - 当设置为NO
+    - 
+  - 建议：保持默认开启，不做修改
 - Asset Catalog Compiler
 - Dead Code Stripping
 - Apple Clang - Code Generation
