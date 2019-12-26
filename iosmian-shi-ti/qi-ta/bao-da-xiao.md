@@ -33,7 +33,7 @@
   * 包括：图片、内置素材、多语言、字体、音视频等
 * 资源瘦身方式：
 
-  * 无用资源的删除
+  * **无用资源的删除**
     * 可以借鉴：LSUnusedResources
     * 处理步骤：
       * 搜索app包中的所有资源问题，例如find命令
@@ -44,12 +44,12 @@
       * 压缩完的图片还需要使用libwebp进行解析
       * 缺点：
         * WebP在CPU的消耗和解码时间会比PNG多很多（2倍）
-  * 重复资源的删除
+  * **重复资源的删除**
     * 指文件名不一样，内容一样的文件
     * 可以借助开源工具fdupes，检验资源文件的md5
     * 文件对比顺序：
       * 大小对比 -&gt; 部分MD5签名对比 -&gt; 完整MD5签名对比 -&gt; 逐个字节对比
-  * 大文件压缩
+  * **大文件压缩**
 
     * 工具：ImageOptim
     * Xcode build setting：
@@ -65,7 +65,7 @@
 
         * 移除PNG资源的文本字符，包括：图像名称、创建时间、作者、版权、注视等
 
-  * 图片管理方式规范
+  * **图片管理方式规范**
 
     * Asset Catlog：
       * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
@@ -76,7 +76,7 @@
       * 使用imageWithContentOfFile会每次重新申请内存，不会缓存
       * 所以常用的图片适合放在xcassets管理，大文件适合放在Bundle中
       * 放在xcassets的图片不要额外压缩，有时候Compress PNG Files二次压缩会导致图片变大
-    - CocoPods中的资源引用方式：
+    * CocoPods中的资源引用方式：
       * 也可以使用Asset Catlog进行管理
       * * resource\_bundles
         * 保存在各自的Bundle中
