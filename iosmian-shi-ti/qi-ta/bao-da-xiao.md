@@ -143,6 +143,7 @@
   - objc_msgSend在Mach-O文件里面是通过_objc_selrefs这个section来获取selector这个参数的
   - _objc_selrefs记录是调用的方法
   - _objc_classrefs记录被调用过的类
+  - __objc_classlist记录所有的类
   - _objc_superrefs记录调用过的super的类（继承关系）
   - 没用的方法检测（类也类似）：
     1. 使用otool获取所有的方法：otool -oV 二进制路径
