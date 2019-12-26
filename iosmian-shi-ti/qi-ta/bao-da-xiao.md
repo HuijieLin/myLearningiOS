@@ -79,16 +79,16 @@
     - CocoPods中的资源引用方式：
       * 也可以使用Asset Catlog进行管理
       * * resource\_bundles
-      * 保存在各自的Bundle中
-      * 获取资源的方式需要指定Bundle
-      * podspec文件描述：
-      * ```
-        s.resource_bundles = {
-            'Huijie' => ['Huijie/Assets/*.xcassets']
-        }
-        ```
-    * resource
-      * 资源会合并到main Bundle，可能会有文件名重复
+        * 保存在各自的Bundle中
+        * 获取资源的方式需要指定Bundle
+        * podspec文件描述：
+        * ```
+          s.resource_bundles = {
+              'Huijie' => ['Huijie/Assets/*.xcassets']
+          }
+          ```
+      * resource
+        * 资源会合并到main Bundle，可能会有文件名重复
   * 对于单色的图标可以使用尺量图
 
 
