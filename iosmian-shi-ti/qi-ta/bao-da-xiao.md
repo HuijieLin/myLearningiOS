@@ -123,6 +123,7 @@
   - Enable Objective-C Exceptions = NO
   - Other C Flags添加-fno-exceptions
   - 对于某些文件单独支持异常，编译选项加上-fexceptions
+  - 带来问题：假如ABC三个文件，AC文件支持了异常，B不支持，如果C抛了异常，在模拟器下A还是能捕获异常不至于Crash，但真机下捕获不了
   - 建议：保持默认，不做修改
 - Link-Time Optimization
   - 用于再link中间代码时，对全局代码进行优化
