@@ -67,30 +67,32 @@
 
   * 图片管理方式规范
 
-    * Asset Catlog
+    * Asset Catlog：
+      * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
+      * xcassets里面的2x、3x图片会更怒具体的设备分发，不会同时包含，Bundle不会
+      * xcassets内可以对图片进行Slicing，即裁剪、拉伸，Bundle不支持
+      * Bundle内支持多语言，Image.xcassets不支持
+      * 使用ImageNamed创建的UIimage（解码后的Image Buffer）会被加入到NSCache中，收到内存警告才会释放不适用的UIImage
+      * 使用imageWithContentOfFile会每次重新申请内存，不会缓存
+      * 所以常用的图片适合放在xcassets管理，大文件适合放在Bundle中
+      * 放在xcassets的图片不要额外压缩，有时候Compress PNG Files二次压缩会导致图片变大
 
-  * * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
-    * xcassets里面的2x、3x图片会更怒具体的设备分发，不会同时包含，Bundle不会
-    * xcassets内可以对图片进行Slicing，即裁剪、拉伸，Bundle不支持
-    * Bundle内支持多语言，Image.xcassets不支持
-    * 使用ImageNamed创建的UIimage（解码后的Image Buffer）会被加入到NSCache中，收到内存警告才会释放不适用的UIImage
-    * 使用imageWithContentOfFile会每次重新申请内存，不会缓存
-    * 所以常用的图片适合放在xcassets管理，大文件适合放在Bundle中
-    * 放在xcassets的图片不要额外压缩，有时候Compress PNG Files二次压缩会导致图片变大
-    * CocoPods中的资源引用方式：
-      * 也可以使用Asset Catlog进行管理
-    * * resource\_bundles
-        * 保存在各自的Bundle中
-        * 获取资源的方式需要指定Bundle
-        * podspec文件描述：
-        * ```
-          s.resource_bundles = {
-              'Huijie' => ['Huijie/Assets/*.xcassets']
-          }
-          ```
-      * resource
-        * 资源会合并到main Bundle，可能会有文件名重复
-    * 对于单色的图标可以使用尺量图
+      CocoPods中的资源引用方式：
+
+  * 也可以使用Asset Catlog进行管理
+
+  * * resource\_bundles
+      * 保存在各自的Bundle中
+      * 获取资源的方式需要指定Bundle
+      * podspec文件描述：
+      * ```
+        s.resource_bundles = {
+            'Huijie' => ['Huijie/Assets/*.xcassets']
+        }
+        ```
+    * resource
+      * 资源会合并到main Bundle，可能会有文件名重复
+  * 对于单色的图标可以使用尺量图
 
 
 
