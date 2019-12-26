@@ -106,6 +106,8 @@
   - optimization设置为space，可以减少包大小
   - 建议：保持默认，不做修改
 - Dead Code Stripping
+  - 删除静态链接的可执行文件中未应用的代码，但是oc是动态语言，所以无法判定
+  - 建议：保持默认，不做修改
 - Apple Clang - Code Generation
 - Swift Compiler - Code Generation
 - Strip Symbol Information
@@ -113,7 +115,22 @@
   - Strip Linked Product 
   - Strip Debug Symbols During Copy 
   - Symbols hidden by default
+  - 设置为YES
+    - 可以去掉不必要的符号信息，但是只能使用dSYM来进行符号化
+  - 建议：Release设置为YES，Debug设置为NO
 - Exceptions
+  - Enable C++ Exceptions = NO
+  - Enable Objective-C Exceptions = NO
+  - Other C Flags添加-fno-exceptions
+  - 对于某些文件单独支持异常，编译选项加上-fexceptions
+  - 建议：保持默认，不做修改
 - Link-Time Optimization
+  - 用于再link中间代码时，对全局代码进行优化
+  - 包括：
+    - 多余代码取出
+    - 跨过程优化
+    - 内敛优化
+  - 建议：开启  
+  
 
 
