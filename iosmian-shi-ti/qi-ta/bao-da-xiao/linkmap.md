@@ -82,7 +82,7 @@
 0x100006B68    0x00000188    __DATA    __data
 ```
 
-Symbols
+**Symbols**
 
 * 每个文件对应的字段位置和占用空间
 
@@ -100,7 +100,7 @@ Symbols
 0x100001690    0x00000040    [  2] -[ViewController setName:]
 ```
 
-Dead Stripped Symbols
+**Dead Stripped Symbols**
 
 * 链接器认为无用的符号，链接的时候不会计记入
 * 计算包大小的时候，需要把这块的大小减去
