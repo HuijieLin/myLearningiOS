@@ -5,7 +5,7 @@
 > ## 如何开启LinkMap
 
 * Write Link Map File：设置是否开启LinkMap
-* Path to Link Map File：设置LinkMap文件生成路径
+* Path to Link Map File：设置LinkMap文件生成路径![](/assets/2019122701.png)
 
 
 
