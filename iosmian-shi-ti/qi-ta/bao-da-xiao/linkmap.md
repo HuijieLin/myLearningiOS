@@ -40,7 +40,7 @@
 [ 12] /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks//UIKit.framework/UIKit.tbd
 ```
 
-Sections
+**Sections**
 
 * 描述各个段在最后编译成可执行文件中的偏移位置以及大小
 
