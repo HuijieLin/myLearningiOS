@@ -182,6 +182,22 @@
   #define RW_LOADED             (1<<23)
   ```
 
-  
+> ## App Extension
+
+App Extension的占用都是放在Plugin文件夹里面，它是独立打包，然后在拷贝到target app Bundle中。有两个注意点：
+- 如果App Extension依赖了第三方静态库，同时主工程也依赖了同样的静态库，最终App包中可能会包含两份三方静态库的体积
+- 动态库是共享的，所以可以修改动态库的加载路径Runpath Search Paths和主工程一致，就可以共享动态库
+
+> ## 静态库瘦身
+
+- 通过lipo命令进行查看支持架构，然后进行静态库拆拆分
+- 如果使用cocoapods管理可以使用两份Podfile文件，一份包含所有的架构，一份只包含Release版本使用的架构
+- dSYM文件（符号表文件）
+  - 是从Mach-O文件里面抽取调式信息而得到的文件目录，实际用于保存调试信息的是dwarf文件
+  - 可以通过工具dsymutil生成
+- dwarf文件（DebuggingWith Arbitrary Record Formats）
+  - 是ELF和Mach-O等文件格式中用来存储和处理调试信息的标准格式
+  - dSYM文件中真正保存符号表数据的是dwarf文件
+  - dwarf文件中不同的数据都保存在相应的section中
 
 
