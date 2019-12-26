@@ -12,7 +12,9 @@
 **Path**
 
 * 可执行文件路径：
-  `# Path: /Users/linhuijie/Library/Developer/Xcode/DerivedData/test-gjocatkmtbmvawcegstrzwyevagk/Build/Products/Debug-iphonesimulator/test.app/test`
+  ```
+  # Path: /Users/linhuijie/Library/Developer/Xcode/DerivedData/test-gjocatkmtbmvawcegstrzwyevagk/Build/Products/Debug-iphonesimulator/test.app/test
+  ```
 
 **Arch**
 
