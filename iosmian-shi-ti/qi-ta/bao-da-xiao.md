@@ -132,6 +132,8 @@
     - 跨过程优化
     - 内敛优化
   - 建议：开启 
+- Make Strings Read-Only
+  - 建议：YES
    
 > ## 代码瘦身
 
