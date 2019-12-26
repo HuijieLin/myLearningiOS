@@ -139,7 +139,7 @@
 
 * 基于clang扫描
   * 基于clang AST，追溯到函数的调用层级，记录所有定义的方法和所有调用的方法，取差集
-  * [https://mp.weixin.qq.com/s?\_\_biz=MzUxMzcxMzE5Ng==&mid=2247488360&amp;idx=1&amp;sn=94fba30a87d0f9bc0b9ff94d3fed3386&source=41\#wechat\_redirect](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247488360&amp;idx=1&amp;sn=94fba30a87d0f9bc0b9ff94d3fed3386&source=41#wechat_redirect)
+  * [https://mp.weixin.qq.com/s?\_\_biz=MzUxMzcxMzE5Ng==∣=2247488360&idx=1&sn=94fba30a87d0f9bc0b9ff94d3fed3386&source=41\#wechat\_redirect](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247488360&amp;idx=1&amp;sn=94fba30a87d0f9bc0b9ff94d3fed3386&source=41#wechat_redirect)
 * 基于可执行文件扫描（linkmap结合Mach-O）
   * objc\_msgSend在Mach-O文件里面是通过\_objc\_selrefs这个section来获取selector这个参数的
   * \_objc\_selrefs记录是调用的方法
@@ -213,6 +213,7 @@ App Extension的占用都是放在Plugin文件夹里面，它是独立打包，�
   * 可以通过工具dsymutil生成
 
 * dwarf文件（DebuggingWith Arbitrary Record Formats）
+
   * 是ELF和Mach-O等文件格式中用来存储和处理调试信息的标准格式
   * dSYM文件中真正保存符号表数据的是dwarf文件
   * dwarf文件中不同的数据都保存在相应的section中
