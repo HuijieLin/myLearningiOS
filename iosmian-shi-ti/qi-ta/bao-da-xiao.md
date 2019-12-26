@@ -49,6 +49,14 @@
     * 文件对比顺序：
       * 大小对比 -&gt; 部分MD5签名对比 -&gt; 完整MD5签名对比 -&gt; 逐个字节对比
   * 大文件压缩
+    * 工具：ImageOptim
+    * Xcode build setting：
+      * Compress PNG FIles
+        * 打包的时候使用pngcrush进行无损压缩，
+        * 但是有一些图片压缩之后反而会变大，可以对单个图片进行关闭压缩，Type设置为Data
+
+        ![](/assets/2019122601.png)
+      * Remove Text Medadata From PNG Files
   * 图片管理方式规范
 
 
