@@ -76,12 +76,9 @@
       * 使用imageWithContentOfFile会每次重新申请内存，不会缓存
       * 所以常用的图片适合放在xcassets管理，大文件适合放在Bundle中
       * 放在xcassets的图片不要额外压缩，有时候Compress PNG Files二次压缩会导致图片变大
-
-      CocoPods中的资源引用方式：
-
-  * 也可以使用Asset Catlog进行管理
-
-  * * resource\_bundles
+    - CocoPods中的资源引用方式：
+      * 也可以使用Asset Catlog进行管理
+      * * resource\_bundles
       * 保存在各自的Bundle中
       * 获取资源的方式需要指定Bundle
       * podspec文件描述：
