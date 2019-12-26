@@ -95,3 +95,19 @@ Symbols
 0x100001690	0x00000040	[  2] -[ViewController setName:]
 ```
 
+Dead Stripped Symbols
+- 链接器认为无用的符号，链接的时候不会计记入
+- 计算包大小的时候，需要把这块的大小减去
+
+```
+# Dead Stripped Symbols:
+#        	Size    	File  Name
+<<dead>> 	0x00000018	[  2] CIE
+<<dead>> 	0x0000000C	[  3] literal string: viewDidLoad
+<<dead>> 	0x00000009	[  3] literal string: setName:
+<<dead>> 	0x00000018	[  3] literal string: touchesBegan:withEvent:
+<<dead>> 	0x0000000E	[  3] literal string: .cxx_destruct
+<<dead>> 	0x00000007	[  3] literal string: button
+<<dead>> 	0x0000000B	[  3] literal string: setButton:
+```
+
