@@ -8,5 +8,35 @@
 
 * iOS 瘦身之道：[https://juejin.im/post/5cdd27d4f265da036902bda5](https://juejin.im/post/5cdd27d4f265da036902bda5)
 
+> ## APP Thining
+
+* iOS9以后引入的优化
+* 主要包括：
+  * Slicing
+    * 仅向设备传输与之相关的资源，取决于屏幕分辨率、系统架构等
+    * 创建、分发不同变体用来适应不同目标设备的过程
+  * Bitcode
+    * 是一种程序中间码，开启bitcode配置的程序在App Store Connect阶段会被重新编译和链接，对可执行文件进行优化，这部分是在服务进行的
+  * * 开启步骤：Build Setting -&gt; Enable Bitcode -&gt; YES
+    * Xcode7之后默认YES，对于iOS Bitcode是可选的，watchOS、tvOS是必选的
+    * 作用：App Store会再按需将这个bitcode编译进32/64位的可执行文件中，也可以理解为对具体架构的拆分
+    * 开启Bitcode注意事项：
+      * 依赖的动态库、静态库、第三方库都需要开启支持
+      * 因为开始Bitcode的可执行文件在Apple的服务端进行了重新编译，所以对应的dsym文件需要在App Store Connect中获取
+  * On-Demand Resources
+    * 一部分图片资源不随着App的安装而下载，直到用户进入某个页面时财进行下载对应的文件
+    * 应用场景：相机应用的贴纸或者滤镜、关卡游戏等
+
+> ## 包体积
+
+* 资源文件
+  * 包括：图片、内置素材、多语言、字体、音视频等
+* 资源瘦身方式：
+  * 无用资源的删除
+    * 可以借鉴：
+  * 重复资源的删除
+  * 大文件压缩
+  * 图片管理方式规范
+
 
 
