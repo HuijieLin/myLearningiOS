@@ -139,6 +139,7 @@
 
 - 基于clang扫描
   - 基于clang AST，追溯到函数的调用层级，记录所有定义的方法和所有调用的方法，取差集
+  - https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247488360&amp;idx=1&amp;sn=94fba30a87d0f9bc0b9ff94d3fed3386&source=41#wechat_redirect
 - 基于可执行文件扫描（linkmap结合Mach-O）
   - objc_msgSend在Mach-O文件里面是通过_objc_selrefs这个section来获取selector这个参数的
   - _objc_selrefs记录是调用的方法
@@ -197,6 +198,13 @@ App Extension的占用都是放在Plugin文件夹里面，它是独立打包，�
 
 - 通过lipo命令进行查看支持架构，然后进行静态库拆拆分
 - 如果使用cocoapods管理可以使用两份Podfile文件，一份包含所有的架构，一份只包含Release版本使用的架构
+
+  ```
+  // cocoapods设置如下
+  pod libWeChatSDK:configurations => ['Debug']
+  pod libWeChatSDK-device:configurations => ['Release']
+  ```
+
 - dSYM文件（符号表文件）
   - 是从Mach-O文件里面抽取调式信息而得到的文件目录，实际用于保存调试信息的是dwarf文件
   - 可以通过工具dsymutil生成
