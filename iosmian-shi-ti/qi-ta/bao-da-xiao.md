@@ -135,7 +135,53 @@
    
 > ## 代码瘦身
 
+- 基于clang扫描
+  - 基于clang AST，追溯到函数的调用层级，记录所有定义的方法和所有调用的方法，取差集
+- 基于可执行文件扫描（linkmap结合Mach-O）
+  - objc_msgSend在Mach-O文件里面是通过_objc_selrefs这个section来获取selector这个参数的
+  - _objc_selrefs记录是调用的方法
+  - _objc_classrefs记录被调用过的类
+  - _objc_superrefs记录调用过的super的类（继承关系）
+  - 没用的方法检测（类也类似）：
+    1. 使用otool获取所有的方法：otool -oV 二进制路径
+    2. 使用otool获取被调用的方法：otool -v -s __DATA __objc_selrefs 二进制路径
+    3. 两者的差值就是无用的方法
+- 运行时检测类是否初始化过
+  - runtime判断类是否初始化过
+  ```objectivec
+  // isInitialized 的结果会保存到元类的 class_rw_t 结构体的 flags 信息里， flags 的 1<<29 位记录的就是这个类是否初始化了的信息
+  #define RW_INITIALIZED (1<<29)
+  bool isInitialized() {
+     return getMeta()->data()->flags & RW_INITIALIZED;
+  }
+  
+  // 其他位的信息
+  // 类的方法列表已修复
+  #define RW_METHODIZED         (1<<30)
+  
+  // 类已经初始化了
+  #define RW_INITIALIZED        (1<<29)
+  
+  // 类在初始化过程中
+  #define RW_INITIALIZING       (1<<28)
+  
+  // class_rw_t->ro 是 class_ro_t 的堆副本
+  #define RW_COPIED_RO          (1<<27)
+  
+  // 类分配了内存，但没有注册
+  #define RW_CONSTRUCTING       (1<<26)
+  
+  // 类分配了内存也注册了
+  #define RW_CONSTRUCTED        (1<<25)
+  
+  // GC：class 有不安全的 finalize 方法
+  #define RW_FINALIZE_ON_MAIN_THREAD (1<<24)
+  
+  // 类的 +load 被调用了
+  #define RW_LOADED             (1<<23)
 
+  ```
 
+  
 
 
