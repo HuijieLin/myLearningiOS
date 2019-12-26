@@ -67,7 +67,9 @@
 
   * 图片管理方式规范
 
-    * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
+    * Asset Catlog
+
+  * * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
     * xcassets里面的2x、3x图片会更怒具体的设备分发，不会同时包含，Bundle不会
     * xcassets内可以对图片进行Slicing，即裁剪、拉伸，Bundle不支持
     * Bundle内支持多语言，Image.xcassets不支持
