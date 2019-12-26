@@ -148,6 +148,7 @@
     3. 两者的差值就是无用的方法
 - 运行时检测类是否初始化过
   - runtime判断类是否初始化过
+  
   ```objectivec
   // isInitialized 的结果会保存到元类的 class_rw_t 结构体的 flags 信息里， flags 的 1<<29 位记录的就是这个类是否初始化了的信息
   #define RW_INITIALIZED (1<<29)
