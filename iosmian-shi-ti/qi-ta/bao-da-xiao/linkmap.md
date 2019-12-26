@@ -37,4 +37,61 @@ Object files
 [ 12] /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks//UIKit.framework/UIKit.tbd
 ```
 
+Sections
+- 描述各个段在最后编译成可执行文件中的偏移位置以及大小
+
+```
+// Address：数据在文件的偏移位置
+// Size：占用的大小
+// Segment：段类型，代码段还是数据段
+// Section：段名称
+// -----------------------------
+// __text：编译后的程序执行语句
+// __data：已经初始化的全局变量和局部静态变量
+// __cstring：代码里面的字符串常量
+// __bss：没有初始化的全局变量和局部静态变量
+// -----------------------------
+# Sections:
+# Address	Size    	Segment	Section
+0x100001490	0x00000D1D	__TEXT	__text
+0x1000021AE	0x0000006C	__TEXT	__stubs
+0x10000221C	0x000000C4	__TEXT	__stub_helper
+0x1000022E0	0x00000E42	__TEXT	__objc_methname
+0x100003122	0x00000169	__TEXT	__cstring
+0x10000328B	0x0000009A	__TEXT	__objc_classname
+0x100003325	0x00000B12	__TEXT	__objc_methtype
+0x100003E37	0x00000178	__TEXT	__entitlements
+0x100003FB0	0x00000048	__TEXT	__unwind_info
+0x100004000	0x00000018	__DATA_CONST	__got
+0x100004018	0x00000120	__DATA_CONST	__cfstring
+0x100004138	0x00000028	__DATA_CONST	__objc_classlist
+0x100004160	0x00000008	__DATA_CONST	__objc_catlist
+0x100004168	0x00000020	__DATA_CONST	__objc_protolist
+0x100004188	0x00000008	__DATA_CONST	__objc_imageinfo
+0x100005000	0x00000090	__DATA	__la_symbol_ptr
+0x100005090	0x00001870	__DATA	__objc_const
+0x100006900	0x00000068	__DATA	__objc_selrefs
+0x100006968	0x00000020	__DATA	__objc_classrefs
+0x100006988	0x00000010	__DATA	__objc_superrefs
+0x100006998	0x00000040	__DATA	__objc_ivar
+0x1000069D8	0x00000190	__DATA	__objc_data
+0x100006B68	0x00000188	__DATA	__data
+```
+
+Symbols
+- 每个文件对应的字段位置和占用空间
+
+```
+// Address：数据在文件的偏移位置
+// Size：占用的大小
+// Fine：Object files的第一列关联，对应所属的文件序号
+// name：符号名字
+# Symbols:
+# Address	Size    	File  Name
+0x100001490	0x00000090	[  2] -[ViewController viewDidLoad]
+0x100001520	0x00000070	[  2] -[ViewController viewDidAppear:]
+0x100001590	0x000000D0	[  2] -[ViewController touchesBegan:withEvent:]
+0x100001660	0x00000030	[  2] -[ViewController name]
+0x100001690	0x00000040	[  2] -[ViewController setName:]
+```
 
