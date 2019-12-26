@@ -93,5 +93,19 @@
 
 > ## 编译选项
 
+编译选项的解释：https://gist.github.com/NSExceptional/2cd98300f7297b75d7b2d929effa2f15
+
+- Generate Debug Symbols
+- Asset Catalog Compiler
+- Dead Code Stripping
+- Apple Clang - Code Generation
+- Swift Compiler - Code Generation
+- Strip Symbol Information
+  - Deployment Postprocessing 
+  - Strip Linked Product 
+  - Strip Debug Symbols During Copy 
+  - Symbols hidden by default
+- Exceptions
+- Link-Time Optimization
 
 
