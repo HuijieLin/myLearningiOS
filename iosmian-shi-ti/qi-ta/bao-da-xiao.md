@@ -62,9 +62,11 @@
         ![](/assets/2019122601.png)
 
       * Remove Text Medadata From PNG Files
+
         * 移除PNG资源的文本字符，包括：图像名称、创建时间、作者、版权、注视等
 
   * 图片管理方式规范
+
     * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
     * xcassets里面的2x、3x图片会更怒具体的设备分发，不会同时包含，Bundle不会
     * xcassets内可以对图片进行Slicing，即裁剪、拉伸，Bundle不支持
@@ -86,6 +88,7 @@
           ```
       * resource
         * 资源会合并到main Bundle，可能会有文件名重复
+    * 对于单色的图标可以使用尺量图
 
 
 
