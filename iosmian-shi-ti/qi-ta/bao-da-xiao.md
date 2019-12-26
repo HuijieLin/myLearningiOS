@@ -93,97 +93,98 @@
 
 > ## 编译选项
 
-编译选项的解释：https://gist.github.com/NSExceptional/2cd98300f7297b75d7b2d929effa2f15
+编译选项的解释：[https://gist.github.com/NSExceptional/2cd98300f7297b75d7b2d929effa2f15](https://gist.github.com/NSExceptional/2cd98300f7297b75d7b2d929effa2f15)
 
-- Generate Debug Symbols
-  - 调试符号是在编译时形成的
-  - 当设置为YES
-    - 每个源文件在编译成.o文件时，编译参数多了\-g和\-gmodules参数，打包会生成symbols文件
-  - 当设置为NO
-    - 不会生成symbol文件，可以减少ipa大小，但是会影响crash的定位
-  - 建议：保持默认，不做修改
-- Asset Catalog Compiler
-  - optimization设置为space，可以减少包大小
-  - 建议：保持默认，不做修改
-- Dead Code Stripping
-  - 删除静态链接的可执行文件中未应用的代码，但是oc是动态语言，所以无法判定
-  - 建议：保持默认，不做修改
-- Apple Clang - Code Generation
-- Swift Compiler - Code Generation
-- Strip Symbol Information
-  - Deployment Postprocessing 
-  - Strip Linked Product 
-  - Strip Debug Symbols During Copy 
-  - Symbols hidden by default
-  - 设置为YES
-    - 可以去掉不必要的符号信息，但是只能使用dSYM来进行符号化
-  - 建议：Release设置为YES，Debug设置为NO
-- Exceptions
-  - Enable C++ Exceptions = NO
-  - Enable Objective-C Exceptions = NO
-  - Other C Flags添加-fno-exceptions
-  - 对于某些文件单独支持异常，编译选项加上-fexceptions
-  - 带来问题：假如ABC三个文件，AC文件支持了异常，B不支持，如果C抛了异常，在模拟器下A还是能捕获异常不至于Crash，但真机下捕获不了
-  - 建议：保持默认，不做修改
-- Link-Time Optimization
-  - 用于再link中间代码时，对全局代码进行优化
-  - 包括：
-    - 多余代码取出
-    - 跨过程优化
-    - 内敛优化
-  - 建议：开启 
-- Make Strings Read-Only
-  - 建议：YES
-   
+* Generate Debug Symbols
+  * 调试符号是在编译时形成的
+  * 当设置为YES
+    * 每个源文件在编译成.o文件时，编译参数多了-g和-gmodules参数，打包会生成symbols文件
+  * 当设置为NO
+    * 不会生成symbol文件，可以减少ipa大小，但是会影响crash的定位
+  * 建议：保持默认，不做修改
+* Asset Catalog Compiler
+  * optimization设置为space，可以减少包大小
+  * 建议：保持默认，不做修改
+* Dead Code Stripping
+  * 删除静态链接的可执行文件中未应用的代码，但是oc是动态语言，所以无法判定
+  * 建议：保持默认，不做修改
+* Apple Clang - Code Generation
+* Swift Compiler - Code Generation
+* Strip Symbol Information
+  * Deployment Postprocessing 
+  * Strip Linked Product 
+  * Strip Debug Symbols During Copy 
+  * Symbols hidden by default
+  * 设置为YES
+    * 可以去掉不必要的符号信息，但是只能使用dSYM来进行符号化
+  * 建议：Release设置为YES，Debug设置为NO
+* Exceptions
+  * Enable C++ Exceptions = NO
+  * Enable Objective-C Exceptions = NO
+  * Other C Flags添加-fno-exceptions
+  * 对于某些文件单独支持异常，编译选项加上-fexceptions
+  * 带来问题：假如ABC三个文件，AC文件支持了异常，B不支持，如果C抛了异常，在模拟器下A还是能捕获异常不至于Crash，但真机下捕获不了
+  * 建议：保持默认，不做修改
+* Link-Time Optimization
+  * 用于再link中间代码时，对全局代码进行优化
+  * 包括：
+    * 多余代码取出
+    * 跨过程优化
+    * 内敛优化
+  * 建议：开启 
+* Make Strings Read-Only
+  * 建议：YES
+
 > ## 代码瘦身
 
-- 基于clang扫描
-  - 基于clang AST，追溯到函数的调用层级，记录所有定义的方法和所有调用的方法，取差集
-  - https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247488360&amp;idx=1&amp;sn=94fba30a87d0f9bc0b9ff94d3fed3386&source=41#wechat_redirect
-- 基于可执行文件扫描（linkmap结合Mach-O）
-  - objc_msgSend在Mach-O文件里面是通过_objc_selrefs这个section来获取selector这个参数的
-  - _objc_selrefs记录是调用的方法
-  - _objc_classrefs记录被调用过的类
-  - __objc_classlist记录所有的类
-  - _objc_superrefs记录调用过的super的类（继承关系）
-  - 没用的方法检测（类也类似）：
+* 基于clang扫描
+  * 基于clang AST，追溯到函数的调用层级，记录所有定义的方法和所有调用的方法，取差集
+  * [https://mp.weixin.qq.com/s?\_\_biz=MzUxMzcxMzE5Ng==&mid=2247488360&amp;idx=1&amp;sn=94fba30a87d0f9bc0b9ff94d3fed3386&source=41\#wechat\_redirect](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247488360&amp;idx=1&amp;sn=94fba30a87d0f9bc0b9ff94d3fed3386&source=41#wechat_redirect)
+* 基于可执行文件扫描（linkmap结合Mach-O）
+  * objc\_msgSend在Mach-O文件里面是通过\_objc\_selrefs这个section来获取selector这个参数的
+  * \_objc\_selrefs记录是调用的方法
+  * \_objc\_classrefs记录被调用过的类
+  * \_\_objc\_classlist记录所有的类
+  * \_objc\_superrefs记录调用过的super的类（继承关系）
+  * 没用的方法检测（类也类似）：
     1. 使用otool获取所有的方法：otool -oV 二进制路径
-    2. 使用otool获取被调用的方法：otool -v -s __DATA __objc_selrefs 二进制路径
+    2. 使用otool获取被调用的方法：otool -v -s **DATA **objc\_selrefs 二进制路径
     3. 两者的差值就是无用的方法
-- 查找重复代码
-  - 第三方工具simian
-- 运行时检测类是否初始化过
-  - runtime判断类是否初始化过
-  
+* 查找重复代码
+  * 第三方工具simian
+* 运行时检测类是否初始化过
+
+  * runtime判断类是否初始化过
+
   ```objectivec
   // isInitialized 的结果会保存到元类的 class_rw_t 结构体的 flags 信息里， flags 的 1<<29 位记录的就是这个类是否初始化了的信息
   #define RW_INITIALIZED (1<<29)
   bool isInitialized() {
      return getMeta()->data()->flags & RW_INITIALIZED;
   }
-  
+
   // 其他位的信息
   // 类的方法列表已修复
   #define RW_METHODIZED         (1<<30)
-  
+
   // 类已经初始化了
   #define RW_INITIALIZED        (1<<29)
-  
+
   // 类在初始化过程中
   #define RW_INITIALIZING       (1<<28)
-  
+
   // class_rw_t->ro 是 class_ro_t 的堆副本
   #define RW_COPIED_RO          (1<<27)
-  
+
   // 类分配了内存，但没有注册
   #define RW_CONSTRUCTING       (1<<26)
-  
+
   // 类分配了内存也注册了
   #define RW_CONSTRUCTED        (1<<25)
-  
+
   // GC：class 有不安全的 finalize 方法
   #define RW_FINALIZE_ON_MAIN_THREAD (1<<24)
-  
+
   // 类的 +load 被调用了
   #define RW_LOADED             (1<<23)
   ```
@@ -191,26 +192,30 @@
 > ## App Extension
 
 App Extension的占用都是放在Plugin文件夹里面，它是独立打包，然后在拷贝到target app Bundle中。有两个注意点：
-- 如果App Extension依赖了第三方静态库，同时主工程也依赖了同样的静态库，最终App包中可能会包含两份三方静态库的体积
-- 动态库是共享的，所以可以修改动态库的加载路径Runpath Search Paths和主工程一致，就可以共享动态库
+
+* 如果App Extension依赖了第三方静态库，同时主工程也依赖了同样的静态库，最终App包中可能会包含两份三方静态库的体积
+* 动态库是共享的，所以可以修改动态库的加载路径Runpath Search Paths和主工程一致，就可以共享动态库
 
 > ## 静态库瘦身
 
-- 通过lipo命令进行查看支持架构，然后进行静态库拆拆分
-- 如果使用cocoapods管理可以使用两份Podfile文件，一份包含所有的架构，一份只包含Release版本使用的架构
+* 通过lipo命令进行查看支持架构，然后进行静态库拆拆分
+* 如果使用cocoapods管理可以使用两份Podfile文件，一份包含所有的架构，一份只包含Release版本使用的架构
 
-  ```
+  ```objectivec
   // cocoapods设置如下
   pod libWeChatSDK:configurations => ['Debug']
   pod libWeChatSDK-device:configurations => ['Release']
   ```
 
-- dSYM文件（符号表文件）
-  - 是从Mach-O文件里面抽取调式信息而得到的文件目录，实际用于保存调试信息的是dwarf文件
-  - 可以通过工具dsymutil生成
-- dwarf文件（DebuggingWith Arbitrary Record Formats）
-  - 是ELF和Mach-O等文件格式中用来存储和处理调试信息的标准格式
-  - dSYM文件中真正保存符号表数据的是dwarf文件
-  - dwarf文件中不同的数据都保存在相应的section中
+* dSYM文件（符号表文件）
+
+  * 是从Mach-O文件里面抽取调式信息而得到的文件目录，实际用于保存调试信息的是dwarf文件
+  * 可以通过工具dsymutil生成
+
+* dwarf文件（DebuggingWith Arbitrary Record Formats）
+  * 是ELF和Mach-O等文件格式中用来存储和处理调试信息的标准格式
+  * dSYM文件中真正保存符号表数据的是dwarf文件
+  * dwarf文件中不同的数据都保存在相应的section中
+
 
 
