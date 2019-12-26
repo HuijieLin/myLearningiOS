@@ -100,7 +100,7 @@
   - 当设置为YES
     - 每个源文件在编译成.o文件时，编译参数多了\-g和\-gmodules参数，打包会生成symbols文件
   - 当设置为NO
-    - 
+    - 不会生成symbol文件，可以减少ipa大小，但是会影响crash的定位
   - 建议：保持默认开启，不做修改
 - Asset Catalog Compiler
 - Dead Code Stripping
