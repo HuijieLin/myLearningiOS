@@ -148,6 +148,8 @@
     1. 使用otool获取所有的方法：otool -oV 二进制路径
     2. 使用otool获取被调用的方法：otool -v -s __DATA __objc_selrefs 二进制路径
     3. 两者的差值就是无用的方法
+- 查找重复代码
+  - 第三方工具simian
 - 运行时检测类是否初始化过
   - runtime判断类是否初始化过
   
