@@ -113,7 +113,7 @@ struct segment_command_64 { /* for 64-bit architectures */
 	uint32_t	flags;		/* flags */
 }
 
-// segname有以下定义
+**segname定义**
 __TEXT：代码段/只读数据段
 __PAGEZERO：Catch访问NULL指针的非法操作的段
 __DATA：数据段
