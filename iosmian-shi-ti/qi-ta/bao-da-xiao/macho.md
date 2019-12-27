@@ -82,6 +82,38 @@ struct load_command {
 
 > ### Segment
 
+```
+// 32位
+struct segment_command { /* for 32-bit architectures */
+	uint32_t	cmd;		/* LC_SEGMENT */
+	uint32_t	cmdsize;	/* includes sizeof section structs */
+	char		segname[16];	/* segment name */
+	uint32_t	vmaddr;		/* memory address of this segment */
+	uint32_t	vmsize;		/* memory size of this segment */
+	uint32_t	fileoff;	/* file offset of this segment */
+	uint32_t	filesize;	/* amount to map from the file */
+	vm_prot_t	maxprot;	/* maximum VM protection */
+	vm_prot_t	initprot;	/* initial VM protection */
+	uint32_t	nsects;		/* number of sections in segment */
+	uint32_t	flags;		/* flags */
+};
+
+// 64位
+struct segment_command_64 { /* for 64-bit architectures */
+	uint32_t	cmd;		/* LC_SEGMENT_64 */
+	uint32_t	cmdsize;	/* includes sizeof section_64 structs */
+	char		segname[16];	/* segment name */
+	uint64_t	vmaddr;		/* memory address of this segment */
+	uint64_t	vmsize;		/* memory size of this segment */
+	uint64_t	fileoff;	/* file offset of this segment */
+	uint64_t	filesize;	/* amount to map from the file */
+	vm_prot_t	maxprot;	/* maximum VM protection */
+	vm_prot_t	initprot;	/* initial VM protection */
+	uint32_t	nsects;		/* number of sections in segment */
+	uint32_t	flags;		/* flags */
+}
+```
+
 > ### Section
 
 > ## dyld和Mach-O
