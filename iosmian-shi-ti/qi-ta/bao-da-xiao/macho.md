@@ -54,14 +54,17 @@ struct mach_header_64 {
 // sizeofcmds: LoadCommand的大小，主要用于划分Mach-O文件的‘区域’
 // flags: 标记了dyld过程中的参数
 // reserved: 保留字段
-
-// 常见的filetype
-#define	MH_OBJECT
-#define	MH_EXECUTE
-#define	MH_DYLIB
-#define	MH_DYLINKER
-#define	MH_DSYM
 ```
+
+常见的filetype
+- MH_OBJECT
+
+- MH_EXECUTE
+- MH_DYLIB
+- MH_DYLINKER
+- MH_DSYM
+
+
 
 > ## Load commands
 
