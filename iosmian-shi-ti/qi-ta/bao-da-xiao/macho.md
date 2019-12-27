@@ -69,11 +69,19 @@ struct mach_header_64 {
 - MH_DSYM
 	- 存储二进制文件符号信息的文件（.dSYM文件）
 
-
-
 > ## Load commands
 
+```
+struct load_command {
+	uint32_t cmd;		// command类型
+	uint32_t cmdsize;	// command占用的大小，主要是用于计算出下一个command的偏移量
+};
+```
+
 > ## Raw segment data
+> ### Segment
+
+> ### Section
 
 > ## dyld和Mach-O
 
