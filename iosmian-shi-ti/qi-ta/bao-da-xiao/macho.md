@@ -125,7 +125,7 @@ __LINKEDIT：包含需要被动态链接器使用的信息，包括符号表、�
 ```
 // 32位
 struct section { /* for 32-bit architectures */
-	char		sectname[16];	/* name of this section */
+	char		sectname[16];	// 所在段（segment）的名称
 	char		segname[16];	/* segment this section goes in */
 	uint32_t	addr;		/* memory address of this section */
 	uint32_t	size;		/* size in bytes of this section */
