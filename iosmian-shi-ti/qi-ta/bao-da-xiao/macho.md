@@ -13,6 +13,7 @@ Framework：包含Dylib以及资源文件和头文件的文件夹
 > ## Mach-O结构
 
 官方描述：https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html
+文件定义：https://opensource.apple.com/source/xnu/xnu-1456.1.26/EXTERNAL_HEADERS/mach-o/loader.h
 
 一个Mach-O文件包含3个主要区域：
 - Header：文件类型、目标架构类型等
@@ -48,11 +49,24 @@ struct mach_header_64 {
 // magic: 用于标识当前设备的是大端序还是小端序。如果是0xfeedfacf(MH_MAGIC_64)就是大端序，而0xcffaedfe(MH_CIGAM_64)是小端序，iOS系统上是小端序
 // cputype: 标识CPU的架构，比如ARM，X86，i386等等，进行了宏观划分
 // cpusubtype: 具体的CPU类型，区分不同版本的处理器, 比如arm64、armv7
-// filetype: 
-// ncmds: 
-// sizeofcmds: 
-// flags: 
-// reserved: 
+// filetype: 文件类型，比如可执行文件、库文件、Dsym文件
+// ncmds: 有几个LoadCommands，每个LoadCommands代表了一种Segment的加载方式
+// sizeofcmds: LoadCommand的大小，主要用于划分Mach-O文件的‘区域’
+// flags: 标记了dyld过程中的参数
+// reserved: 保留字段
+
+// filetype的定义
+#define	MH_OBJECT	0x1
+#define	MH_EXECUTE	0x2
+#define	MH_FVMLIB	0x3
+#define	MH_CORE		0x4
+#define	MH_PRELOAD	0x5
+#define	MH_DYLIB	0x6
+#define	MH_DYLINKER	0x7
+#define	MH_BUNDLE	0x8
+#define	MH_DYLIB_STUB	0x9
+#define	MH_DSYM		0xa
+#define	MH_KEXT_BUNDLE	0xb
 ```
 
 > ## Load commands
