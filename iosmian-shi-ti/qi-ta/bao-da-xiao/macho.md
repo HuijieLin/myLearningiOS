@@ -22,7 +22,20 @@ Framework：包含Dylib以及资源文件和头文件的文件夹
 
 官方描述：https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html
 
-一个Mach-O文件
+一个Mach-O文件包含3个主要区域：
+- Header
+- Load commands
+- Raw segment data
+
+**Header**
+
+**Load commands**
+
+**Raw segment data**
+
+
+
+
 
 
 
