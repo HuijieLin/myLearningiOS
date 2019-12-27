@@ -116,13 +116,14 @@ struct segment_command_64 { /* for 64-bit architectures */
     uint32_t    nsects;        /* number of sections in segment */
     uint32_t    flags;        /* flags */
 }
-
-**segname定义**
-__TEXT：代码段/只读数据段
-__PAGEZERO：Catch访问NULL指针的非法操作的段
-__DATA：数据段
-__LINKEDIT：包含需要被动态链接器使用的信息，包括符号表、字符串表、重定位项表等。
 ```
+
+**segname定义：**
+
+* \_\_TEXT：代码段/只读数据段
+* \_\_PAGEZERO：Catch访问NULL指针的非法操作的段
+* \_\_DATA：数据段
+* \_\_LINKEDIT：包含需要被动态链接器使用的信息，包括符号表、字符串表、重定位项表等。
 
 > ### Section
 
