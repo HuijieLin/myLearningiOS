@@ -20,5 +20,9 @@ Framework：包含Dylib以及资源文件和头文件的文件夹
 
 > ## Mach-O结构
 
+官方描述：https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html
+
+一个Mach-O文件
+
 
 
