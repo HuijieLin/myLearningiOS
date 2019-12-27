@@ -85,7 +85,7 @@ struct load_command {
 ```
 // 32位
 struct segment_command { /* for 32-bit architectures */
-	uint32_t	cmd;		// command类型
+	uint32_t	cmd;		// load command类型
 	uint32_t	cmdsize;	// load command的大小
 	char		segname[16];	// segment的名称
 	uint32_t	vmaddr;		// 未偏移的虚拟内存地址
