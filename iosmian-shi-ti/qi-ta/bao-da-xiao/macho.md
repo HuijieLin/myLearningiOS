@@ -85,17 +85,17 @@ struct load_command {
 ```
 // 32位
 struct segment_command { /* for 32-bit architectures */
-	uint32_t	cmd;		/* LC_SEGMENT */
-	uint32_t	cmdsize;	/* includes sizeof section structs */
-	char		segname[16];	/* segment name */
-	uint32_t	vmaddr;		/* memory address of this segment */
-	uint32_t	vmsize;		/* memory size of this segment */
-	uint32_t	fileoff;	/* file offset of this segment */
-	uint32_t	filesize;	/* amount to map from the file */
-	vm_prot_t	maxprot;	/* maximum VM protection */
-	vm_prot_t	initprot;	/* initial VM protection */
-	uint32_t	nsects;		/* number of sections in segment */
-	uint32_t	flags;		/* flags */
+	uint32_t	cmd;		// command类型
+	uint32_t	cmdsize;	// load command的大小
+	char		segname[16];	// segment的名称
+	uint32_t	vmaddr;		// 未偏移的虚拟内存地址
+	uint32_t	vmsize;		// 虚拟内存的段大小
+	uint32_t	fileoff;	// 段在文件的偏移
+	uint32_t	filesize;	// 段在文件的大小
+	vm_prot_t	maxprot;	
+	vm_prot_t	initprot;	
+	uint32_t	nsects;		// 段中有多少个section
+	uint32_t	flags;		
 };
 
 // 64位
