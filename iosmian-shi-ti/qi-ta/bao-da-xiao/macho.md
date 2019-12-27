@@ -58,11 +58,16 @@ struct mach_header_64 {
 
 常见的filetype
 - MH_OBJECT
-
+	- 目标文件（.o）
+	- 静态库文件（.a），静态库是由多个.o文件合并在一起
 - MH_EXECUTE
+	- 可执行文件
 - MH_DYLIB
+	- 动态库文件（.dylib, .framework/xx）
 - MH_DYLINKER
+	- 动态连接器（dyld）
 - MH_DSYM
+	- 存储二进制文件符号信息的文件（.dSYM文件）
 
 
 
