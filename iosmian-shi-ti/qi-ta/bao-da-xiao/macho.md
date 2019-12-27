@@ -23,15 +23,15 @@ Framework：包含Dylib以及资源文件和头文件的文件夹
 官方描述：https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/MachOTopics/0-Introduction/introduction.html
 
 一个Mach-O文件包含3个主要区域：
-- Header
-- Load commands
-- Raw segment data
+- Header：文件类型、目标架构类型等
+- Load commands：描述文件在虚拟内存中的逻辑结构、布局
+- Raw segment data：在Load commands中定义的Segment的原始数据
 
-**Header**
+> ## Header
 
-**Load commands**
+> ## Load commands
 
-**Raw segment data**
+> ## Raw segment data
 
 
 
