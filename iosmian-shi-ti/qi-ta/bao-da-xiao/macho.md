@@ -57,7 +57,7 @@ struct mach_header_64 {
 // reserved: 保留字段
 ```
 
-**常见的filetype**
+**常见的文件类型（filetype）**
 
 * MH\_OBJECT
   * 目标文件（.o）
