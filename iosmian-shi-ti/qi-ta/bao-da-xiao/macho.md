@@ -37,9 +37,9 @@ Framework：包含Dylib以及资源文件和头文件的文件夹
 
 - app的可执行文件、动态库都是有dyld负责加载
 - dyld用于加载一下类型的Mach-O文件：
-    - MH_EXECUTE
-    - MH_DYLIB
-    - MH_BUNDLE
+    - MH_EXECUTE：应用的主要二进制
+    - MH_DYLIB：动态链接库
+    - MH_BUNDLE：不能被链接的Dylib，只能在运行时使用dlopen\(\)加载，可以作为MacOS的插件
 
 
 
