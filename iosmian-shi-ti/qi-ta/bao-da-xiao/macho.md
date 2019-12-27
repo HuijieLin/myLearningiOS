@@ -181,7 +181,7 @@ struct section_64 { /* for 64-bit architectures */
 **la\_symbol\_ptr 和 nl\_symbol\_ptr**
 
 * la\_symbol\_ptr 中的数据被第一次调用时会通过 dyld\_stub\_binder 进行相关绑定，而 nl\_symbol\_ptr 中的数据就是在动态库绑定时进行加载
-* 所以 la\_symbol\_ptr 中的数据在初始状态都被 bind 成  stub\_helper，接着 dyld\_stub\_binder 会加载相应的动态链接库，执行具体的函数实现，此时 la\_symbol\_ptr 也获取到了函数的真实地址，完成了一次近似懒加载的过程
+* la\_symbol\_ptr 中的数据在初始状态都被 bind 成  stub\_helper，接着 dyld\_stub\_binder 会加载相应的动态链接库，执行具体的函数实现，此时 la\_symbol\_ptr 也获取到了函数的真实地址，完成了一次近似懒加载的过程
 
 > ## dyld和Mach-O
 
