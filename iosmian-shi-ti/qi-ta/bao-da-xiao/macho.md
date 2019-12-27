@@ -127,15 +127,15 @@ __LINKEDIT：包含需要被动态链接器使用的信息，包括符号表、�
 struct section { /* for 32-bit architectures */
 	char		sectname[16];	// 所在段（segment）的名称
 	char		segname[16];	// section名称
-	uint32_t	addr;		/* memory address of this section */
-	uint32_t	size;		/* size in bytes of this section */
-	uint32_t	offset;		/* file offset of this section */
-	uint32_t	align;		/* section alignment (power of 2) */
-	uint32_t	reloff;		/* file offset of relocation entries */
-	uint32_t	nreloc;		/* number of relocation entries */
-	uint32_t	flags;		/* flags (section type and attributes)*/
-	uint32_t	reserved1;	/* reserved (for offset or index) */
-	uint32_t	reserved2;	/* reserved (for count or sizeof) */
+	uint32_t	addr;		// 在内存的起始位置
+	uint32_t	size;		// section的大小
+	uint32_t	offset;		// section的文件偏移
+	uint32_t	align;		// 字节大小对其
+	uint32_t	reloff;		// 重定位入口的文件偏移
+	uint32_t	nreloc;		// 需要重定位的入口数量
+	uint32_t	flags;		
+	uint32_t	reserved1;	
+	uint32_t	reserved2;	
 };
 
 // 64位
@@ -154,6 +154,23 @@ struct section_64 { /* for 64-bit architectures */
 	uint32_t	reserved3;	/* reserved */
 };
 ```
+
+// 常见的section名称
+- TEXT.text：只有可执行的机器码
+- TEXT.cstring：去重后的C字符串
+- TEXT.const：初始化过的常量
+- TEXT.stubs：符号桩。本质上是一小段会直接跳入lazybinding的表对应项指针指向的地址的代码。
+- TEXT.stub_helper：辅助函数。上述提到的lazybinding的表中对应项的指针在没有找到真正的符号地址的时候，都指向这。
+- TEXT.unwind_info：用于存储处理异常情况信息
+- TEXT.eh_frame：调试辅助信息
+- DATA.data：初始化过的可变的数据
+- DATA.nl_symbol_ptr：非lazy-binding的指针表，每个表项中的指针都指向一个在装载过程中，被动态链机器搜索完成的符号
+- DATA.la_symbol_ptr：lazy-binding的指针表，每个表项中的指针一开始指向stub_helper
+- DATA.const：没有初始化过的常量
+- DATA.mod_init_func：初始化函数，在main之前调用
+- DATA.mod_term_func：终止函数，在main返回之后调用
+- DATA.bss：没有初始化的静态变量
+- DATA.common：没有初始化过的符号声明
 
 > ## dyld和Mach-O
 
