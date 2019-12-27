@@ -7,7 +7,7 @@ dyld源码下载地址：[https://opensource.apple.com/tarballs/dyld/](https://o
 > ## 简介
 
 Mach-O是针对不同运行时可执行文件的文件类型
-Image：executable、dylib、bundle
+image：executable、dylib、bundle
 Framework：包含Dylib以及资源文件和头文件的文件夹
 
 > ## Mach-O结构
