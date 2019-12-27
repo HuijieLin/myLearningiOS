@@ -55,18 +55,12 @@ struct mach_header_64 {
 // flags: 标记了dyld过程中的参数
 // reserved: 保留字段
 
-// filetype的定义
-#define	MH_OBJECT	0x1
-#define	MH_EXECUTE	0x2
-#define	MH_FVMLIB	0x3
-#define	MH_CORE		0x4
-#define	MH_PRELOAD	0x5
-#define	MH_DYLIB	0x6
-#define	MH_DYLINKER	0x7
-#define	MH_BUNDLE	0x8
-#define	MH_DYLIB_STUB	0x9
-#define	MH_DSYM		0xa
-#define	MH_KEXT_BUNDLE	0xb
+// 常见的filetype
+#define	MH_OBJECT
+#define	MH_EXECUTE
+#define	MH_DYLIB
+#define	MH_DYLINKER
+#define	MH_DSYM
 ```
 
 > ## Load commands
