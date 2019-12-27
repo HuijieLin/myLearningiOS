@@ -21,6 +21,40 @@ Framework：包含Dylib以及资源文件和头文件的文件夹
 
 > ## Header
 
+```
+// 32位
+struct mach_header {
+	uint32_t	magic;		/* mach magic number identifier */
+	cpu_type_t	cputype;	/* cpu specifier */
+	cpu_subtype_t	cpusubtype;	/* machine specifier */
+	uint32_t	filetype;	/* type of file */
+	uint32_t	ncmds;		/* number of load commands */
+	uint32_t	sizeofcmds;	/* the size of all the load commands */
+	uint32_t	flags;		/* flags */
+};
+
+// 64位
+struct mach_header_64 {
+	uint32_t	magic;		/* mach magic number identifier */
+	cpu_type_t	cputype;	/* cpu specifier */
+	cpu_subtype_t	cpusubtype;	/* machine specifier */
+	uint32_t	filetype;	/* type of file */
+	uint32_t	ncmds;		/* number of load commands */
+	uint32_t	sizeofcmds;	/* the size of all the load commands */
+	uint32_t	flags;		/* flags */
+	uint32_t	reserved;	/* reserved */
+}
+
+// magic: 用于标识当前设备的是大端序还是小端序。如果是0xfeedfacf(MH_MAGIC_64)就是大端序，而0xcffaedfe(MH_CIGAM_64)是小端序，iOS系统上是小端序
+// cputype: 标识CPU的架构，比如ARM，X86，i386等等，进行了宏观划分
+// cpusubtype: 具体的CPU类型，区分不同版本的处理器, 比如arm64、armv7
+// filetype: 
+// ncmds: 
+// sizeofcmds: 
+// flags: 
+// reserved: 
+```
+
 > ## Load commands
 
 > ## Raw segment data
