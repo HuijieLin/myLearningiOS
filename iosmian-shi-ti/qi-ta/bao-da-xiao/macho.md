@@ -33,6 +33,14 @@ Framework：包含Dylib以及资源文件和头文件的文件夹
 
 > ## Raw segment data
 
+> ## dyld和Mach-O
+
+- app的可执行文件、动态库都是有dyld负责加载
+- dyld用于加载一下类型的Mach-O文件：
+    - MH_EXECUTE
+    - MH_DYLIB
+    - MH_BUNDLE
+
 
 
 
