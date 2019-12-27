@@ -155,7 +155,7 @@ struct section_64 { /* for 64-bit architectures */
 };
 ```
 
-// 常见的section名称
+**常见的section名称**
 - TEXT.text：只有可执行的机器码
 - TEXT.cstring：去重后的C字符串
 - TEXT.const：初始化过的常量
@@ -171,6 +171,8 @@ struct section_64 { /* for 64-bit architectures */
 - DATA.mod_term_func：终止函数，在main返回之后调用
 - DATA.bss：没有初始化的静态变量
 - DATA.common：没有初始化过的符号声明
+
+
 
 > ## dyld和Mach-O
 
