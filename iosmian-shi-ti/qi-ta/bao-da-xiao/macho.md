@@ -75,7 +75,7 @@ struct mach_header_64 {
 
 > ## Load commands
 
-```
+```c
 struct load_command {
     uint32_t cmd;        // load command类型
     uint32_t cmdsize;    // load command占用的大小，主要是用于计算出下一个command的偏移量
