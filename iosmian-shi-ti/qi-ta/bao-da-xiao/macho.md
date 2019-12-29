@@ -80,6 +80,13 @@ struct load_command {
     uint32_t cmd;        // load command类型
     uint32_t cmdsize;    // load command占用的大小，主要是用于计算出下一个command的偏移量
 };
+
+// 常见的load command类型
+LC_SEGMENT、LC_SEGMENT_64 将 segment 映射到进程的内存空间，
+LC_UUID 二进制文件 id，与符号表 uuid 对应，可用作符号表匹配，
+LC_LOAD_DYLINKER 启动动态加载器，
+LC_SYMTAB 描述在 __LINKEDIT 段的哪找字符串表、符号表，
+LC_CODE_SIGNATURE 代码签名等
 ```
 
 > ## Raw segment data
