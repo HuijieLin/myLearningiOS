@@ -4,7 +4,7 @@
 深入剖析Mach-O：[https://satanwoo.github.io/2017/06/13/Macho-1/](https://satanwoo.github.io/2017/06/13/Macho-1/)  
 dyld源码下载地址：[https://opensource.apple.com/tarballs/dyld/](https://opensource.apple.com/tarballs/dyld/)
 
-[https://juejin.im/post/5ab47ca1518825611a406a39\#heading-7](https://juejin.im/post/5ab47ca1518825611a406a39#heading-7)
+探秘 Mach-O 文件：[https://juejin.im/post/5ab47ca1518825611a406a39\#heading-7](https://juejin.im/post/5ab47ca1518825611a406a39#heading-7)
 
 > ## 简介
 
