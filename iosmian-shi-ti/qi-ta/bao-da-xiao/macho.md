@@ -82,11 +82,11 @@ struct load_command {
 };
 
 // 部分load command类型
-LC_SEGMENT、LC_SEGMENT_64 将 segment 映射到进程的内存空间，
-LC_UUID 二进制文件 id，与符号表 uuid 对应，可用作符号表匹配，
-LC_LOAD_DYLINKER 启动动态加载器，
-LC_SYMTAB 描述在 __LINKEDIT 段的哪找字符串表、符号表，
-LC_CODE_SIGNATURE 代码签名等
+LC_SEGMENT、LC_SEGMENT_64：将 segment 映射到进程的内存空间，
+LC_UUID：二进制文件 id，与符号表 uuid 对应，可用作符号表匹配，
+LC_LOAD_DYLINKER：启动动态加载器，
+LC_SYMTAB：描述在 __LINKEDIT 段的哪找字符串表、符号表，
+LC_CODE_SIGNATURE：代码签名等
 ```
 
 > ## Raw segment data
