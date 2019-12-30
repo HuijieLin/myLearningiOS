@@ -192,6 +192,7 @@ struct section_64 { /* for 64-bit architectures */
 * la\_symbol\_ptr 中的数据被第一次调用时会通过 dyld\_stub\_binder 进行相关绑定，而 nl\_symbol\_ptr 中的数据就是在动态库绑定时进行加载
 * la\_symbol\_ptr 中的数据在初始状态都被 bind 成  stub\_helper，接着 dyld\_stub\_binder 会加载相应的动态链接库，执行具体的函数实现，此时 la\_symbol\_ptr 也获取到了函数的真实地址，完成了一次近似懒加载的过程
 * \_\_la\_symbol\_ptr 里面的所有表项的数据在开始时都会被 binding 成 \_\_stub\_helper。而在之后的调用中，虽然依旧会跳到 \_\_stub 区域，但是 \_\_la\_symbol\_ptr 中由于在之前的调用中获取到了对应方法的真实地址，所以无需在进入 dyld\_stub\_binder 阶段，并直接调用函数。这样就完成了一次近似于 lazy 思想的延时 binding 过程
+* 外部函数引用在 \_\_DATA 段的 \_\_la\_symbol\_ptr 区域先生产一个占位符，当第一个调用启动时，就会进入符号的动态链接过程，一旦找到地址后，就将 \_\_DATA Segment 中的 \_\_la\_symbol\_ptr Section 中的占位符修改为方法的真实地址，这样就完成了只需要一个符号绑定的执行过程
 
 > ## dyld和Mach-O
 
