@@ -1,4 +1,4 @@
-# Runloop
+# appRunloop
 
 ---
 
@@ -180,7 +180,7 @@ struct __CFRunLoopMode {
 
 > # AutoreleasePool
 
+App启动之后，苹果在主线程Runloop里面注册了两个Observer，其回调都是\_wrapRunLoopWithAutoreleasePoolHandler\(\)。
 
-
-
+第一个Observer监听的事件是Entry（即将进入Loop）
 
