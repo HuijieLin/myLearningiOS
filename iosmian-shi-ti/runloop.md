@@ -178,5 +178,9 @@ struct __CFRunLoopMode {
 * 当`_UIApplicationHandleEventQueue()`识别到是一个手势事件，首先会调用Cancel，将当前的touchBegin/Move/End等回调打断，随后系统讲这个手势事件标记为待处理。
 * 苹果注册一个Observer检测BeforeWaiting（即将休眠）事件，当Observer的回调函数是`_UIGestureRecognizerUpdateObserver()`，内部会将刚刚标记待处理的手势执行手势的回调。
 
+> # AutoreleasePool
+
+
+
 
 
