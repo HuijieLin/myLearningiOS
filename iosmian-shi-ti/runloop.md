@@ -186,5 +186,6 @@ App启动之后，苹果在主线程Runloop里面注册了两个Observer，其�
 
 * BeforeWaiting（即将进入休眠）时调用\_objc\_autoreleasePoolPop\(\) 和 \_objc\_autoreleasePoolPush\(\) 释放旧的池并创建新池
 * Exit（即将退出Loop）时调用 \_objc\_autoreleasePoolPop\(\) 来释放自动释放池
-* 这个Observer的order是2147483647，优先级最低，保证释放池释放发生在其他所有回调之后
+
+这个Observer的order是2147483647，优先级最低，保证释放池释放发生在其他所有回调之后
 
