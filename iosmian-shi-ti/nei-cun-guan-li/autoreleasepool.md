@@ -1,3 +1,5 @@
+# AutoreleasePool
+
 > ## Autorelease对象什么时候释放
 
 [http://blog.sunnyxx.com/2014/10/15/behind-autorelease/](http://blog.sunnyxx.com/2014/10/15/behind-autorelease/)
@@ -22,7 +24,7 @@ objc_autoreleasePoolPop(context);
 
 > `AutoreleasePoolPage`是一个C++实现的类，具体结构如下：
 
-![](/assets/import_2019030501.png)
+![](../../.gitbook/assets/import_2019030501.png)
 
 * 是一个双向的链表
 * AutoreleasePoolPage每个对象会开辟4096字节内存（等于虚拟内存一页的大小），除了实例变量所占的内存，其余的内存空间全部留给autorealse对象
@@ -32,7 +34,7 @@ objc_autoreleasePoolPop(context);
 
 > Autorelease对象在AutoreleasePool中的存放示意图：
 
-![](/assets/import2019030502.png)
+![](../../.gitbook/assets/import2019030502.png)
 
 * 当向一个对象发送`autorelease`消息的时候，就是把对象添加到next指针所在的位置
 
@@ -40,7 +42,7 @@ objc_autoreleasePoolPop(context);
 
 每次调用objc\_autoreleasePoolPush的时候，runtime就会往当前的AutoreleasePoolPage中添加一个哨兵对象（POOL\_BOUNDARY），值等于0，然后AutoreleasePoolPage的内部结构如下所示：
 
-![](/assets/import2019030503.png)
+![](../../.gitbook/assets/import2019030503.png)
 
 objc\_autoreleasePoolPush的返回值就是哨兵对象的地址，objc\_autoreleasePoolPop的参数就是哨兵对象（POOL\_BOUNDARY）的地址，所以：
 
@@ -50,5 +52,5 @@ objc\_autoreleasePoolPush的返回值就是哨兵对象的地址，objc\_autorel
 
 > objc\_autoreleasePoolPop调用之后，AutoreleasePoolPage的内部结构如下：
 
-![](/assets/import2019030504.png)
+![](../../.gitbook/assets/import2019030504.png)
 

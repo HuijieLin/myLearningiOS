@@ -1,4 +1,6 @@
-> # FPS检测
+# FPS
+
+> ## FPS检测
 
 [https://wereadteam.github.io/2016/12/12/Monitor/](https://wereadteam.github.io/2016/12/12/Monitor/)
 
@@ -12,6 +14,4 @@ Demo：[https://github.com/featuretower/GYMonitor](https://github.com/featuretow
 > ### 上报思路
 
 * 利用NSthread+Runloop开启一个常驻子线程，每隔0.5秒计算最近两次CADisplayLink刷新的时间，如果超过0.5秒（这个值可以自动设置）就代表有卡顿，然后捞去对应的堆栈。为了避免防止频繁捞去堆栈，间隔12秒才在次捞取一次，并且使用最后一次的堆栈信息上报。
-
-
 

@@ -1,6 +1,6 @@
-## 简介
+# simctl
 
----
+## 简介
 
 是一个apple提供的命令行，用来与iOS模拟器进行交互的。与安卓的`adb`命令有点类似。
 
@@ -14,8 +14,6 @@ Applications/Xcode.app/Contents/Developer/usr/bin/simctl
 
 ## 常用命令
 
----
-
 > 帮助
 
 ```objectivec
@@ -24,7 +22,7 @@ xcrun simctl help
 
 > 查看已经安装的模拟器列表
 
-```
+```text
 xcrun instruments -s devices
 ```
 
@@ -77,7 +75,7 @@ xcrun simctl install booted Your_APP_Path.app
 
 > 卸载APP
 
-```
+```text
 xcrun simctl uninstall booted Your_APP_Bundle_Identifier
 ```
 
@@ -97,7 +95,7 @@ xcrun simctl launch booted Your_APP_Bundle_Identifier -key1 value1 -key2 value2 
 
 > 关闭APP
 
-```
+```text
 xcrun simctl terminate booted "Your_APP_Bundle_Identifier"
 ```
 
@@ -113,14 +111,14 @@ xcrun simctl openurl booted "https://www.baidu.com"
 
 > 添加图片或者视频到模拟器
 
-```
+```text
 // 也可以把资源文件直接拽入模拟器，更方便
 xcrun simctl addmedia booted Your_file_Path
 ```
 
 > 打印模拟器日志
 
-```
+```text
 xcrun simctl spawn booted log stream — level=debug
 
 // 添加过滤条件
@@ -133,26 +131,26 @@ xcrun simctl spawn booted log collect
 
 > 截图
 
-```
+```text
 xcrun simctl io booted screenshot screen.png
 ```
 
 > 录屏
 
-```
+```text
 // 可以使用Ctrl+C来提前结束录制
 xcrun simctl io booted recordVideo news.mov
 ```
 
 > 显示APP的沙盒地址
 
-```
+```text
 xcrun simctl get_app_container booted Your_APP_Bundle_Identifier
 ```
 
 > 显示APP的完整信息
 
-```
+```text
 xcrun simctl appinfo booted Your_APP_Bundle_Identifier
 ```
 
@@ -166,8 +164,6 @@ xcrun simctl appinfo booted Your_APP_Bundle_Identifier
 ```
 
 ## 日常应用
-
----
 
 * 在日常开发中，每次编译只能打开一个模拟器，针对UI适配调试的话，需要多次编译到不同模拟器上会比较浪费时间，所以可以在Build Phases -&gt; New Run Script Phases添加以下脚本来实现一次编译，在多个模拟器同时启动APP
 
@@ -184,6 +180,4 @@ xcrun simctl install "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542" "${BUILT_PRODUCTS_DI
 // 打开应用
 xcrun simctl launch "C6BEEF0D-94EC-4C52-B0C9-8C6F5B0AA542" "${PRODUCT_BUNDLE_IDENTIFIER}
 ```
-
-
 

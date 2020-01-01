@@ -1,3 +1,5 @@
+# associate
+
 > ## assocate声明weak属性
 
 [http://mrpeak.cn/blog/ios-weak/](http://mrpeak.cn/blog/ios-weak/)
@@ -21,7 +23,7 @@
 
 [https://stackoverflow.com/questions/10842829/will-an-associated-object-be-released-automatically/10843510\#10843510](https://stackoverflow.com/questions/10842829/will-an-associated-object-be-released-automatically/10843510#10843510)
 
-```markdown
+```text
  1. 调用 -release ：引用计数变为零
      * 对象正在被销毁，生命周期即将结束.
      * 不能再有新的 __weak 弱引用， 否则将指向 nil.
@@ -53,12 +55,10 @@
 > ## 关联对象的原理
 
 * 核心对象
-
   * AssociationsManager：统一的存储管理
   * AssociationsHashMap：关联对象的存储
   * ObjectAssociationMap：关联对象里面属性的存储
   * ObjcAssociation：具体的属性值和策略
-
 * 对象关系
 
 ```objectivec
@@ -72,9 +72,6 @@ objc_setAssociatedObject(id _Nonnull object,
 
 * 设置关联对象函数`objc_setAssociatedObject`中，每个参数对应的使用
   * 不会引用到对应的关联对象，是使用`参数object`的地址进一步运算作为其中一个关联对象的key，所以不会对对象造成引用
-  
 
-![](/assets/2019112001.png)
-
-
+![](../../.gitbook/assets/2019112001.png)
 

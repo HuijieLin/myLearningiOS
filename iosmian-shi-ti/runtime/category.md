@@ -1,6 +1,4 @@
-# Category
-
----
+# category
 
 [https://tech.meituan.com/2015/03/03/diveintocategory.html](https://tech.meituan.com/2015/03/03/diveintocategory.html)
 
@@ -11,7 +9,7 @@
 
 > ## 打印`load`方法调用和category的加载
 
-在edit scheme中添加环境变量，如下所示：![](/assets/import2019030601.png)
+在edit scheme中添加环境变量，如下所示：![](../../.gitbook/assets/import2019030601.png)
 
 > ## category如何添加@property
 
@@ -24,9 +22,9 @@
 
 > ## category底层逻辑
 
-* ### **category结构体**
+* **category结构体**
 
-```
+```text
 typedef struct category_t {
     const char *name; // 类名
     classref_t cls; // 类
@@ -46,5 +44,5 @@ typedef struct category_t {
 
 > ## 调试某个方法调用的是来自哪个Category
 
-![](/assets/2019111601.png)
+![](../../.gitbook/assets/2019111601.png)
 

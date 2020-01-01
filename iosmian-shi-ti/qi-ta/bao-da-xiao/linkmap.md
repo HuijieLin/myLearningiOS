@@ -1,3 +1,5 @@
+# LinkMap
+
 > ## LinkMap
 
 它是Xcode生成可执行文件时生成的链接信息文件。 它用来描述可执行文件的构造部分，包括代码段和数据段的分布。
@@ -5,20 +7,22 @@
 > ## 如何开启LinkMap
 
 * Write Link Map File：设置是否开启LinkMap
-* Path to Link Map File：设置LinkMap文件生成路径![](/assets/2019122701.png)
+* Path to Link Map File：设置LinkMap文件生成路径![](../../../.gitbook/assets/2019122701.png)
 
 > ## LinkMap结构
 
 **Path**
 
 * 可执行文件路径：
-  ```
+
+  ```text
   # Path: /Users/linhuijie/Library/Developer/Xcode/DerivedData/test-gjocatkmtbmvawcegstrzwyevagk/Build/Products/Debug-iphonesimulator/test.app/test
   ```
 
 **Arch**
 
 * 架构类型
+
   `# Arch: x86_64`
 
 **Object files**
@@ -107,7 +111,7 @@
 * 链接器认为无用的符号，链接的时候不会计记入
 * 计算包大小的时候，需要把这块的大小减去
 
-```
+```text
 # Dead Stripped Symbols:
 #            Size        File  Name
 <<dead>>     0x00000018    [  2] CIE
@@ -118,6 +122,4 @@
 <<dead>>     0x00000007    [  3] literal string: button
 <<dead>>     0x0000000B    [  3] literal string: setButton:
 ```
-
-
 

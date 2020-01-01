@@ -1,3 +1,5 @@
+# Tagged Pointer
+
 > ## 简介
 
 * 在没有tagger pointer之前，NSNumber等小对象需要动态分配内存，维护引用计数，NSNumber指针存储的是堆中NSNumber对象的地址值
@@ -72,6 +74,4 @@ for (int i = 0 ; i<1000; i++) {
     });
 }
 ```
-
-
 

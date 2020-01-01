@@ -1,7 +1,5 @@
 # KVO
 
----
-
 > ## KVO的实现原理
 
 原理如下：
@@ -11,7 +9,7 @@
 * 新建的子类的前缀是`NSKVONotifying_` ，如果手动创建一个同名的类，在注册的时候就会报错
 * 重写`setter`方法是在运行时而不是编译时
 
-流程图如下：![](/assets/2019011001.png)
+流程图如下：![](../.gitbook/assets/2019011001.png)
 
 > ## addObserver:forKeyPath:options:context:各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？
 

@@ -1,8 +1,10 @@
+# 切分文件
+
 > ## 导出.o文件
 
 * lipo方法
 
-```
+```text
 // YOUR_A_FILE -> 需要拆分.a或者.framework的路径
 // YOUR_OUTPUT_FILE_PATH -> 拆分后存放的路径
 // 拆分出armv7的库
@@ -22,7 +24,7 @@ ar -x my_armv7.a
 
 * 直接解压
 
-```
+```text
 // 安装7zip
 brew install p7zip
 
@@ -41,10 +43,8 @@ my~.x86
 
 * 查看单个.o文件
 
-```
+```text
 xcrun nm -nm xx.o文件
 otool -o xx.o文件
 ```
-
-
 

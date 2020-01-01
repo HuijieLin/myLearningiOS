@@ -1,9 +1,7 @@
 # 网络
 
----
+[https://hit-alibaba.github.io/interview/basic/network/HTTP.html](https://hit-alibaba.github.io/interview/basic/network/HTTP.html)
 
-> [https://hit-alibaba.github.io/interview/basic/network/HTTP.html](https://hit-alibaba.github.io/interview/basic/network/HTTP.html)
->
 > ## Get和Post的区别
 
 * GET
@@ -34,11 +32,50 @@
 | 安全性 | 与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！ | POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。 |
 | 可见性 | 数据在 URL 中对所有人都是可见的。 | 数据不会显示在 URL 中。 |
 
-> ## HTTP有哪些部分
->
+> ## HTTP报文
+
+请求报文
+
+包含：
+
+* 状态行
+* 请求头
+* 消息主体
+
+```text
+<method> <request-URL> <version>
+<headers>
+
+<entity-body>
+
+// method：表示与服务端交互的方法，常见的有GET、POST、DELETE、PUT
+// request-URL：资源描述符
+// version：HTTP版本
+// entity-body：
+
+// GET请求报文实例
+ GET /books/?sex=man&name=Professional HTTP/1.1
+ Host: www.example.com
+ User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)
+ Gecko/20050225 Firefox/1.0.1
+ Connection: Keep-Alive
+ 
+// POST请求报文示例
+ POST / HTTP/1.1
+ Host: www.example.com
+ User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6)
+ Gecko/20050225 Firefox/1.0.1
+ Content-Type: application/x-www-form-urlencoded
+ Content-Length: 40
+ Connection: Keep-Alive
+ sex=man&name=Professional  
+```
+
+
+
+响应报文
+
 > ## TCP和UDP的区别
 >
 > ## 七层模型
-
-
 

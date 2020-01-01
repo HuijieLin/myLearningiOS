@@ -1,3 +1,5 @@
+# 多线程
+
 > ## GCD
 
 源码地址：[https://github.com/apple/swift-corelibs-libdispatch](https://github.com/apple/swift-corelibs-libdispatch)
@@ -17,6 +19,4 @@
   * 并发队列：
     * Concurrent Dispatch Queue
   * * 多个任务并发执行
-
-
 

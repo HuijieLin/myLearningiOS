@@ -1,6 +1,8 @@
+# 日常记录
+
 > ## mac终端加密压缩包
 
-```
+```text
 // 方式一
 zip -q -r -e 20181221.zip 20181221
 
@@ -15,13 +17,13 @@ zip -r -P your_password 20190109.zip 20190109
 
 > ## mac开启信任任何来源
 
-```
+```text
 sudo spctl --master-disable
 ```
 
 > ## 统计代码行数
 
-```
+```text
 // 代码行数统计
 // 参数1：pl文件路径
 // 参数2：代码路径
@@ -44,18 +46,16 @@ git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git l
 
 > ## Xcode自动导入UIKIT
 
-```
+```text
 echo display @import UIKit >> ~/.lldbinit
 ```
 
 > ## sourceStree 跳过注册
 
-```
+```text
 打开sourcetree
 关闭sourcetree
 命令终端输入defaults write com.torusknot.SourceTreeNotMAS completedWelcomeWizardVersion 3
 打开sourcetree即可跳过登录
 ```
-
-
 

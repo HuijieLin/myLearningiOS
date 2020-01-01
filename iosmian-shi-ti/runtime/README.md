@@ -1,10 +1,8 @@
 # Runtime
 
----
-
 > ## 相关链接
 
-[http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/](#httpyulingtianxiacomblog20141105objective-c-runtime)
+[http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/](./#httpyulingtianxiacomblog20141105objective-c-runtime)
 
 > ## 什么是runtime
 
@@ -179,19 +177,14 @@ struct objc_method {
 > ## 方法缓存的数据结构
 
 * 方法缓存**保存**步骤：
-
   * 通过 `@selector（myFunction）& _mask` 计算得出一个数组下标
   * 如果对应下标的位置没有存储过数据，就直接保存进去
   * 如果计算出来的下标对应的位置已经有存储的数据，就按照`下标-1`的方式循环往上寻找，直到找到空位保存进去
-
 * 方法缓存**取值**步骤：
-
   * 通过 `@selector（myFunction）& _mask` 计算得出一个数组下标
   * 在对应的下标获取数据，然后判断取出来的SEL进行对比，
   * 如果不是目标的SEL，就按照`下标-1`的方式循环往上寻找，直到找到目标SEL然后取出对应的IMP
-
 * 方法缓存散列表扩容：
-
   * 一开始开辟的空间比较小，在缓存列表满之后，会按照`旧容量*2`的方式进行扩容，同时还会把散列表里面的数据清空
 
 ```objectivec
@@ -234,14 +227,12 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 > ## 消息转发流程
 
-![](/assets/2019011002.png)
+![](../../.gitbook/assets/2019011002.png)
 
 * 动态方法解析
-
   * 根据消息的接受者类型分别调用对应的方法：`resolveInstanceMethod`（实例对象） 和 `resolveClassMethod`（类对象）
   * 在调用完上面的方法之后，就标记为**已经动态解析**，然后重新来一次消息发送的流程，就是【缓存 - 方法表 - 父类缓存 - 父类方法表】的流程再来一次查找
   * 上面两个方法的返回值，无论是YES还是NO都没什么用，因为在知道走到了这两个方法，外部就会自动标示为**已经动态解析**
-
 * 快速转发
 
   `forwardingTargetForSelector`
@@ -249,6 +240,4 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 * 完整转发
 
   `methodSignatureForSelector` 和 `forwardInvocation`
-
-
 

@@ -1,7 +1,5 @@
 # 内存管理
 
----
-
 > ## iOS 程序的内存布局
 
 **低地址**  
@@ -25,12 +23,14 @@
 
 * 在iOS中，使用**引用计数**来管理OC对象的内存
 * 可以通过以下私有函数来查看自动释放池的情况：
+
   `extern void _objc_autoreleasePoolPrint(void);`
 
 > ## 引用计数的存储
 
 * 在64bit中，引用计数可以直接存储在优化过的isa指针中，当存不下的时候，在存到SideTable类中。
 * SideTable结构如下：
+
   ```objectivec
   struct SideTable {
     spinlock_t slock; // 保证原子操作的自旋锁
@@ -88,6 +88,4 @@ weak_entry_for_referent(weak_table_t *weak_table, objc_object *referent)
 不同点：
 
 * assign 可以用于非OC对象，weak必须用在OC对象上
-
-
 
