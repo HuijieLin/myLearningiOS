@@ -13,7 +13,7 @@
     * [Load](iosmian-shi-ti/runtime/load.md)
   * [Runloop](iosmian-shi-ti/runloop.md)
   * [KVO](iosmian-shi-ti/kvo.md)
-  * [KVC](iosmian-shi-ti/kvo/kvc.md)
+  * [KVC](iosmian-shi-ti/kvc.md)
   * [多线程](iosmian-shi-ti/gcd.md)
   * [内存管理](iosmian-shi-ti/nei-cun-guan-li.md)
     * [AutoreleasePool](iosmian-shi-ti/nei-cun-guan-li/autoreleasepool.md)
