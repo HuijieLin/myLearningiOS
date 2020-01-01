@@ -40,10 +40,9 @@
 * 请求头
 * 消息主体
 
-```text
+```js
 <method> <request-URL> <version>
 <headers>
-
 <entity-body>
 
 // method：表示与服务端交互的方法，常见的有GET、POST、DELETE、PUT
