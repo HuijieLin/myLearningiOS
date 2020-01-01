@@ -1,12 +1,10 @@
-# appRunloop
+# Runloop
 
----
-
-> ## 深入理解Runloop
+> ### 深入理解Runloop
 
 [https://blog.ibireme.com/2015/05/18/runloop/\#base](https://blog.ibireme.com/2015/05/18/runloop/#base)
 
-> ## Runloop简介
+> ### Runloop简介
 
 runloop也是一个对象，这个对象是管理着它需要处理的事件和消息，并提供一个入口的开启函数。当线程调用了这个开启函数，这个对象就会一直处于『接受消息 - 等待 - 处理消息』的循环当中，直到循环处理结束，函数才会返回。
 
@@ -16,14 +14,14 @@ iOS平台下有两个这样的对象`NSRunLoop`和`CFRunLoopRef`：
 * `CFRunLoopRef`：是在`CoreFoundation`框架内，纯C的API，API是线程安全的。
 * `CFRunLoopRef`源码地址：[https://opensource.apple.com/tarballs/CF/](https://opensource.apple.com/tarballs/CF/)
 
-> ## Runloop和线程的关系
+> ### Runloop和线程的关系
 
 * 每条线程都有唯一的一个RunLoop对象
 * RunLoop保存在一个全局的字典里，key = pthread\_t， value = CFRunLoopRef
 * RunLoop会在线程结束的时候销毁
 * 主线程的RunLoop默认开启，子线程的RunLoop需要手动开启
 
-> ## Runloop内部结构
+> ### Runloop内部结构
 
 主要的类：
 
@@ -76,7 +74,7 @@ struct __CFRunLoopMode {
 };
 ```
 
-> ## Runloop 的 Mode
+> ### Runloop 的 Mode
 
 * CFRunLoopModeRef 代表 RunLoop 的运行模式
 * 一个 RunLoop 可以包含多个 Mode ，每个 Mode 又包含多个 Source0/Source1/Timer/Observer
@@ -86,7 +84,7 @@ struct __CFRunLoopMode {
 * 苹果公开提供的 Mode 有两个：`kCFRunLoopDefaultMode (NSDefaultRunLoopMode)` 和 `UITrackingRunLoopMode`
 * 苹果还提供了一个操作 Common 标记的字符串：`kCFRunLoopCommonModes (NSRunLoopCommonModes)`，这个不是真正的mode，只是作为一个标志符。被标记的item，可以在包含 Common 标记符的Mode下面运行，苹果公开的两个 Mode ，都属于带有 Common 标记的 Mode
 
-> ## Runloop 的运行步骤
+> ### Runloop 的运行步骤
 
 1. 通知Observer：进入Loop
 2. 通知Observer：即将处理Timers
@@ -153,16 +151,16 @@ struct __CFRunLoopMode {
 }
 ```
 
-> ## Runloop的休眠原理
+> ### Runloop的休眠原理
 
-![](/assets/2019112504.png)
+![](../.gitbook/assets/2019112504.png)
 
 * 用户态调用`mach_msg()`切换到内核态，内核态中内核实现的`mach_msg()`会完成实际的工作
 * 等待消息
   * 没有消息就让线程休眠
   * 有消息就唤醒线程
 
-> ## 事件响应
+> ### 事件响应
 
 苹果注册了一个Source1用来捕获系统事件，对应的回调函数为`__IOHIDEventSystemClientQueueCallback()`
 
@@ -173,14 +171,20 @@ struct __CFRunLoopMode {
   * 一开始Source1注册的回调就会被触发，并调用`_UIApplicationHandleEventQueue()`进行app内部分发
   * `_UIApplicationHandleEventQueue()`会把IOHIDEvent包装成UIEvent进行处理或者分发给UIWindow
 
-> ## 手势识别
+> ### 手势识别
 
 * 当`_UIApplicationHandleEventQueue()`识别到是一个手势事件，首先会调用Cancel，将当前的touchBegin/Move/End等回调打断，随后系统讲这个手势事件标记为待处理。
 * 苹果注册一个Observer检测BeforeWaiting（即将休眠）事件，当Observer的回调函数是`_UIGestureRecognizerUpdateObserver()`，内部会将刚刚标记待处理的手势执行手势的回调。
 
-> # AutoreleasePool
+> ## AutoreleasePool
 
 App启动之后，苹果在主线程Runloop里面注册了两个Observer，其回调都是\_wrapRunLoopWithAutoreleasePoolHandler\(\)。
 
-第一个Observer监听的事件是Entry（即将进入Loop）
+第一个Observer监听的事件是Entry（即将进入Loop），其回调会调用\_objc\_autoreleasePoolPush\(\) 创建自动释放池。其 order 是 -2147483647，优先级最高，保证创建释放池发生在其他所有回调之前。
+
+第二个Observer监听了两个事件：
+
+* BeforeWaiting（即将进入休眠）时调用\_objc\_autoreleasePoolPop\(\) 和 \_objc\_autoreleasePoolPush\(\) 释放旧的池并创建新池
+* Exit（即将退出Loop）时调用 \_objc\_autoreleasePoolPop\(\) 来释放自动释放池
+* 这个Observer的order是2147483647，优先级最低，保证释放池释放发生在其他所有回调之后
 
