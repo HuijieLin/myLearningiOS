@@ -23,7 +23,7 @@
   * [block](iosmian-shi-ti/block.md)
   * [网络](iosmian-shi-ti/wang-luo.md)
   * [算法](iosmian-shi-ti/suan-fa.md)
-  * [其他](iosmian-shi-ti/qi-ta/README.md)
+  * [其他](iosmian-shi-ti/qi-ta.md)
     * [iOS APP签名原理](iosmian-shi-ti/qi-ta/ios-appqian-ming-yuan-li.md)
     * [设计模式](iosmian-shi-ti/qi-ta/she-ji-mo-shi.md)
     * [APP启动流程](iosmian-shi-ti/qi-ta/appqi-dong-liu-cheng.md)
