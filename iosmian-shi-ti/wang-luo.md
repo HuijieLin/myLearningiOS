@@ -70,6 +70,20 @@
 
 响应报文
 
+* 状态行
+* 响应头（Response Header）
+* 响应正文
+
+```js
+HTTP/1.1 200 OK
+
+Server:Apache Tomcat/5.0.12
+Date:Mon,6Oct2003 13:23:42 GMT
+Content-Length:112
+
+<html>...
+```
+
 > ## TCP和UDP的区别
 >
 > ## 七层模型
