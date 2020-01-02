@@ -20,6 +20,8 @@
     * Concurrent Dispatch Queue
   * * 多个任务并发执行
 
+使用sync函数往当前串行队列中添加任务，会卡住当前的串行队列（产生死锁）
+
 > # 下面输出结果
 
 ```c
@@ -56,7 +58,6 @@ NSThread *thread = [[NSThread alloc] initWithBlock:^{
 // waitUntileDone = YES：表示等待线程任务执行完，但是线程执行完就销毁了，target thread exited while waiting for the perform
 // 解决方案：
 // 把 waiteUntileDone 设置为 NO
-
 ```
 
 
