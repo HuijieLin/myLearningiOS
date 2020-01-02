@@ -22,7 +22,7 @@
 
 > # 下面输出结果
 
-```
+```c
 dispatch_async(dispatch_get_global_queue(0, 0), ^{
     NSLog(@"1");
     [self performSelector:@selector(test) withObject:nil afterDelay:1];
