@@ -39,5 +39,24 @@ dispatch_async(dispatch_get_global_queue(0, 0), ^{
 // 子线程默认没有启动Runloop
 ```
 
+```
+NSThread *thread = [[NSThread alloc] initWithBlock:^{
+    NSLog(@"1");
+}];
+[thread start];
+
+[self performSelector:@selector(test) onThread:thread withObject:nil waitUntilDone:YES];
+
+- (void)test {
+    NSLog(@"2");
+}
+
+// crash
+// 原因：
+// waitUntileDone = YES：表示等待线程任务执行完，但是线程执行完就销毁了，target thread exited while waiting for the perform
+// 解决方案：
+// 把 waiteUntileDone 设置为 NO
+```
+
 
 
