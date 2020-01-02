@@ -20,3 +20,24 @@
     * Concurrent Dispatch Queue
   * * 多个任务并发执行
 
+> # 下面输出结果
+
+```c
+dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    NSLog(@"1");
+    [self performSelector:@selector(test) withObject:nil afterDelay:1];
+    NSLog(@"3");
+});
+
+- (void)test {
+    NSLog(@"2");
+}
+
+// 输出1、3
+// 原因：
+// performSelector:withObject:afterDelay:的本质是往Runloop中添加定时器
+// 子线程默认没有启动Runloop
+```
+
+
+
