@@ -39,7 +39,7 @@ dispatch_async(dispatch_get_global_queue(0, 0), ^{
 // 子线程默认没有启动Runloop
 ```
 
-```
+```c
 NSThread *thread = [[NSThread alloc] initWithBlock:^{
     NSLog(@"1");
 }];
