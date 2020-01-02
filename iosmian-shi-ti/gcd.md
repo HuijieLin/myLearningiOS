@@ -56,6 +56,7 @@ NSThread *thread = [[NSThread alloc] initWithBlock:^{
 // waitUntileDone = YES：表示等待线程任务执行完，但是线程执行完就销毁了，target thread exited while waiting for the perform
 // 解决方案：
 // 把 waiteUntileDone 设置为 NO
+
 ```
 
 
