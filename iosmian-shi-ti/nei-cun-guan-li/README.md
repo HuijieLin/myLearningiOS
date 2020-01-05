@@ -89,3 +89,5 @@ weak_entry_for_referent(weak_table_t *weak_table, objc_object *referent)
 
 * assign 可以用于非OC对象，weak必须用在OC对象上
 
+
+

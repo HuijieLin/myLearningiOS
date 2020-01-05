@@ -1,7 +1,5 @@
 # dealloc
 
-> ## dealloc
-
 > ### 什么时候被调用
 
 [https://stackoverflow.com/questions/13853438/when-does-dealloc-method-call](https://stackoverflow.com/questions/13853438/when-does-dealloc-method-call)
@@ -93,4 +91,6 @@ static void object_cxxDestructFromClass(id obj, Class cls)
 * 调用链路：
   * `clearDeallocating` -&gt; （最后调到）`weak_clear_no_lock`
 * 在weaktable中找到对应的引用置为nil，然后在weaktable中移除
+
+
 
