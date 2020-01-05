@@ -51,5 +51,14 @@ LRU 存储是基于双向链表，head表示表头，tail表示表尾。如果�
 * layoutIfNeeded：
   * 判断如果有刷新标识位，就立马刷新
 
+---
 
+# hash和isEqual的关系
 
+- 对象的判断是相互的，即：`[a isEqual:b]` == `[b ieEqual:b]`
+- 如果两个对象相等，那么他们的hash值是一样的，即：`[a isEqual:b]` => `[a hash] == [b hash]`
+- 如果hash值一样，两个对象不一定相等，即：`[a hash] == [b hash]` != `[a isEqual:b]`
+
+为了优化判等的效率，基于hash的 NSSet 和 NSDictionary 在判断成员是否相等时，会：
+  1. 先判断 hash 值是否一样，如果不一样，进入第2步
+  2. 在进行对象判等，作为最终结果
