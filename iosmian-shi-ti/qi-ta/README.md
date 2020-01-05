@@ -62,3 +62,13 @@ LRU 存储是基于双向链表，head表示表头，tail表示表尾。如果�
 为了优化判等的效率，基于hash的 NSSet 和 NSDictionary 在判断成员是否相等时，会：
   1. 先判断 hash 值是否一样，如果不一样，进入第2步
   2. 在进行对象判等，作为最终结果
+  
+---
+
+# NSDictionary 和 NSMutableArray 底层结构
+
+NSDictionary
+- 哈希表
+
+NSMutableArray
+- 环形缓冲区
