@@ -153,7 +153,7 @@ struct property_t {
     const char *attributes; // 对应下面的结构体
 };
 
-// Defines a property attribute
+// attributes 对应的结构体
 typedef struct {
     const char *name; // 属性的类型，T@"NSString"
     const char *value; // 原子性、内存语义和对应的实例变量，C,N,V_string
