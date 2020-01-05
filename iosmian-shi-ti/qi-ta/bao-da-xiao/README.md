@@ -30,6 +30,7 @@
 * 资源文件
   * 包括：图片、内置素材、多语言、字体、音视频等
 * 资源瘦身方式：
+
   * **无用资源的删除**
     * 可以借鉴：LSUnusedResources
     * 处理步骤：
@@ -47,8 +48,10 @@
     * 文件对比顺序：
       * 大小对比 -&gt; 部分MD5签名对比 -&gt; 完整MD5签名对比 -&gt; 逐个字节对比
   * **大文件压缩**
+
     * 工具：ImageOptim
     * Xcode build setting：
+
       * Compress PNG FIles
 
         * 打包的时候使用pngcrush进行无损压缩，
@@ -57,7 +60,9 @@
         ![](../../../.gitbook/assets/2019122601.png)
 
       * Remove Text Medadata From PNG Files
+
         * 移除PNG资源的文本字符，包括：图像名称、创建时间、作者、版权、注视等
+
   * **图片管理方式规范**
     * Asset Catlog：
       * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
@@ -200,10 +205,14 @@ App Extension的占用都是放在Plugin文件夹里面，它是独立打包，�
   ```
 
 * dSYM文件（符号表文件）
+
   * 是从Mach-O文件里面抽取调式信息而得到的文件目录，实际用于保存调试信息的是dwarf文件
   * 可以通过工具dsymutil生成
+
 * dwarf文件（DebuggingWith Arbitrary Record Formats）
   * 是ELF和Mach-O等文件格式中用来存储和处理调试信息的标准格式
   * dSYM文件中真正保存符号表数据的是dwarf文件
   * dwarf文件中不同的数据都保存在相应的section中
+
+
 
