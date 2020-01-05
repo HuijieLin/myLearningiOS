@@ -18,7 +18,7 @@ iOS平台下有两个这样的对象`NSRunLoop`和`CFRunLoopRef`：
 
 * 每条线程都有唯一的一个RunLoop对象
 * RunLoop保存在一个全局的字典里，key = pthread\_t， value = CFRunLoopRef
-* RunLoop会在线程结束的时候销毁
+* RunLoop在线程结束的时候销毁
 * 主线程的RunLoop默认开启，子线程的RunLoop需要手动开启
 
 > ### Runloop内部结构
