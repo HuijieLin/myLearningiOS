@@ -144,6 +144,16 @@ struct objc_ivar {
 }
 ```
 
+属性大致生成了五个东西：
+
+- OBJC_IVAR_$类名$属性名称 ：该属性的“偏移量” (offset)，这个偏移量是“硬编码” (hardcode)，表示该变量距离存放对象的内存区域的起始地址有多远。
+- setter 与 getter 方法对应的实现函数
+- ivar_list ：成员变量列表
+- method_list ：方法列表
+- prop_list ：属性列表
+
+也就是说我们每次在增加一个属性,系统都会在 ivar_list 中添加一个成员变量的描述, 在 method_list 中增加 setter 与 getter 方法的描述,在属性列表中增加一个属性的描述, 然后计算该属性在对象中的偏移量,然后给出 setter 与 getter 方法对应的实现, 在 setter 方法中从偏移量的位置开始赋值,在 getter 方法中从偏移量开始取值, 为了能够读取正确字节数, 系统对象偏移量的指针类型进行了类型强转.
+
 > ## 属性的数据结构
 
 ```objectivec
