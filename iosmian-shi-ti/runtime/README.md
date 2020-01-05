@@ -147,10 +147,16 @@ struct objc_ivar {
 > ## 属性的数据结构
 
 ```objectivec
-/// Defines a property attribute
+
+struct property_t {
+    const char *name; // property的名称
+    const char *attributes; // 对应下面的结构体
+};
+
+// Defines a property attribute
 typedef struct {
-    const char *name; /**< The name of the attribute */
-    const char *value; /**< The value of the attribute (usually empty) */
+    const char *name; // 属性的类型，T@"NSString"
+    const char *value; // 原子性、内存语义和对应的实例变量，C,N,V_string
 } objc_property_attribute_t;
 ```
 
