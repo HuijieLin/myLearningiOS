@@ -44,6 +44,13 @@ void (^block)(void) = ^{
 /*****************
  * C++代码
 ******************/
+// block的结构体入口
+struct __main_block_impl_0 {
+  struct __block_impl impl;
+  struct __main_block_desc_0* Desc;
+  int age; // 捕获到的auto变量，存在block的结构体中
+};
+
 static struct __main_block_desc_0 {
   size_t reserved;
   size_t Block_size;
@@ -54,13 +61,6 @@ struct __block_impl {
   int Flags;
   int Reserved;
   void *FuncPtr; // 指向block的内容，调用block的时候通过这个来找到block的内容
-};
-
-// block的结构体入口
-struct __main_block_impl_0 {
-  struct __block_impl impl;
-  struct __main_block_desc_0* Desc;
-  int age; // 捕获到的auto变量，存在block的结构体中
 };
 ```
 
@@ -188,4 +188,6 @@ struct __main_block_impl_0 {
         NSLog(@"%@", weakSelf);
     };
 ```
+
+
 
