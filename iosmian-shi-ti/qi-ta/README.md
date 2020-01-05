@@ -48,7 +48,7 @@ LRU 存储是基于双向链表，head表示表头，tail表示表尾。如果�
 
 * setNeedsLayout：
   * 添加刷新标志位，下一次RunLoop的时候进行刷新
-* layoutIfNeeded
+* layoutIfNeeded：
   * 判断如果有刷新标识位，就立马刷新
 
 
