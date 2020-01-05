@@ -26,7 +26,7 @@
 
 ```text
 typedef struct category_t {
-    const char *name; // 类名
+    const char *name; // 分类名
     classref_t cls; // 类
     struct method_list_t *instanceMethods; // 实例方法
     struct method_list_t *classMethods; // 类方法
