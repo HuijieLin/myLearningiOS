@@ -64,6 +64,7 @@
         * 移除PNG资源的文本字符，包括：图像名称、创建时间、作者、版权、注视等
 
   * **图片管理方式规范**
+
     * Asset Catlog：
       * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
       * xcassets里面的2x、3x图片会更怒具体的设备分发，不会同时包含，Bundle不会
@@ -210,6 +211,7 @@ App Extension的占用都是放在Plugin文件夹里面，它是独立打包，�
   * 可以通过工具dsymutil生成
 
 * dwarf文件（DebuggingWith Arbitrary Record Formats）
+
   * 是ELF和Mach-O等文件格式中用来存储和处理调试信息的标准格式
   * dSYM文件中真正保存符号表数据的是dwarf文件
   * dwarf文件中不同的数据都保存在相应的section中

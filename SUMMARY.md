@@ -32,6 +32,7 @@
       * [LinkMap](iosmian-shi-ti/qi-ta/bao-da-xiao/linkmap.md)
       * [Macho](iosmian-shi-ti/qi-ta/bao-da-xiao/macho.md)
     * [GNUstep](iosmian-shi-ti/qi-ta/gnustep.md)
+    * [Hybird](iosmian-shi-ti/qi-ta/hybird.md)
   * [项目准备](iosmian-shi-ti/xiang-mu-zhun-bei/README.md)
     * [FPS](iosmian-shi-ti/xiang-mu-zhun-bei/fps.md)
     * [子线程刷新UI](iosmian-shi-ti/xiang-mu-zhun-bei/zi-xian-cheng-shua-xin-ui.md)
