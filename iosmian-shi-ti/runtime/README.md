@@ -256,5 +256,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
   `methodSignatureForSelector` 和 `forwardInvocation`
 
+> isa和superclasszing
 
+![](/assets/2020010801.png)
 
