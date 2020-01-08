@@ -51,16 +51,18 @@ struct __main_block_impl_0 {
   int age; // 捕获到的auto变量，存在block的结构体中
 };
 
-static struct __main_block_desc_0 {
-  size_t reserved;
-  size_t Block_size;
-};
-
+// 对应 __main_block_impl_0 -> impl
 struct __block_impl {
   void *isa; // 指向block的类型
   int Flags;
   int Reserved;
   void *FuncPtr; // 指向block的内容，调用block的时候通过这个来找到block的内容
+};
+
+// 对应 __main_block_impl_0 -> Desc
+static struct __main_block_desc_0 {
+  size_t reserved;
+  size_t Block_size;
 };
 ```
 
