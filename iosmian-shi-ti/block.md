@@ -57,7 +57,7 @@ static struct __main_block_desc_0 {
 };
 
 struct __block_impl {
-  void *isa;
+  void *isa; // 指向block的类型
   int Flags;
   int Reserved;
   void *FuncPtr; // 指向block的内容，调用block的时候通过这个来找到block的内容
