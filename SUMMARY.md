@@ -40,6 +40,7 @@
     * [如何获取堆栈](iosmian-shi-ti/xiang-mu-zhun-bei/ru-he-huo-qu-dui-zhan.md)
     * [内存获取](iosmian-shi-ti/xiang-mu-zhun-bei/nei-cun-huo-qu.md)
     * [load时间计算](iosmian-shi-ti/xiang-mu-zhun-bei/loadshi-jian-ji-suan.md)
+    * [闪退防护](iosmian-shi-ti/xiang-mu-zhun-bei/shan-tui-fang-hu.md)
   * [响应者链条](iosmian-shi-ti/runtime/xiang-ying-zhe-lian-tiao.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
