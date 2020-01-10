@@ -1,6 +1,6 @@
 
 
-# 通知Crash防护
+# Notification 防护
 
 - 新建 NSObject 分类
     - 在 iOS9 以下 hook delloc 方法
@@ -11,4 +11,5 @@
     - 在 iOS9 以下 hook `addObserver:selector:name:object:`, iOS9以上（包含）不需要处理，因为系统已经修复了
     - 在被 hook 的方法里给 observer 增加一个标记 `hasRegisterForNotification = YES`，然后继续调用原来的方法
     
+# Timber 防护
 
