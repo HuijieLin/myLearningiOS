@@ -23,3 +23,7 @@
         - 然后在那个方法里面判断target是否为nil：
             - 如果 `target = nil` 把 timer = invalidate，
             - 如果 `target != nil`，先用`respondsToSelector`判断select是否存在，然后在通过`[_target performSelector:_selector withObject:timer];`给真实的target进行回调
+            
+# KVO 防护
+
+https://juejin.im/post/5d67b720f265da039a289bb4#heading-0
