@@ -8,4 +8,5 @@
     
 - 新建 NSObject 分类
     - 在 iOS9 以下 hook delloc 方法
-    - 在被 hook 的方法里面判断 self.hasRegisterForNotification 是否等于 YES ，如果是就调用 `[[NSNotificationCenter defaultCenter] removeObserver:self];`
+    - 增加一个属性 hasRegisterForNotification， 用户标记添加过通知的object
+    - 在被 hook 的方法里面判断 `self.hasRegisterForNotification` 是否等于 YES ，如果是就调用 `[[NSNotificationCenter defaultCenter] removeObserver:self];`
