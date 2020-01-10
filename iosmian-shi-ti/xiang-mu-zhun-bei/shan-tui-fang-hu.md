@@ -22,4 +22,4 @@
         - 这时候timer的回调就会到那个写死的方法里面
         - 然后在那个方法里面判断target是否为nil：
             - 如果target = nil把timer = invalidate，
-            - 如果target != nil，先用respondsToSelector判断select是否存在，然后在通过[_target performSelector:_selector withObject:timer];给真实的target进行回调
+            - 如果target != nil，先用respondsToSelector判断select是否存在，然后在通过`[_target performSelector:_selector withObject:timer];`给真实的target进行回调
