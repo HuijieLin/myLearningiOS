@@ -1,7 +1,5 @@
 # 卡顿监控
 
-> ## 卡顿监控
-
 [http://www.tanhao.me/code/151113.html/](http://www.tanhao.me/code/151113.html/)
 
 > ### 监控思路
