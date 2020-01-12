@@ -260,3 +260,12 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 ![](/assets/2020010801.png)
 
+- instance的isa指向class
+- class的isa指向meta-class
+- meta-class的isa指向基类的meta-class
+- class的superclass指向父类的class
+    - 如果没有父类，superclass指针为nil
+- meta-class的superclass指向父类的meta-class
+    - 基类的meta-class的superclass指向基类的class
+    
+
