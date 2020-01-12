@@ -1,6 +1,7 @@
 # 如何获取堆栈
 
 [https://bestswifter.com/callstack/](https://bestswifter.com/callstack/)
+https://zhuanlan.zhihu.com/p/54843312
 
 > ##大概步骤
 
