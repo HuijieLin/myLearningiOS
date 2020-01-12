@@ -4,6 +4,7 @@
 
 * block的本质是一个OC对象，它内部也有一个isa指针
 * block是封装了函数调用以及函数调用环境的OC对象
+- block的isa指针指向block的类型
 * block的底层结构如下：
 
 ![](../.gitbook/assets/2019112101.png)
