@@ -72,3 +72,5 @@ NSDictionary
 
 NSMutableArray
 - 环形缓冲区
+
+# SDWebImage 下载了图片后为什么要解码
