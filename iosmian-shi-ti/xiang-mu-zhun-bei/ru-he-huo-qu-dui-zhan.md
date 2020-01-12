@@ -11,6 +11,6 @@
 符号解析：
 - 根据 Frame Pointer 找到函数调用地址
 - 找到 Frame Pointer 属于哪个Image
-- 找到 Image 里面的符号表，在 LC_SYMTAB 的 symbal table offset找到符号表的位置
+- 找到 Image 里面的符号表，在 LC_SYMTAB 的 symbal table offset 找到符号表的位置
 - 在符号表中找到函数调用地址对应的符号表
 
