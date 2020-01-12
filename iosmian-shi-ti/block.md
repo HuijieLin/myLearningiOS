@@ -1,4 +1,4 @@
-# block
+************# block
 
 > ## block的本质和原理是什么
 
@@ -139,7 +139,7 @@ static struct __main_block_desc_0 {
 * block对\_\_block变量的内存管理
   * block对\_\_block修饰变量生成的结构体强引用（如上面的：`__Block_byref_age_0`）
   * \_\_block修饰变量的结构体`__Block_byref_age_0`对变量（如上面的age）的引用类型取决于变量的修饰符（strong， weak等）
-  * 注意：在MRC下，`__Block_byref_age_0`对里面的变量不会retain，也就是弱引用
+  * **注意：在MRC下，`__Block_byref_age_0`对里面的变量不会retain，也就是弱引用**
 
 > ## block在修改NSMutableArray的时候需不需要添加\_\_block
 
