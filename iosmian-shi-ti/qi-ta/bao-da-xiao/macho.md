@@ -197,7 +197,7 @@ struct section_64 { /* for 64-bit architectures */
 > ## dyld和Mach-O
 
 * app的可执行文件、动态库都是有dyld负责加载
-* dyld用于加载一下类型的Mach-O文件：
+* dyld用于加载以下类型的Mach-O文件：
   * MH\_EXECUTE：应用的主要二进制
   * MH\_DYLIB：动态链接库
   * MH\_BUNDLE：不能被链接的Dylib，只能在运行时使用dlopen\(\)加载，可以作为MacOS的插件
