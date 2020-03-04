@@ -5,6 +5,7 @@
 1. 头条包大小瘦身：[https://techblog.toutiao.com/2018/06/04/gan-huo-jin-ri-tou-tiao-iosduan-an-zhuang-bao-da-xiao-you-hua-si-lu-yu-shi-jian/](https://techblog.toutiao.com/2018/06/04/gan-huo-jin-ri-tou-tiao-iosduan-an-zhuang-bao-da-xiao-you-hua-si-lu-yu-shi-jian/)
 2. 如何精简SDK包大小：[https://wellphone.me/post/2018/how\_reduce\_ios\_sdk\_file\_size/](https://wellphone.me/post/2018/how_reduce_ios_sdk_file_size/)
 3. iOS 瘦身之道：[https://juejin.im/post/5cdd27d4f265da036902bda5](https://juejin.im/post/5cdd27d4f265da036902bda5)
+4. iOS微信安装包瘦身 https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6#rd
 
 > ## APP Thining
 
