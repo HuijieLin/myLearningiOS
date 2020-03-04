@@ -1,4 +1,4 @@
-gmv                          # Load
+# Load
 
 > ## Catrgory中有load方法吗
 
