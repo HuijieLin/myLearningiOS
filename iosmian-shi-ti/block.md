@@ -197,5 +197,7 @@ self.block = ^{
 
 ## 为什么block为nil会crash
 
-[https://stackoverflow.com/questions/4145164/why-do-nil-null-blocks-cause-bus-errors-when-run](https://stackoverflow.com/questions/4145164/why-do-nil-null-blocks-cause-bus-errors-when-run)
+{% embed url="https://stackoverflow.com/questions/4145164/why-do-nil-null-blocks-cause-bus-errors-when-run" %}
+
+[https://www.aopod.com/2016/11/16/block-empty-checking/](https://www.aopod.com/2016/11/16/block-empty-checking/)
 
