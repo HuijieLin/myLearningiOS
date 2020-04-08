@@ -1,10 +1,12 @@
-************# block
+# block
+
+_**\*\***_\# block
 
 > ## block的本质和原理是什么
 
 * block的本质是一个OC对象，它内部也有一个isa指针
 * block是封装了函数调用以及函数调用环境的OC对象
-- block的isa指针指向block的类型
+* block的isa指针指向block的类型
 * block的底层结构如下：
 
 ![](../.gitbook/assets/2019112101.png)
@@ -193,5 +195,7 @@ self.block = ^{
 };
 ```
 
+### 为什么block为nil会crash
 
+[https://stackoverflow.com/questions/4145164/why-do-nil-null-blocks-cause-bus-errors-when-run](https://stackoverflow.com/questions/4145164/why-do-nil-null-blocks-cause-bus-errors-when-run)
 

@@ -242,7 +242,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 > ## 消息转发流程
 
-![](../../.gitbook/assets/2019011002.png)
+![](../../.gitbook/assets/2019011002%20%281%29.png)
 
 * 动态方法解析
   * 根据消息的接受者类型分别调用对应的方法：`resolveInstanceMethod`（实例对象） 和 `resolveClassMethod`（类对象）
@@ -258,14 +258,13 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 > ## isa和superclass
 
-![](/assets/2020010801.png)
+![](../../.gitbook/assets/2020010801.png)
 
-- instance的isa指向class
-- class的isa指向meta-class
-- meta-class的isa指向基类的meta-class
-- class的superclass指向父类的class
-    - 如果没有父类，superclass指针为nil
-- meta-class的superclass指向父类的meta-class
-    - 基类的meta-class的superclass指向基类的class
-    
+* instance的isa指向class
+* class的isa指向meta-class
+* meta-class的isa指向基类的meta-class
+* class的superclass指向父类的class
+  * 如果没有父类，superclass指针为nil
+* meta-class的superclass指向父类的meta-class
+  * 基类的meta-class的superclass指向基类的class
 

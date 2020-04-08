@@ -2,7 +2,7 @@
 
 [http://www.tanhao.me/code/151113.html/](http://www.tanhao.me/code/151113.html/)
 
-> ### 监控思路
+> ## 监控思路
 
 * 使用`CFRunLoopObserverRef`给runloop添加观察者，观察runloop的所有状态变化
 * 另外开辟一个子线程来计算`kCFRunLoopBeforeSourcesh`和`kCFRunLoopAfterWaiting`这两个状态区域之间的耗时是否达到阀值来判断是否卡顿

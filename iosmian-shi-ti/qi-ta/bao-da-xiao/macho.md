@@ -1,3 +1,5 @@
+# Macho
+
 > ## Mach-O
 
 探秘Mach-O：[https://juejin.im/post/5ab47ca1518825611a406a39](https://juejin.im/post/5ab47ca1518825611a406a39)  
@@ -25,7 +27,7 @@ Framework：包含Dylib以及资源文件和头文件的文件夹
 
 > ## Header
 
-```
+```text
 // 32位
 struct mach_header {
     uint32_t    magic;        /* mach magic number identifier */
@@ -91,11 +93,9 @@ LC_CODE_SIGNATURE：代码签名等
 
 > ## Raw segment data
 
----
-
 > ### Segment
 
-```
+```text
 // 32位
 struct segment_command { /* for 32-bit architectures */
     uint32_t    cmd;        // load command类型
@@ -136,7 +136,7 @@ struct segment_command_64 { /* for 64-bit architectures */
 
 > ### Section
 
-```
+```text
 // 32位
 struct section { /* for 32-bit architectures */
     char        sectname[16];    // 所在段（segment）的名称
@@ -201,6 +201,4 @@ struct section_64 { /* for 64-bit architectures */
   * MH\_EXECUTE：应用的主要二进制
   * MH\_DYLIB：动态链接库
   * MH\_BUNDLE：不能被链接的Dylib，只能在运行时使用dlopen\(\)加载，可以作为MacOS的插件
-
-
 

@@ -40,7 +40,7 @@
 * 请求头
 * 消息主体
 
-```js
+```javascript
 <method> <request-URL> <version>
 <headers>
 <entity-body>
@@ -74,7 +74,7 @@
 * 响应头（Response Header）
 * 响应正文
 
-```js
+```javascript
 HTTP/1.1 200 OK
 
 Server:Apache Tomcat/5.0.12
@@ -100,6 +100,4 @@ Content-Length:112
 > ## TCP和UDP的区别
 >
 > ## 七层模型
-
-
 

@@ -29,7 +29,7 @@
       * 调用子类的load之前，会先调用父类的load
     * 在调用分类的load
       * 先编译的分类，优先调用load
- * initialize
+  * initialize
     * 先初始化父类         
     * 在初始化子类（可能最终调用的还是父类的initialize方法）
     * 直接调用子类的时候，会判断父类是否已经初始化，如果没有就会先调用父类的initialize

@@ -1,6 +1,6 @@
 # 多线程
 
-> ## GCD
+> ### GCD
 
 源码地址：[https://github.com/apple/swift-corelibs-libdispatch](https://github.com/apple/swift-corelibs-libdispatch)
 
@@ -22,7 +22,7 @@
 
 使用**sync**函数往**当前串行队列**中添加任务，会卡住当前的串行队列（产生死锁）
 
-> # 下面输出结果
+> ## 下面输出结果
 
 ```c
 dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -59,6 +59,4 @@ NSThread *thread = [[NSThread alloc] initWithBlock:^{
 // 解决方案：
 // 把 waiteUntileDone 设置为 NO
 ```
-
-
 

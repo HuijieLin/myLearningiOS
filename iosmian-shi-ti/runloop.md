@@ -153,7 +153,7 @@ struct __CFRunLoopMode {
 
 > ### Runloop的休眠原理
 
-![](../.gitbook/assets/2019112504.png)
+![](../.gitbook/assets/2019112504%20%281%29.png)
 
 * 用户态调用`mach_msg()`切换到内核态，内核态中内核实现的`mach_msg()`会完成实际的工作
 * 等待消息

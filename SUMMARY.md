@@ -1,4 +1,4 @@
-# Summary
+# Table of contents
 
 * [Introduction](README.md)
 * [自我简介](zi-wo-jian-jie.md)
@@ -22,7 +22,7 @@
     * [Tagged Pointer](iosmian-shi-ti/nei-cun-guan-li/tagged-pointer.md)
   * [block](iosmian-shi-ti/block.md)
   * [网络](iosmian-shi-ti/wang-luo.md)
-  * [算法](iosmian-shi-ti/suan-fa.md)
+  * [算法](iosmian-shi-ti/suan-fa/README.md)
     * [二叉树](iosmian-shi-ti/suan-fa/er-cha-shu.md)
   * [其他](iosmian-shi-ti/qi-ta/README.md)
     * [iOS APP签名原理](iosmian-shi-ti/qi-ta/ios-appqian-ming-yuan-li.md)
@@ -41,7 +41,7 @@
     * [内存获取](iosmian-shi-ti/xiang-mu-zhun-bei/nei-cun-huo-qu.md)
     * [load时间计算](iosmian-shi-ti/xiang-mu-zhun-bei/loadshi-jian-ji-suan.md)
     * [闪退防护](iosmian-shi-ti/xiang-mu-zhun-bei/shan-tui-fang-hu.md)
-  * [响应者链条](iosmian-shi-ti/runtime/xiang-ying-zhe-lian-tiao.md)
+  * [响应者链条](iosmian-shi-ti/xiang-ying-zhe-lian-tiao.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
 * [日常记录](ri-chang-ji-lu.md)

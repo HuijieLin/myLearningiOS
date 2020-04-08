@@ -5,7 +5,7 @@
 1. 头条包大小瘦身：[https://techblog.toutiao.com/2018/06/04/gan-huo-jin-ri-tou-tiao-iosduan-an-zhuang-bao-da-xiao-you-hua-si-lu-yu-shi-jian/](https://techblog.toutiao.com/2018/06/04/gan-huo-jin-ri-tou-tiao-iosduan-an-zhuang-bao-da-xiao-you-hua-si-lu-yu-shi-jian/)
 2. 如何精简SDK包大小：[https://wellphone.me/post/2018/how\_reduce\_ios\_sdk\_file\_size/](https://wellphone.me/post/2018/how_reduce_ios_sdk_file_size/)
 3. iOS 瘦身之道：[https://juejin.im/post/5cdd27d4f265da036902bda5](https://juejin.im/post/5cdd27d4f265da036902bda5)
-4. iOS微信安装包瘦身 https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6#rd
+4. iOS微信安装包瘦身 [https://mp.weixin.qq.com/s?\_\_biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6\#rd](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6#rd)
 
 > ## APP Thining
 
@@ -31,7 +31,6 @@
 * 资源文件
   * 包括：图片、内置素材、多语言、字体、音视频等
 * 资源瘦身方式：
-
   * **无用资源的删除**
     * 可以借鉴：LSUnusedResources
     * 处理步骤：
@@ -49,23 +48,18 @@
     * 文件对比顺序：
       * 大小对比 -&gt; 部分MD5签名对比 -&gt; 完整MD5签名对比 -&gt; 逐个字节对比
   * **大文件压缩**
-
     * 工具：ImageOptim
     * Xcode build setting：
-
       * Compress PNG FIles
 
         * 打包的时候使用pngcrush进行无损压缩，
         * 但是有一些图片压缩之后反而会变大，可以对单个图片进行关闭压缩，Type设置为Data
 
-        ![](../../../.gitbook/assets/2019122601.png)
+        ![](../../../.gitbook/assets/2019122601%20%281%29.png)
 
       * Remove Text Medadata From PNG Files
-
         * 移除PNG资源的文本字符，包括：图像名称、创建时间、作者、版权、注视等
-
   * **图片管理方式规范**
-
     * Asset Catlog：
       * 工程中用到Asset Catlog管理图片，最终会输出到Asset.car内，不再Asset.car内的都都归Bundle管理
       * xcassets里面的2x、3x图片会更怒具体的设备分发，不会同时包含，Bundle不会
@@ -207,15 +201,10 @@ App Extension的占用都是放在Plugin文件夹里面，它是独立打包，�
   ```
 
 * dSYM文件（符号表文件）
-
   * 是从Mach-O文件里面抽取调式信息而得到的文件目录，实际用于保存调试信息的是dwarf文件
   * 可以通过工具dsymutil生成
-
 * dwarf文件（DebuggingWith Arbitrary Record Formats）
-
   * 是ELF和Mach-O等文件格式中用来存储和处理调试信息的标准格式
   * dSYM文件中真正保存符号表数据的是dwarf文件
   * dwarf文件中不同的数据都保存在相应的section中
-
-
 
