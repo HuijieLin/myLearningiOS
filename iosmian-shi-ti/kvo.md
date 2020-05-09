@@ -218,6 +218,27 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
 
 不会触发
 
+> ## Mutable 属性如何触发KVO
+
+```text
+// NSMutableArray
+// 自动触发KVO主要是看有没有经过 setter 方法，
+// 由于对 NSMutableArray 对象进行增、删操作不会触发到 setter 方法
+// 所以可以使用 mutableArrayValueForKey 
+@property (nonatomic, strong) NSMutableArray *kvoMutableArray;
+[[self mutableArrayValueForKey:@"kvoMutableArray"] addObject:@"1"];
+
+// NSMutableSet
+// 和上面同理，使用这个方法mutableSetValueForKey
+
+// NSMutableDictionary
+// 目前只能手动触发，在改变值的前后手动调用KVO对应的方法
+@property (nonatomic, strong) NSMutableDictionary *kvoMutableDic;
+[self willChangeValueForKey:self.kvoMutableDic];
+[self.kvoMutableDic setObject:object forKey:key];
+[self didChangeValueForKey:self.kvoMutableDic];
+```
+
 > ## KVO是否线程同步
 
 是的。在哪个线程监听就在哪个线程回调。
