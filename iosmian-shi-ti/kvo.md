@@ -233,6 +233,8 @@ po [observedObject observationInfo]
 > ## 如何禁止KVO回调
 
 ```text
+// 方法1
+// 如果两个都写，方法1的优先级 > 方法二
 + (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key
 {
     // 把需要禁止回调的属性，返回NO
@@ -242,6 +244,14 @@ po [observedObject observationInfo]
     }
 
     return [super automaticallyNotifiesObserversForKey:key];
+}
+
+// 方法2
+// 方法名 = automaticallyNotifiesObserversOf + 监听的属性（首字母大写）
+// 例如：监听的属性（kvoString）
+// 所以方法名 = automaticallyNotifiesObserversOfKvoString
++ (BOOL)automaticallyNotifiesObserversOfKvoString {
+    return NO;
 }
 ```
 
