@@ -230,5 +230,18 @@ po [observedObject observationInfo]
 // 这个信息的格式不是公开的，我们不能让任何东西依赖它，因为苹果随时都可以改变它。不过这是一个很强大的排错工具
 ```
 
+> ## 如何禁止KVO回调
 
+```text
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key
+{
+    // 把需要禁止回调的属性，返回NO
+    if ([key isEqualToString:@"kvoString"])
+    {
+        return NO;
+    }
+
+    return [super automaticallyNotifiesObserversForKey:key];
+}
+```
 
