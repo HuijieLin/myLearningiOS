@@ -12,6 +12,8 @@ Native -&gt; JS
 * WKUserScript
 
 > #### 从输入url地址栏到所有内容显示到界面上做了哪些事
+>
+> [https://juejin.im/post/5e042c00f265da339c03a47e](https://juejin.im/post/5e042c00f265da339c03a47e)
 
 1. 浏览器向 DNS 服务器请求解析该 URL 中的域名所对应的 IP 地址; 
 2. 建立TCP连接（三次握手）; 
