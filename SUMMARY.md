@@ -46,4 +46,5 @@
 * [切分文件](qie-fen-wen-jian.md)
 * [日常记录](ri-chang-ji-lu.md)
 * [iOS13](ios13.md)
+* [iOS14](ios14.md)
 
