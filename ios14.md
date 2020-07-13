@@ -1,28 +1,28 @@
 # iOS14
 
-> ### iOS 14 beta2 闪退 prepareToMoveKeyboardForInputViewSet
+> ## iOS 14 beta2 闪退 prepareToMoveKeyboardForInputViewSet
 
 原文链接：[https://www.jianshu.com/p/d49be270cb75](https://www.jianshu.com/p/d49be270cb75)
 
-## 问题
+#### 问题
 
 7 月 8 日 iOS 14 beta 2 放出后，我们注意到一个 crash 激增了起来。
 
 这个 crash 顶部的堆栈为：
 
 ```text
-0        _objc_retain (in libobjc.A.dylib)
-1        -[UIInputResponderController prepareToMoveKeyboardForInputViewSet:animationStyle:] (in UIKitCore)
-2        -[UIInputResponderController setKeyWindowSceneInputViews:animationStyle:] (in UIKitCore)
-3        -[UIInputResponderController setInputViews:animationStyle:] (in UIKitCore)
-4        -[UIInputResponderController setInputViews:animated:] (in UIKitCore)
-5        -[UIInputResponderController setInputViews:] (in UIKitCore)
+0 _objc_retain (in libobjc.A.dylib)
+1 -[UIInputResponderController prepareToMoveKeyboardForInputViewSet:animationStyle:] (in UIKitCore)
+2 -[UIInputResponderController setKeyWindowSceneInputViews:animationStyle:] (in UIKitCore)
+3 -[UIInputResponderController setInputViews:animationStyle:] (in UIKitCore)
+4 -[UIInputResponderController setInputViews:animated:] (in UIKitCore)
+5 -[UIInputResponderController setInputViews:] (in UIKitCore)
 ......
 ```
 
 并且我们注意到，这个问题的触发，和业务形态没有特别密切的联系，多个 app 都遇到了这个崩溃，且量级不低。
 
-## 修复方案
+#### 修复方案
 
 先抛出一下我们最后确定的修复方案：
 
@@ -30,7 +30,7 @@ hook 私有方法 `-[UIInputViewSet restorableResponder]`，直接返回 `nil`�
 
 由于是系统库自身的问题，我们没有源码，很难保证这个修复没有引入新的坑。但从目前的测试结果来看，至少崩溃不再复现了，并且看起来有关联的键盘场景，也没有严重问题。
 
-## 原因定位
+#### 原因定位
 
 造成 crash 的原因，是系统私有类 `UIInputViewSet` 中的 `restorableResponder` 属性，既不是 weak 也不是 strong，类似于 unsafe\_unretained。所以当它被访问时，很容易造成野指针。当它被赋值给一个 `__strong id` 类型的变量时，则会在 `_objc_retain` 中崩溃。
 
@@ -42,7 +42,7 @@ hook 私有方法 `-[UIInputViewSet restorableResponder]`，直接返回 `nil`�
 
 可以 hook `-[UIInputViewSet restorableResponder]` 方法，验证一下它的返回值是不是经常是个野指针。
 
-## 定位过程
+#### 定位过程
 
 是怎么定位到 `-[UIInputViewSet restorableResponder]` 方法的呢？我的思路是这样的：
 
