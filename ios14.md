@@ -35,8 +35,7 @@ hook 私有方法 `-[UIInputViewSet restorableResponder]`，直接返回 `nil`�
 造成 crash 的原因，是系统私有类 `UIInputViewSet` 中的 `restorableResponder` 属性，既不是 weak 也不是 strong，类似于 unsafe\_unretained。所以当它被访问时，很容易造成野指针。当它被赋值给一个 `__strong id` 类型的变量时，则会在 `_objc_retain` 中崩溃。
 
 我们可以打符号断点，从汇编中确认， iOS 14 beta 2 中，restorableResponder 属性的 getter 和 setter 方法，只是存取了一个内存值，没有做任何 weak 或 strong 应有的操作。![](//upload-images.jianshu.io/upload_images/164542-fccf065a692031aa.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)  
-![](//upload-images.jianshu.io/upload_images/164542-e8ce966189f633a9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)  
-
+![](//upload-images.jianshu.io/upload_images/164542-e8ce966189f633a9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
 
 （从汇编指令看，没有 storeWeak 或 storeStrong 操作）
 
