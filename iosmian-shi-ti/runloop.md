@@ -58,7 +58,7 @@ typedef struct __CFRunLoop * CFRunLoopRef;
 struct __CFRunLoop {
     pthread_t _pthread; // 所在的线程
     CFMutableSetRef _commonModes; // 带有commonMode标记的mode
-    CFMutableSetRef _commonModeItems; // 标记了commonMode的时间
+    CFMutableSetRef _commonModeItems; // 标记了commonMode的事件
     CFRunLoopModeRef _currentMode; // 当前的mode
     CFMutableSetRef _modes; // 所有的mode列表
 };
