@@ -10,3 +10,8 @@ hook UIView和CALayer的以下三个方法，然后判断是否在主线程，�
 * setNeedsDisplay
 * setNeedsDisplayInRect
 
+```text
+// 设置这个，可以查看系统hook了哪些类
+MTC_VERBOSE
+```
+
