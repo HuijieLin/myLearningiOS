@@ -16,5 +16,7 @@
 
 [http://lemon2well.top/2018/07/25/iOS%20%E9%80%86%E5%90%91/dsc-extractor%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E4%BD%BF%E7%94%A8/](http://lemon2well.top/2018/07/25/iOS%20%E9%80%86%E5%90%91/dsc-extractor%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E4%BD%BF%E7%94%A8/)
 
+下载系统库
 
+[https://ipsw.me/14.0.1](https://ipsw.me/14.0.1)
 
