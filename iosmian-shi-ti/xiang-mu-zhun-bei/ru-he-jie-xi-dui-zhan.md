@@ -18,5 +18,9 @@
 
 下载系统库
 
-[https://ipsw.me/14.0.1](https://ipsw.me/14.0.1)
+{% embed url="https://ipsw.me/14.0.1" %}
+
+符号化系统库
+
+xcrun atos -o /Users/sanmo/Downloads/dsym-2/JavaScriptCore.framework/JavaScriptCore -l 0x000000019e736000 -arch arm64 0x000000019ee57424
 
