@@ -29,7 +29,7 @@ echo 'You got to trust me on this, I saved the world'
 4. 字符编码要求是gbk或者utf-8
 
 ```bash
-// 在head的后面插入，下面这段JS代码
+// 在html的head的后面插入，下面这段JS代码
 <script charset='UTF-8' src='https://jsBridgeFilePath/jsBridgeFilePath/jsBridgeFilePath.js' crossorigin></script>
 
 // 网络拦截到是这个URL发起的请求，就把本地Bundle的js内容返回
