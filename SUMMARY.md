@@ -42,7 +42,7 @@
     * [内存获取](iosmian-shi-ti/xiang-mu-zhun-bei/nei-cun-huo-qu.md)
     * [load时间计算](iosmian-shi-ti/xiang-mu-zhun-bei/loadshi-jian-ji-suan.md)
     * [闪退防护](iosmian-shi-ti/xiang-mu-zhun-bei/shan-tui-fang-hu.md)
-    * [J s A pi](iosmian-shi-ti/xiang-mu-zhun-bei/j-s-a-pi.md)
+    * [JsApi](iosmian-shi-ti/xiang-mu-zhun-bei/j-s-a-pi.md)
   * [响应者链条](iosmian-shi-ti/xiang-ying-zhe-lian-tiao.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
