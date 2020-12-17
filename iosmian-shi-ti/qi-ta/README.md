@@ -12,8 +12,6 @@
 6. 尽量少用addView的方式给Cell动态添加View，可以先初始化好，通过控制hidden的方式是否展示
 7. 尽量少用conerRadius和maskToBounds来设置圆角（因为会导致离屏渲染）
 
-离屏渲染：[https://hit-alibaba.github.io/interview/iOS/Cocoa-Touch/Performance.html](https://hit-alibaba.github.io/interview/iOS/Cocoa-Touch/Performance.html)
-
 ### 怎么实现LRU
 
 整体设计思路是，使用hashMap存储key，这样可以做到save和get key 的事件都是O（1），而HashMap的Value指向双向链表实现的LRU的Node节点，如下图所示：
@@ -55,10 +53,7 @@ LRU 存储是基于双向链表，head表示表头，tail表示表尾。如果�
 * 如果两个对象相等，那么他们的hash值是一样的，即：`[a isEqual:b]` =&gt; `[a hash] == [b hash]`
 * 如果hash值一样，两个对象不一定相等，即：`[a hash] == [b hash]` != `[a isEqual:b]`
 
-为了优化判等的效率，基于hash的 NSSet 和 NSDictionary 在判断成员是否相等时，会：
-
-1. 先判断 hash 值是否一样，如果不一样，进入第2步 
-2. 在进行对象判等，作为最终结果
+为了优化判等的效率，基于hash的 NSSet 和 NSDictionary 在判断成员是否相等时，会： 1. 先判断 hash 值是否一样，如果不一样，进入第2步 2. 在进行对象判等，作为最终结果
 
 ## NSDictionary 和 NSMutableArray 底层结构
 

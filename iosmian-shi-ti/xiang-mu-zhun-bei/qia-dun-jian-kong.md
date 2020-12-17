@@ -11,3 +11,7 @@
 * 卡顿的情况包括连续多次小卡顿和一次大卡顿，所以在`dispatch_semaphore_wait`设置的超时时间为一次小卡顿时间（50ms），大卡顿暂时设置为（250ms），所以只要统计连续触发5次超时就表示有卡顿发生
 * 堆栈的收集使用的是PLCrashReport
 
+新方案
+
+[https://mp.weixin.qq.com/s/vMRQ0VuHLxpaY9oCNd5G8w](https://mp.weixin.qq.com/s/vMRQ0VuHLxpaY9oCNd5G8w)
+
