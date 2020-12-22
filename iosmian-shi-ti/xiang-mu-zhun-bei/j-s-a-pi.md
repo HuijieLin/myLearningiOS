@@ -1,26 +1,5 @@
 # JsApi
 
-## Getting Super Powers
-
-Becoming a super hero is a fairly straight forward process:
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
-
 网络拦截到每次的请求结束，达成以下4中条件就插入&lt;script&gt;标签引入外部JS代码，
 
 1. mimeType是html，text/html
