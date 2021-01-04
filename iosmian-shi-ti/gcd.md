@@ -60,3 +60,7 @@ NSThread *thread = [[NSThread alloc] initWithBlock:^{
 // 把 waiteUntileDone 设置为 NO
 ```
 
+锁
+
+[https://bestswifter.com/ios-lock/](https://bestswifter.com/ios-lock/)
+
