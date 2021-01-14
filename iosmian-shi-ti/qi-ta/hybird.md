@@ -26,3 +26,13 @@ Native -&gt; JS
 
 * WKWebView项目实践分享（二）- WKWebView介绍[https://www.jianshu.com/p/0a1d636b2e96](https://www.jianshu.com/p/0a1d636b2e96)
 
+### 秒开方案
+
+离线Hybrid容器如何做到接近100%秒开？ [https://mp.weixin.qq.com/s/inAFLg85TfmXOWXS50pEfg](https://mp.weixin.qq.com/s/inAFLg85TfmXOWXS50pEfg)
+
+双11主会场性能体验提升 - 秒开优化 [https://mp.weixin.qq.com/s/PJRJBhzatwE3jyeO26iZGg](https://mp.weixin.qq.com/s/PJRJBhzatwE3jyeO26iZGg)
+
+web离线技术原理 [https://juejin.cn/post/6844903845483511815\#heading-8](https://juejin.cn/post/6844903845483511815#heading-8)
+
+今日头条品质优化 - 图文详情页秒开实践 [https://mp.weixin.qq.com/s?spm=ata.13261165.0.0.72e12b8fZeVtZW&\_\_biz=MzI1MzYzMjE0MQ==&mid=2247486645&idx=1&sn=7c9111b70758c65575d7a2b5ee697191&chksm=e9d0c757dea74e418b8002d5eb652166d7edcf38a462dfadfc88377a05815f439ba624fc8565&token=534750968&lang=zh\_CN&scene=21\#wechat\_redirect](https://mp.weixin.qq.com/s?spm=ata.13261165.0.0.72e12b8fZeVtZW&__biz=MzI1MzYzMjE0MQ==&mid=2247486645&idx=1&sn=7c9111b70758c65575d7a2b5ee697191&chksm=e9d0c757dea74e418b8002d5eb652166d7edcf38a462dfadfc88377a05815f439ba624fc8565&token=534750968&lang=zh_CN&scene=21#wechat_redirect)
+
