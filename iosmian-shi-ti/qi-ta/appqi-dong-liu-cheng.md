@@ -8,13 +8,5 @@
 
 [https://www.jianshu.com/p/f29b59f4c2b9](https://www.jianshu.com/p/f29b59f4c2b9)
 
-{% embed url="https://everettjf.github.io/2018/08/19/ios-hook-really-all-load/" %}
-
-### 抖音品质建设 - iOS启动优化《实战篇》 <a id="activity-name"></a>
-
-{% embed url="https://mp.weixin.qq.com/s/ekXfFu4-rmZpHwzFuKiLXw" %}
-
-### 抖音品质建设 - iOS启动优化《原理篇》 <a id="activity-name"></a>
-
-[https://mp.weixin.qq.com/s?\_\_biz=MzI1MzYzMjE0MQ==&mid=2247486932&idx=1&sn=eb4d294e00375d506b93a00b535c6b05&chksm=e9d0c636dea74f20ec800af333d1ee94969b74a92f3f9a5a66a479380d1d9a4dbb8ffd4574ca&scene=21\#wechat\_redirect](https://mp.weixin.qq.com/s?__biz=MzI1MzYzMjE0MQ==&mid=2247486932&idx=1&sn=eb4d294e00375d506b93a00b535c6b05&chksm=e9d0c636dea74f20ec800af333d1ee94969b74a92f3f9a5a66a479380d1d9a4dbb8ffd4574ca&scene=21#wechat_redirect)
+[https://everettjf.github.io/2018/08/19/ios-hook-really-all-load/](https://everettjf.github.io/2018/08/19/ios-hook-really-all-load/)
 
