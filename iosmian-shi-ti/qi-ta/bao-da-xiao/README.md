@@ -6,8 +6,6 @@
 2. 如何精简SDK包大小：[https://wellphone.me/post/2018/how\_reduce\_ios\_sdk\_file\_size/](https://wellphone.me/post/2018/how_reduce_ios_sdk_file_size/)
 3. iOS 瘦身之道：[https://juejin.im/post/5cdd27d4f265da036902bda5](https://juejin.im/post/5cdd27d4f265da036902bda5)
 4. iOS微信安装包瘦身 [https://mp.weixin.qq.com/s?\_\_biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6\#rd](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&3rd=MzA3MDU4NTYzMw==&scene=6#rd)
-5. 抖音品质建设 - iOS 安装包大小优化实践篇 [https://mp.weixin.qq.com/s/LSP8kC09zjb-sDjgZaikbg](https://mp.weixin.qq.com/s/LSP8kC09zjb-sDjgZaikbg)
-6. 今日头条优化实践： iOS 包大小二进制优化，一行代码减少 60 MB 下载大小 [https://mp.weixin.qq.com/s/TnqAqpmuXsGFfpcSUqZ9GQ](https://mp.weixin.qq.com/s/TnqAqpmuXsGFfpcSUqZ9GQ)
 
 > ## APP Thining
 
