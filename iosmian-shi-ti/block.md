@@ -199,14 +199,16 @@ self.block = ^{
 
 {% embed url="https://www.aopod.com/2016/11/16/block-empty-checking/" %}
 
-## weak strong dance
+## Weak-Strong Dance
 
 ```objectivec
+// Weak-Strong Dance 案例
 __weak typeof(self) weakSelf = self;
 self.block = ^{
     __strong typeof(self) strongSelf = weakSelf;
+    
     if(strongSelf) {
-        // doing something
+        // do something
     }
 };
 ```
@@ -214,7 +216,7 @@ self.block = ^{
 > #### 直接使用weakSelf有什么问题
 
 * 逻辑不确定性
-  * 例如block调用了5次weakSelf，有可能前面3次正常，后面2次是nil，会导致业务逻辑偶现非预期
+  * 例如 block 调用了5次 weakSelf，有可能前面3次正常，后面2次是nil，会导致业务逻辑偶现非预期
 * 增加包大小和减慢运行效率
   * 每次访问 weakSelf，会触发 objc\_loadWeakRetained -&gt; objc\_msgSend -&gt; objc\_Release
   * 如果使用 strongSelf，可以减少了多次的 objc\_loadWeakRetained 和 objc\_Release 调用
