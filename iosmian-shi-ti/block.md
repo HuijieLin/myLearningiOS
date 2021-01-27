@@ -1,8 +1,6 @@
 # block
 
-_**\*\***_\# block
-
-> ## block的本质和原理是什么
+## block的本质和原理是什么
 
 * block的本质是一个OC对象，它内部也有一个isa指针
 * block是封装了函数调用以及函数调用环境的OC对象
@@ -11,7 +9,7 @@ _**\*\***_\# block
 
 ![](../.gitbook/assets/2019112101.png)
 
-> ## block的变量捕获
+## block的变量捕获
 
 * auto是默认的变量声明标签，如下：
 * ```objectivec
@@ -80,7 +78,7 @@ static struct __main_block_desc_0 {
     * dispose函数内部会调用`_block_object_dispose`函数
     * `_block_object_dispoase`会自动释放引用的auto变量
 
-> ## block的类型
+## block的类型
 
 | block类型 | 环境 |
 | :--- | :--- |
@@ -102,7 +100,7 @@ static struct __main_block_desc_0 {
   * block作为GCD API中的参数时
   * block作为cocoa API中方法名含有usingBlock的方法参数时
 
-> ## \_\_block的作用是什么
+## \_\_block的作用是什么
 
 * 可以用于解决block内部修改auto变量值的问题
 * 不能修饰全局变量和静态变量
@@ -144,11 +142,11 @@ static struct __main_block_desc_0 {
   * \_\_block修饰变量的结构体`__Block_byref_age_0`对变量（如上面的age）的引用类型取决于变量的修饰符（strong， weak等）
   * **注意：在MRC下，`__Block_byref_age_0`对里面的变量不会retain，也就是弱引用**
 
-> ## block在修改NSMutableArray的时候需不需要添加\_\_block
+## QA：block在修改NSMutableArray的时候需不需要添加\_\_block
 
 不需要，因为本身没有修改到NSMutableArray
 
-> ## 解决循环引用
+## 解决循环引用
 
 ```objectivec
 /***************
@@ -199,5 +197,21 @@ self.block = ^{
 
 {% embed url="https://stackoverflow.com/questions/4145164/why-do-nil-null-blocks-cause-bus-errors-when-run" %}
 
-[https://www.aopod.com/2016/11/16/block-empty-checking/](https://www.aopod.com/2016/11/16/block-empty-checking/)
+{% embed url="https://www.aopod.com/2016/11/16/block-empty-checking/" %}
+
+## weak strong dance
+
+```objectivec
+__weak typeof(self) weakSelf = self;
+self.block = ^{
+    __strong typeof(self) strongSelf = weakSelf;
+    if(strongSelf) {
+        // doing something
+    }
+};
+```
+
+> #### 直接使用weakSelf有什么风险
+
+* 逻辑风险逻辑逻辑 p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'PingFang SC'; color: \#0f17逻辑
 
