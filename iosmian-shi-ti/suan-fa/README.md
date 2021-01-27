@@ -50,27 +50,3 @@
 * 手写LFU
 * 判断平衡二叉树（easy）
 
-> ## 递归求和
-
-```objectivec
-// a + ... b
-- (NSInteger)num:(NSInteger)a num2:(NSInteger)b {
-    if (a >= b) {
-        return a;
-    }
-    
-    return a + [self num:(a+1) num2:b];
-}
-
-// 1 + 2 + ... + n
-- (NSInteger)num:(NSInteger)a {
-    
-    if (a == 0) {
-        return a;
-    }
-    
-    return a + [self num:(a-1)];
-    
-}
-```
-
