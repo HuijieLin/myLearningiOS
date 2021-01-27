@@ -211,7 +211,47 @@ self.block = ^{
 };
 ```
 
-> #### 直接使用weakSelf有什么风险
+> #### 直接使用weakSelf有什么问题
 
-* 逻辑风险逻辑逻辑 p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'PingFang SC'; color: \#0f17逻辑
+* 逻辑不确定性
+  * 例如block调用了5次weakSelf，有可能前面3次正常，后面2次是nil，会导致业务逻辑偶现非预期
+* 增加包大小和减慢运行效率
+  * 每次访问 weakSelf，会触发 objc\_loadWeakRetained -&gt; objc\_msgSend -&gt; objc\_Release
+  * 如果使用 strongSelf，可以减少了多次的 objc\_loadWeakRetained 和 objc\_Release 调用
+
+> #### 底层代码转换
+
+```objectivec
+// weakSelf
+static void __TestBlock__test_block_func_0(struct __TestBlock__test_block_impl_0 *__cself) {
+        TestBlock *const __weak weakSelf = __cself->weakSelf; 
+        // 在执行Block之前，才获取weakSelf，所以可能获取到的是nil
+        ((id (*)(id, SEL))(void *)objc_msgSend)((id)weakSelf, sel_registerName("copy"));
+    }
+    
+// weak-Strong Dance
+static void __TestBlock__test_block_func_0(struct __TestBlock__test_block_impl_0 *__cself) {
+        TestBlock *const __weak weakSelf = __cself->weakSelf;
+        // 加了 strongSelf， 只是多了这么一行代码
+        // 创建一个对象strong的引用，这样可以保证在这个block执行的范围内，self是强引用的，不会半路释放
+        __attribute__((objc_ownership(strong))) typeof(self) strongSelf = weakSelf;
+        ((id (*)(id, SEL))(void *)objc_msgSend)((id)strongSelf, sel_registerName("copy"));
+    }
+    
+/**************** 
+ * 下面会Crash吗
+ *
+ * 答案：会
+ * 原因：根据上文，在 strongSelf 执行前 weakSelf 可能就变成nil，所以会导致 strongSelf 执行没意义
+ *
+ * 解决方案：
+ * 可以在使用前判断 strongSelf 是否为 nil
+****************/
+__weak typeof(self) weakSelf = self;
+self.handler = ^{
+    typeof(weakSelf) strongSelf = weakSelf;
+    [strongSelf.obserable removeObserver:strongSelf
+                              forKeyPath:kObservableProperty];
+};
+```
 
