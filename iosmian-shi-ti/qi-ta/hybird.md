@@ -1,5 +1,9 @@
 # Hybird
 
+### 从零收拾一个hybrid框架（一）-- 从选择JS通信方案开始
+
+[http://awhisper.github.io/2018/01/02/hybrid-jscomunication/](http://awhisper.github.io/2018/01/02/hybrid-jscomunication/)
+
 JS -&gt; Native
 
 * 假跳转， delegate拦截

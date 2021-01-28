@@ -1,6 +1,8 @@
 # block
 
-## block的本质和原理是什么
+_**\*\***_\# block
+
+> ## block的本质和原理是什么
 
 * block的本质是一个OC对象，它内部也有一个isa指针
 * block是封装了函数调用以及函数调用环境的OC对象
@@ -9,7 +11,7 @@
 
 ![](../.gitbook/assets/2019112101.png)
 
-## block的变量捕获
+> ## block的变量捕获
 
 * auto是默认的变量声明标签，如下：
 * ```objectivec
@@ -78,7 +80,7 @@ static struct __main_block_desc_0 {
     * dispose函数内部会调用`_block_object_dispose`函数
     * `_block_object_dispoase`会自动释放引用的auto变量
 
-## block的类型
+> ## block的类型
 
 | block类型 | 环境 |
 | :--- | :--- |
@@ -100,7 +102,7 @@ static struct __main_block_desc_0 {
   * block作为GCD API中的参数时
   * block作为cocoa API中方法名含有usingBlock的方法参数时
 
-## \_\_block的作用是什么
+> ## \_\_block的作用是什么
 
 * 可以用于解决block内部修改auto变量值的问题
 * 不能修饰全局变量和静态变量
@@ -142,11 +144,11 @@ static struct __main_block_desc_0 {
   * \_\_block修饰变量的结构体`__Block_byref_age_0`对变量（如上面的age）的引用类型取决于变量的修饰符（strong， weak等）
   * **注意：在MRC下，`__Block_byref_age_0`对里面的变量不会retain，也就是弱引用**
 
-## QA：block在修改NSMutableArray的时候需不需要添加\_\_block
+> ## block在修改NSMutableArray的时候需不需要添加\_\_block
 
 不需要，因为本身没有修改到NSMutableArray
 
-## 解决循环引用
+> ## 解决循环引用
 
 ```objectivec
 /***************
@@ -197,63 +199,5 @@ self.block = ^{
 
 {% embed url="https://stackoverflow.com/questions/4145164/why-do-nil-null-blocks-cause-bus-errors-when-run" %}
 
-{% embed url="https://www.aopod.com/2016/11/16/block-empty-checking/" %}
-
-## Weak-Strong Dance
-
-```objectivec
-// Weak-Strong Dance 案例
-__weak typeof(self) weakSelf = self;
-self.block = ^{
-    __strong typeof(self) strongSelf = weakSelf;
-    
-    if(strongSelf) {
-        // do something
-    }
-};
-```
-
-> #### 直接使用weakSelf有什么问题
-
-* 逻辑不确定性
-  * 例如 block 调用了5次 weakSelf，有可能前面3次正常，后面2次是nil，会导致业务逻辑偶现非预期
-* 增加包大小和减慢运行效率
-  * 每次访问 weakSelf，会触发 objc\_loadWeakRetained -&gt; objc\_msgSend -&gt; objc\_Release
-  * 如果使用 strongSelf，可以减少了多次的 objc\_loadWeakRetained 和 objc\_Release 调用
-
-> #### 底层代码转换
-
-```objectivec
-// weakSelf
-static void __TestBlock__test_block_func_0(struct __TestBlock__test_block_impl_0 *__cself) {
-        TestBlock *const __weak weakSelf = __cself->weakSelf; 
-        // 在执行Block之前，才获取weakSelf，所以可能获取到的是nil
-        ((id (*)(id, SEL))(void *)objc_msgSend)((id)weakSelf, sel_registerName("copy"));
-    }
-    
-// weak-Strong Dance
-static void __TestBlock__test_block_func_0(struct __TestBlock__test_block_impl_0 *__cself) {
-        TestBlock *const __weak weakSelf = __cself->weakSelf;
-        // 加了 strongSelf， 只是多了这么一行代码
-        // 创建一个对象strong的引用，这样可以保证在这个block执行的范围内，self是强引用的，不会半路释放
-        __attribute__((objc_ownership(strong))) typeof(self) strongSelf = weakSelf;
-        ((id (*)(id, SEL))(void *)objc_msgSend)((id)strongSelf, sel_registerName("copy"));
-    }
-    
-/**************** 
- * 下面会Crash吗
- *
- * 答案：会
- * 原因：根据上文，在 strongSelf 执行前 weakSelf 可能就变成nil，所以会导致 strongSelf 执行没意义
- *
- * 解决方案：
- * 可以在使用前判断 strongSelf 是否为 nil
-****************/
-__weak typeof(self) weakSelf = self;
-self.handler = ^{
-    typeof(weakSelf) strongSelf = weakSelf;
-    [strongSelf.obserable removeObserver:strongSelf
-                              forKeyPath:kObservableProperty];
-};
-```
+[https://www.aopod.com/2016/11/16/block-empty-checking/](https://www.aopod.com/2016/11/16/block-empty-checking/)
 
