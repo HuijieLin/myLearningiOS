@@ -43,6 +43,7 @@
     * [load时间计算](iosmian-shi-ti/xiang-mu-zhun-bei/loadshi-jian-ji-suan.md)
     * [闪退防护](iosmian-shi-ti/xiang-mu-zhun-bei/shan-tui-fang-hu.md)
     * [JsApi](iosmian-shi-ti/xiang-mu-zhun-bei/j-s-a-pi.md)
+    * [代码分析](iosmian-shi-ti/xiang-mu-zhun-bei/dai-ma-fen-xi.md)
   * [响应者链条](iosmian-shi-ti/xiang-ying-zhe-lian-tiao.md)
 * [otool](otool.md)
 * [切分文件](qie-fen-wen-jian.md)
