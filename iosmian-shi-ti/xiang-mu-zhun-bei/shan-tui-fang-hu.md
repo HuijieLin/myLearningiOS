@@ -25,5 +25,9 @@
 
 ## KVO 防护
 
-[https://juejin.im/post/5d67b720f265da039a289bb4\#heading-0](https://juejin.im/post/5d67b720f265da039a289bb4#heading-0)
+{% embed url="https://juejin.im/post/5d67b720f265da039a289bb4\#heading-0" %}
+
+## 野指针防护
+
+[http://gonghonglou.com/2019/07/06/crash-guard-bad-access/](http://gonghonglou.com/2019/07/06/crash-guard-bad-access/)
 
