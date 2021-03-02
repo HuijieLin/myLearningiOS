@@ -1,6 +1,6 @@
 # associate
 
-## assocate声明weak属性
+> ## assocate声明weak属性
 
 [http://mrpeak.cn/blog/ios-weak/](http://mrpeak.cn/blog/ios-weak/)
 
@@ -19,7 +19,7 @@
 }
 ```
 
-## 关联对象什么时候被销毁
+> ## 关联对象什么时候被销毁
 
 [https://stackoverflow.com/questions/10842829/will-an-associated-object-be-released-automatically/10843510\#10843510](https://stackoverflow.com/questions/10842829/will-an-associated-object-be-released-automatically/10843510#10843510)
 
@@ -42,7 +42,7 @@
      * 调用 free()
 ```
 
-## 关联对象policy和属性修饰符的对应关系
+> ## 关联对象policy和属性修饰符的对应关系
 
 | objc\_AssociationPolicy | 对应的修饰符 |
 | :--- | :--- |
@@ -52,7 +52,7 @@
 | OBJC\_ASSOCIATION\_RETAIN | strong，atomic |
 | OBJC\_ASSOCIATION\_COPY | copy，atomic |
 
-## 关联对象的原理
+> ## 关联对象的原理
 
 * 核心对象
   * AssociationsManager：统一的存储管理
