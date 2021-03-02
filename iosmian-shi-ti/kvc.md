@@ -1,6 +1,6 @@
 # KVC
 
-> ## KVC赋值流程 `- setValueForKey`
+## KVC赋值流程 `- setValueForKey`
 
 1. 调用`setValueForKey`
 2. 按照`setKey`，`_setKey：`的顺序查找方法
@@ -11,7 +11,7 @@
 6. 如果返回值是NO
    1. 调用`setValueForUndefineKey`
 
-> ## KVC取值流程 `- valueForKey：`
+## KVC取值流程 `- valueForKey：`
 
 1. 调用`valueForKey：`
 2. 按照`getKey`，`key`，`_isKey`，`_key`的顺序查找方法
@@ -23,11 +23,11 @@
 6. 如果返回值是NO
    1. 调用`setValueForUndefineKey`
 
-> ## KVC修改属性会触发KVO吗
+## KVC修改属性会触发KVO吗
 
 会触发KVO
 
-> ## KVC的应用场景
+## KVC的应用场景
 
 1. 动态取值和赋值
 2. 访问和修改私有变量

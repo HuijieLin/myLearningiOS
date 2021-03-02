@@ -1,6 +1,6 @@
 # KVO
 
-## KVO的实现原理
+> ## KVO的实现原理
 
 原理如下：
 
@@ -11,7 +11,7 @@
 
 流程图如下：![](../.gitbook/assets/2019011001.png)
 
-## addObserver:forKeyPath:options:context:各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？
+> ## addObserver:forKeyPath:options:context:各个参数的作用分别是什么，observer中需要实现哪个方法才能获得KVO回调？
 
 ```objectivec
 // 添加键值观察
@@ -43,7 +43,7 @@ observer中需要实现以下方法获取KVO回调：
                        context:(void *)context;
 ```
 
-## 如何手动触发KVO
+> ## 如何手动触发KVO
 
 [Apple官网文档 - Manual Change Notification](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueObserving/Articles/KVOCompliance.html#//apple_ref/doc/uid/20002178-SW3)
 
@@ -71,7 +71,7 @@ observer中需要实现以下方法获取KVO回调：
 }
 ```
 
-## KVC和KVO的keyPath一定是属性么？
+> ## KVC和KVO的keyPath一定是属性么？
 
 KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量的监听，需要手动实现。
 
@@ -194,7 +194,7 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
 @end
 ```
 
-## 如何手动实现KVO
+> ## 如何手动实现KVO
 
 [参考链接](https://tech.glowing.com/cn/implement-kvo/)
 
@@ -214,11 +214,11 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
      * 在重写的`setter`方法里，记录新旧值然后调用原来的`setter`方法，通知给观察者回调
   4. 添加观察者
 
-## 直接修改成员变量会触发KVO吗
+> ## 直接修改成员变量会触发KVO吗
 
 不会触发
 
-## Mutable 属性如何触发KVO
+> ## Mutable 属性如何触发KVO
 
 ```objectivec
 // NSMutableArray
@@ -239,11 +239,11 @@ KVC支持实例变量，KVO只支持属性。如果KVO需要支持实例变量�
 [self didChangeValueForKey:self.kvoMutableDic];
 ```
 
-## KVO是否线程同步
+> ## KVO是否线程同步
 
 是的。在哪个线程监听就在哪个线程回调。
 
-## 调试KVO
+> ## 调试KVO
 
 ```objectivec
 po [observedObject observationInfo]
@@ -251,7 +251,7 @@ po [observedObject observationInfo]
 // 这个信息的格式不是公开的，我们不能让任何东西依赖它，因为苹果随时都可以改变它。不过这是一个很强大的排错工具
 ```
 
-## 如何禁止KVO回调
+> ## 如何禁止KVO回调
 
 ```objectivec
 // 方法1
