@@ -1,16 +1,16 @@
 # Runtime
 
-> ## 相关链接
+## 相关链接
 
 [http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/](./#httpyulingtianxiacomblog20141105objective-c-runtime)
 
-> ## 什么是runtime
+## 什么是runtime
 
 * OC是一门动态性比较强的编程语言，允许很多操作推迟到程序运行时在进行
 * OC的动态性就是由runtime来支撑和实现的，runtime是一套C语言的API，封装了很多动态性相关的函数
 * 平时编写的OC代码，底层都是转换成runtime api进行调用
 
-> ## 什么是isa
+## 什么是isa
 
 * 在arm64架构之前，isa是一个普通的指针，存储着Class，meta-class对象的内存地址
 * 在arm64架构开始，对isa进行了优化，变成了一个共同体（union）结构，还使用了位域来存储更多的信息
@@ -62,7 +62,7 @@ union isa_t
 };
 ```
 
-> ## super的本质
+## super的本质
 
 super调用，底层会转换为`objc_msgSendSuper2`函数调用，接收2个参数：
 
@@ -76,7 +76,7 @@ struct objc_super2 {
 };
 ```
 
-> ## 类的数据结构
+## 类的数据结构
 
 ```objectivec
 struct objc_class : objc_object {
@@ -122,7 +122,7 @@ struct class_ro_t {
 };
 ```
 
-> ## 类的实例的数据结构
+## 类的实例的数据结构
 
 ```objectivec
 // Represents an instance of a class.
@@ -131,7 +131,7 @@ struct objc_object {
 };
 ```
 
-> ## 成员变量的数据结构
+## 成员变量的数据结构
 
 ```objectivec
 struct objc_ivar {
@@ -144,7 +144,7 @@ struct objc_ivar {
 }
 ```
 
-> ## 属性的数据结构
+## 属性的数据结构
 
 ```objectivec
 struct property_t {
@@ -169,7 +169,7 @@ typedef struct {
 
 也就是说我们每次在增加一个属性,系统都会在 ivar\_list 中添加一个成员变量的描述, 在 method\_list 中增加 setter 与 getter 方法的描述,在属性列表中增加一个属性的描述, 然后计算该属性在对象中的偏移量,然后给出 setter 与 getter 方法对应的实现, 在 setter 方法中从偏移量的位置开始赋值,在 getter 方法中从偏移量开始取值, 为了能够读取正确字节数, 系统对象偏移量的指针类型进行了类型强转.
 
-> ## 方法的数据结构
+## 方法的数据结构
 
 ```objectivec
 typedef struct objc_method *Method;
@@ -189,7 +189,7 @@ struct objc_method {
 * `i16`: 表示第1参数是int类型，在第16位开始
 * `f20`: 表示第2参数是float类型，在第20位开始
 
-> ## 方法缓存的数据结构
+## 方法缓存的数据结构
 
 * 方法缓存**保存**步骤：
   * 通过 `@selector（myFunction）& _mask` 计算得出一个数组下标
@@ -215,7 +215,7 @@ struct bucket_t {
 };
 ```
 
-> ## 消息发送`objc_msgSend`流程
+## 消息发送`objc_msgSend`流程
 
 ```objectivec
 objc_msgSend(receiver, selector, arg1, arg2, ...)
@@ -225,7 +225,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 将foo消息发送给obj对象，首先在 Class 中的缓存查找 IMP （没缓存则初始化缓存），如果没找到，则向父类的 Class 查找。如果一直查找到根类仍旧没有实现，则用\_objc\_msgForward函数指针代替 IMP 。最后执行这个 IMP ，走消息转发流程
 
-**详细流程如下：**
+**消息发送详细流程如下：**
 
 * 判断receiver（obj）是否为nil
 * 如果是YES，就退出
@@ -240,7 +240,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 * receiver通过isa指针找到receiverClass
 * receiverClass通过superclass指针找到SuperClass
 
-> ## 消息转发流程
+## 消息转发流程
 
 ![](../../.gitbook/assets/2019011002%20%281%29.png)
 
@@ -256,7 +256,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
   `methodSignatureForSelector` 和 `forwardInvocation`
 
-> ## isa和superclass
+## isa和superclass
 
 ![](../../.gitbook/assets/2020010801.png)
 
