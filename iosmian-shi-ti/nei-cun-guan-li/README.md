@@ -1,6 +1,6 @@
 # 内存管理
 
-## iOS 程序的内存布局
+> ## iOS 程序的内存布局
 
 **低地址**  
 ｜ 保留  
@@ -19,14 +19,14 @@
 ｜ 内核区  
 **高地址**
 
-## OC对象的内存管理
+> ## OC对象的内存管理
 
 * 在iOS中，使用**引用计数**来管理OC对象的内存
 * 可以通过以下私有函数来查看自动释放池的情况：
 
   `extern void _objc_autoreleasePoolPrint(void);`
 
-## 引用计数的存储
+> ## 引用计数的存储
 
 * 在64bit中，引用计数可以直接存储在优化过的isa指针中，当存不下的时候，在存到SideTable类中。
 * SideTable结构如下：
@@ -39,20 +39,12 @@
   };
   ```
 
-## weak指针的实现原理
+> ## weak指针的实现原理
 
 [https://cloud.tencent.com/developer/article/1089204](https://cloud.tencent.com/developer/article/1089204)
 
 * 当一个对象obj被weak指针指向时，这个weak指针会以obj地址作为key，被存储到sideTable类的weak\_table这个散列表上对应的一个weak指针数组里面
-
-```objectivec
-// obj对象作为key
-// weakStr对象作为value
-// 保存在weak_table中
-NSString *obj = [[NSString alloc] initWithString: @"Jiaming Chen"];
-__weak NSString *weakStr = obj;
-```
-
+* 当一个对象obj的delloc方法被调用时，runtime会以obj为key，从sideTable类的weak\_table这个散列表中，找出对应的weak指针列表，然后将里面的weak指逐个设置为nil
 * 在散列表里面的查找过程：
 
 ```objectivec
@@ -93,7 +85,7 @@ weak_entry_for_referent(weak_table_t *weak_table, objc_object *referent)
 }
 ```
 
-## weak和assign的区别
+> ## weak和assign的区别
 
 不同点：
 
