@@ -73,5 +73,10 @@ NSThread *thread = [[NSThread alloc] initWithBlock:^{
 
 ## 锁
 
-[https://bestswifter.com/ios-lock/](https://bestswifter.com/ios-lock/)
+{% embed url="https://bestswifter.com/ios-lock/" %}
+
+## 互斥锁和自旋锁的区别
+
+* 互斥锁属于sleep-waiting类型的锁。例如在一个双核的机器上有两个线程\(线程A和线程B\)，它们分别运行在Core0和 Core1上。假设线程A想要通过pthread\_mutex\_lock操作去得到一个临界区的锁，而此时这个锁正被线程B所持有，那么线程A就会被阻塞 \(blocking\)，Core0 会在此时进行上下文切换\(Context Switch\)将线程A置于等待队列中，此时Core0就可以运行其他的任务\(例如另一个线程C\)而不必进行忙等待。 
+* 自旋锁，它属于busy-waiting类型的锁，如果线程A是使用pthread\_spin\_lock操作去请求锁，那么线程A就会一直在 Core0上进行忙等待并不停的进行锁请求，直到得到这个锁为止
 
