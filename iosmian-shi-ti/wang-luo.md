@@ -2,7 +2,7 @@
 
 [https://hit-alibaba.github.io/interview/basic/network/HTTP.html](https://hit-alibaba.github.io/interview/basic/network/HTTP.html)
 
-## Get和Post的区别
+> ## Get和Post的区别
 
 * GET
   * 从指定的资源请求数据
@@ -32,7 +32,7 @@
 | 安全性 | 与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！ | POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。 |
 | 可见性 | 数据在 URL 中对所有人都是可见的。 | 数据不会显示在 URL 中。 |
 
-## HTTP报文
+> ## HTTP报文
 
 请求报文
 
@@ -97,7 +97,7 @@ Content-Length:112
 * 500：服务器发生不可预期的错误，导致无法完成客户端的请求。
 * 503：服务器当前不能够处理客户端的请求，在一段时间之后，服务器可能会恢复正常。
 
-## TCP和UDP的区别
-
-## 七层模型
+> ## TCP和UDP的区别
+>
+> ## 七层模型
 
